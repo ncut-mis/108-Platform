@@ -69,8 +69,8 @@
                         <br> <a href="element.html" class="dropdown-item">XXX</a>
                     </div>
                 </div>
-                <br>  <a href="widget.html" class="nav-item nav-link"><i class="fa fa-laptop me-2"></i>公告管理</a><br>
-                <br>  <a href="widget.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>賣家申請管理</a><br>
+                <br>  <a href="{{'/home'}}" class="nav-item nav-link"><i class="fa fa-laptop me-2"></i>公告管理</a><br>
+                <br>  <a href="{{'/apply'}}" class="nav-item nav-link"><i class="fa fa-th me-2"></i>賣家申請管理</a><br>
                 <br> <a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>班表管理</a>
 
             </div>

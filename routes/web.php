@@ -24,3 +24,6 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 Route::get('/home', function () {
     return view('adminhome');
 });
+Route::get('/apply', function () {
+    return view('seller_apply');
+});
