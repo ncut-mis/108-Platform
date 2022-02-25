@@ -64,40 +64,61 @@
 <main>
     <div class="container-xxl position-relative bg-white d-flex p-0">
         <div class="content">
-            <div class="col-md-12">
+            <div class="col-md-8">
                 <div class="bg-light text-center rounded p-4">
                     <div class="d-flex align-items-center justify-content-between mb-4">
-                        <a><h3><i class="bi bi-journal-arrow-down"></i>&nbsp;賣家申請單</h3></a>
+                        <a><h3><i class="bi bi-brush"></i>&nbsp;公告區</h3></a>
                     </div>
                     <div class="table-responsive">
                         <table class="table text-start align-middle table-bordered table-hover mb-0">
                             <thead>
                             <tr class="text-dark">
-                                <th scope="col"><input class="form-check-input" type="checkbox"></th>
                                 <th scope="col">Date</th>
-                                <th scope="col">member_id</th>
-                                <th scope="col">name</th>
-                                <th scope="col">detail</th>
-                                <th scope="col">Status</th>
+                                <th scope="col">XXX</th>
+                                <th scope="col">XXX</th>
+                                <th scope="col">XXX</th>
+                                <th scope="col">XXX</th>
                                 <th scope="col">Action</th>
                             </tr>
                             </thead>
                             <tbody>
                             <tr>
-                                <td><input class="form-check-input" type="checkbox"></td>
                                 <td>XXX</td>
                                 <td>XXX</td>
                                 <td>XXX</td>
                                 <td>XXX</td>
                                 <td>XXX</td>
                                 <td>
-                                    <a class="btn btn-sm btn-primary" href="">通過</a>&nbsp;/&nbsp;
-                                    <a class="btn btn-sm btn-danger" href="">不通過</a>
+                                    <a class="btn btn-sm btn-primary" href="">修改</a>&nbsp;/&nbsp;
+                                    <a class="btn btn-sm btn-danger" href="">刪除</a>
                                 </td>
                             </tr>
+                            <tr>
+                                <td>XXX</td>
+                                <td>XXX</td>
+                                <td>XXX</td>
+                                <td>XXX</td>
+                                <td>XXX</td>
+                                <td>
+                                    <a class="btn btn-sm btn-primary" href="">修改</a>&nbsp;/&nbsp;
+                                    <a class="btn btn-sm btn-danger" href="">刪除</a>
+                                </td>
+                            </tr>
+
                             </tbody>
-                        </table>
+                        </table><a class="btn btn-sm btn-warning" href="">新增</a>
                     </div>
+                </div>
+            </div>
+
+            <div class="col-md-4"> <br><br><br>
+                <div class="alert alert-danger alert-dismissable">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <i class="fa fa-info-circle"></i>  <strong>通知！</strong>XXXX!
+                </div>
+                <div class="alert alert-danger alert-dismissable">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <i class="fa fa-info-circle"></i>  <strong>通知！</strong>XXXX!
                 </div>
             </div>
         </div>

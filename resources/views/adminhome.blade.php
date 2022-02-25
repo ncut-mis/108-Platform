@@ -1,6 +1,6 @@
 @extends('layouts.master')
 <header>
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top"  style="background-color: lavender">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top"  style="background-color: lightblue">
         <div class="container-fluid" >
             <div class="collapse navbar-collapse navbar-right " id="navbarCollapse">
                 <ul class="nav nav-pills nav-fill"><br>
@@ -73,43 +73,32 @@
             <table class="table text-start align-middle table-bordered table-hover mb-0">
                 <thead>
                 <tr class="text-dark">
-                    <th scope="col"><input class="form-check-input" type="checkbox"></th>
                     <th scope="col">Date</th>
-                    <th scope="col">Invoice</th>
-                    <th scope="col">Customer</th>
-                    <th scope="col">Amount</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Action</th>
+                    <th scope="col">XXX</th>
+                    <th scope="col">XXX</th>
+                    <th scope="col">XXX</th>
+                    <th scope="col">XXX</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                    <td><input class="form-check-input" type="checkbox"></td>
-                    <td>01 Jan 2045</td>
-                    <td>INV-0123</td>
-                    <td>Jhon Doe</td>
-                    <td>$123</td>
-                    <td>Paid</td>
-                    <td>
-                        <a class="btn btn-sm btn-primary" href="">修改</a>&nbsp;/&nbsp;
-                        <a class="btn btn-sm btn-danger" href="">刪除</a>
-                    </td>
+                    <td>XXX</td>
+                    <td>XXX</td>
+                    <td>XXX</td>
+                    <td>XXX</td>
+                    <td>XXX</td>
+
                 </tr>
                 <tr>
-                    <td><input class="form-check-input" type="checkbox"></td>
-                    <td>01 Jan 2045</td>
-                    <td>INV-0123</td>
-                    <td>Jhon Doe</td>
-                    <td>$123</td>
-                    <td>Paid</td>
-                    <td>
-                        <a class="btn btn-sm btn-primary" href="">修改</a>&nbsp;/&nbsp;
-                        <a class="btn btn-sm btn-danger" href="">刪除</a>
-                    </td>
+                    <td>XXX</td>
+                    <td>XXX</td>
+                    <td>XXX</td>
+                    <td>XXX</td>
+                    <td>XXX</td>
                 </tr>
 
                 </tbody>
-            </table><a class="btn btn-sm btn-warning" href="">新增</a>
+            </table>
         </div>
     </div>
 </div>
