@@ -73,28 +73,30 @@
                         <table class="table text-start align-middle table-bordered table-hover mb-0">
                             <thead>
                             <tr class="text-dark">
-                                <th scope="col"><input class="form-check-input" type="checkbox"></th>
-                                <th scope="col">Date</th>
-                                <th scope="col">member_id</th>
-                                <th scope="col">name</th>
-                                <th scope="col">detail</th>
-                                <th scope="col">Status</th>
+                                <th scope="col">會員ID</th>
+                                <th scope="col">會員名稱</th>
+                                <th scope="col">銀行分行</th>
+                                <th scope="col">銀行帳號</th>
                                 <th scope="col">Action</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td><input class="form-check-input" type="checkbox"></td>
-                                <td>XXX</td>
-                                <td>XXX</td>
-                                <td>XXX</td>
-                                <td>XXX</td>
-                                <td>XXX</td>
+                            @foreach ($apply as $applies)
+                                @foreach ($member as $members)
+                                    @if($members->id==$applies->member_id)
+                           <tr>
+                                <td>{{$applies->member_id}}</td>
+                                <td>{{$members->name}}</td>
+                                <td>{{$applies->bank_branch}}</td>
+                                <td>{{$applies->account}}</td>
                                 <td>
                                     <a class="btn btn-sm btn-primary" href="">通過</a>&nbsp;/&nbsp;
                                     <a class="btn btn-sm btn-danger" href="">不通過</a>
                                 </td>
                             </tr>
+                                    @endif
+                            @endforeach
+                            @endforeach
                             </tbody>
                         </table>
                     </div>
