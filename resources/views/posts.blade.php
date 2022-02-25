@@ -64,7 +64,7 @@
 <main>
     <div class="container-xxl position-relative bg-white d-flex p-0">
         <div class="content">
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <div class="bg-light text-center rounded p-4">
                     <div class="d-flex align-items-center justify-content-between mb-4">
                         <a><h3><i class="bi bi-brush"></i>&nbsp;公告區</h3></a>
@@ -108,17 +108,6 @@
                             </tbody>
                         </table><a class="btn btn-sm btn-warning" href="">新增</a>
                     </div>
-                </div>
-            </div>
-
-            <div class="col-md-4"> <br><br><br>
-                <div class="alert alert-danger alert-dismissable">
-                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                    <i class="fa fa-info-circle"></i>  <strong>通知！</strong>XXXX!
-                </div>
-                <div class="alert alert-danger alert-dismissable">
-                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                    <i class="fa fa-info-circle"></i>  <strong>通知！</strong>XXXX!
                 </div>
             </div>
         </div>
