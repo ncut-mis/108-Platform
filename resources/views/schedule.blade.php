@@ -95,50 +95,94 @@
 
                             ?>
 
-                              @foreach ($w1 as $w1s)
+
+                                @foreach ($w1 as $w1s)
                                 @foreach ($w2 as $w2s)
                                     @foreach ($w3 as $w3s)
                                         @foreach ($w4 as $w4s)
                                             @foreach ($w5 as $w5s)
                                                 @foreach ($w6 as $w6s)
                                                     @foreach ($w7 as $w7s)
+
                                                             @if($w1s->start=='09:00:00'&&$w2s->start=='09:00:00'&&$w3s->start=='09:00:00'&&$w4s->start=='09:00:00'&&$w5s->start=='09:00:00'&&$w6s->start=='09:00:00'&&$w7s->start=='09:00:00')
                                         <tr>
-                                            <td>早</td>
+                                            <td>早<br>9:00~11:00</td>
                                             @if($w1s->staff_id==null)
                                                 <td><a class="btn-check" href="">+</a></td>
                                             @else
-                                                <td>{{$w1s->staff_id}}<br><a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
+                                                @foreach($staff as$staffs)
+                                                    @if($w1s->staff_id==$staffs->id)
+                                                <td>人員編號:{{$w1s->staff_id}}<br>
+                                                    人員姓名:{{$staffs->name}}<br>
+                                                    <a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
+                                                    @endif
+                                                @endforeach
                                             @endif
                                             @if($w2s->staff_id==null)
                                                 <td><a class="btn-check" href="">+</a></td>
                                             @else
-                                                <td>{{$w2s->staff_id}}<br><a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
+                                                @foreach($staff as$staffs)
+                                                    @if($w2s->staff_id==$staffs->id)
+                                                <td>人員編號:{{$w2s->staff_id}}<br>
+                                                    人員姓名:{{$staffs->name}}<br>
+                                                    <a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
+                                                    @endif
+                                                @endforeach
                                             @endif
                                             @if($w3s->staff_id==null)
                                                 <td><a class="btn-check" href="">+</a></td>
                                             @else
-                                                <td>{{$w3s->staff_id}}<br><a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
+                                                @foreach($staff as$staffs)
+                                                    @if($w3s->staff_id==$staffs->id)
+                                                <td>人員編號:{{$w3s->staff_id}}<br>
+                                                    人員姓名:{{$staffs->name}}<br>
+                                                    <a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
+                                                    @endif
+                                                @endforeach
                                             @endif
                                             @if($w4s->staff_id==null)
                                                 <td><a class="btn-check" href="">+</a></td>
                                             @else
-                                                <td>{{$w4s->staff_id}}<br><a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
+                                                @foreach($staff as$staffs)
+                                                    @if($w4s->staff_id==$staffs->id)
+                                                <td>人員編號:{{$w4s->staff_id}}<br>
+                                                    人員姓名:{{$staffs->name}}<br>
+                                                    <a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
+                                                    @endif
+                                                @endforeach
                                             @endif
                                             @if($w5s->staff_id==null)
                                                 <td><a class="btn-check" href="">+</a></td>
                                             @else
-                                                <td>{{$w5s->staff_id}}<br><a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
+                                                @foreach($staff as$staffs)
+                                                    @if($w5s->staff_id==$staffs->id)
+                                                <td>人員編號:{{$w5s->staff_id}}<br>
+                                                    人員姓名:{{$staffs->name}}<br>
+                                                    <a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
+                                                    @endif
+                                                @endforeach
                                             @endif
                                             @if($w6s->staff_id==null)
-                                                <td><a class="btn-check" href="">+</a></td>
+                                                <td>人員編號:<a class="btn-check" href="">+</a></td>
                                             @else
-                                                <td>{{$w6s->staff_id}}<br><a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
+                                                @foreach($staff as$staffs)
+                                                    @if($w6s->staff_id==$staffs->id)
+                                                <td>人員編號:{{$w6s->staff_id}}<br>
+                                                    人員姓名:{{$staffs->name}}<br>
+                                                    <a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
+                                                    @endif
+                                                @endforeach
                                             @endif
                                             @if($w7s->staff_id==null)
                                                 <td><a class="btn-check" href="">+</a></td>
                                             @else
-                                                <td>{{$w7s->staff_id}}<br><a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
+                                                @foreach($staff as$staffs)
+                                                    @if($w7s->staff_id==$staffs->id)
+                                                <td>人員編號:{{$w7s->staff_id}}<br>
+                                                    人員姓名:{{$staffs->name}}<br>
+                                                    <a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
+                                                    @endif
+                                                @endforeach
                                             @endif
                                         </tr>
                                     @endif
@@ -146,41 +190,83 @@
                                     @if($w1s->start=='15:00:00'&&$w2s->start=='15:00:00'&&$w3s->start=='15:00:00'&&$w4s->start=='15:00:00'&&$w5s->start=='15:00:00'&&$w6s->start=='15:00:00'&&$w7s->start=='15:00:00')
 
                                             <tr>
-                                                <td>中</td>
+                                                <td>中<br>15:00~17:00</td>
                                                 @if($w1s->staff_id==null)
                                                     <td><a class="btn-check" href="">+</a></td>
                                                 @else
-                                                    <td>{{$w1s->staff_id}}<br><a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
+                                                    @foreach($staff as$staffs)
+                                                        @if($w1s->staff_id==$staffs->id)
+                                                            <td>人員編號:{{$w1s->staff_id}}<br>
+                                                                人員姓名:{{$staffs->name}}<br>
+                                                                <a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
+                                                        @endif
+                                                    @endforeach
                                                 @endif
                                                 @if($w2s->staff_id==null)
                                                     <td><a class="btn-check" href="">+</a></td>
                                                 @else
-                                                    <td>{{$w2s->staff_id}}<br><a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
+                                                    @foreach($staff as$staffs)
+                                                        @if($w2s->staff_id==$staffs->id)
+                                                            <td>人員編號:{{$w2s->staff_id}}<br>
+                                                                人員姓名:{{$staffs->name}}<br>
+                                                                <a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
+                                                        @endif
+                                                    @endforeach
                                                 @endif
                                                 @if($w3s->staff_id==null)
                                                     <td><a class="btn-check" href="">+</a></td>
                                                 @else
-                                                    <td>{{$w3s->staff_id}}<br><a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
+                                                    @foreach($staff as$staffs)
+                                                        @if($w3s->staff_id==$staffs->id)
+                                                            <td>人員編號:{{$w3s->staff_id}}<br>
+                                                                人員姓名:{{$staffs->name}}<br>
+                                                                <a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
+                                                        @endif
+                                                    @endforeach
                                                 @endif
                                                 @if($w4s->staff_id==null)
                                                     <td><a class="btn-check" href="">+</a></td>
                                                 @else
-                                                    <td>{{$w4s->staff_id}}<br><a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
+                                                    @foreach($staff as$staffs)
+                                                        @if($w4s->staff_id==$staffs->id)
+                                                            <td>人員編號:{{$w4s->staff_id}}<br>
+                                                                人員姓名:{{$staffs->name}}<br>
+                                                                <a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
+                                                        @endif
+                                                    @endforeach
                                                 @endif
                                                 @if($w5s->staff_id==null)
                                                     <td><a class="btn-check" href="">+</a></td>
                                                 @else
-                                                    <td>{{$w5s->staff_id}}<br><a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
+                                                    @foreach($staff as$staffs)
+                                                        @if($w5s->staff_id==$staffs->id)
+                                                            <td>人員編號:{{$w5s->staff_id}}<br>
+                                                                人員姓名:{{$staffs->name}}<br>
+                                                                <a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
+                                                        @endif
+                                                    @endforeach
                                                 @endif
                                                 @if($w6s->staff_id==null)
-                                                    <td><a class="btn-check" href="">+</a></td>
+                                                    <td>人員編號:<a class="btn-check" href="">+</a></td>
                                                 @else
-                                                    <td>{{$w6s->staff_id}}<br><a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
+                                                    @foreach($staff as$staffs)
+                                                        @if($w6s->staff_id==$staffs->id)
+                                                            <td>人員編號:{{$w6s->staff_id}}<br>
+                                                                人員姓名:{{$staffs->name}}<br>
+                                                                <a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
+                                                        @endif
+                                                    @endforeach
                                                 @endif
                                                 @if($w7s->staff_id==null)
                                                     <td><a class="btn-check" href="">+</a></td>
                                                 @else
-                                                    <td>{{$w7s->staff_id}}<br><a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
+                                                    @foreach($staff as$staffs)
+                                                        @if($w7s->staff_id==$staffs->id)
+                                                            <td>人員編號:{{$w7s->staff_id}}<br>
+                                                                人員姓名:{{$staffs->name}}<br>
+                                                                <a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
+                                                        @endif
+                                                    @endforeach
                                                 @endif
                                             </tr>
                                                @endif
@@ -188,41 +274,83 @@
                                     @if($w1s->start=='18:00:00'&&$w2s->start=='18:00:00'&&$w3s->start=='18:00:00'&&$w4s->start=='18:00:00'&&$w5s->start=='18:00:00'&&$w6s->start=='18:00:00'&&$w7s->start=='18:00:00')
 
                                              <tr>
-                                                 <td>晚</td>
+                                                 <td>晚<br>18:00~21:00</td>
                                                  @if($w1s->staff_id==null)
                                                      <td><a class="btn-check" href="">+</a></td>
                                                  @else
-                                                     <td>{{$w1s->staff_id}}<br><a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
+                                                     @foreach($staff as$staffs)
+                                                         @if($w1s->staff_id==$staffs->id)
+                                                             <td>人員編號:{{$w1s->staff_id}}<br>
+                                                                 人員姓名:{{$staffs->name}}<br>
+                                                                 <a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
+                                                         @endif
+                                                     @endforeach
                                                  @endif
                                                  @if($w2s->staff_id==null)
                                                      <td><a class="btn-check" href="">+</a></td>
                                                  @else
-                                                     <td>{{$w2s->staff_id}}<br><a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
+                                                     @foreach($staff as$staffs)
+                                                         @if($w2s->staff_id==$staffs->id)
+                                                             <td>人員編號:{{$w2s->staff_id}}<br>
+                                                                 人員姓名:{{$staffs->name}}<br>
+                                                                 <a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
+                                                         @endif
+                                                     @endforeach
                                                  @endif
                                                  @if($w3s->staff_id==null)
                                                      <td><a class="btn-check" href="">+</a></td>
                                                  @else
-                                                     <td>{{$w3s->staff_id}}<br><a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
+                                                     @foreach($staff as$staffs)
+                                                         @if($w3s->staff_id==$staffs->id)
+                                                             <td>人員編號:{{$w3s->staff_id}}<br>
+                                                                 人員姓名:{{$staffs->name}}<br>
+                                                                 <a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
+                                                         @endif
+                                                     @endforeach
                                                  @endif
                                                  @if($w4s->staff_id==null)
                                                      <td><a class="btn-check" href="">+</a></td>
                                                  @else
-                                                     <td>{{$w4s->staff_id}}<br><a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
+                                                     @foreach($staff as$staffs)
+                                                         @if($w4s->staff_id==$staffs->id)
+                                                             <td>人員編號:{{$w4s->staff_id}}<br>
+                                                                 人員姓名:{{$staffs->name}}<br>
+                                                                 <a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
+                                                         @endif
+                                                     @endforeach
                                                  @endif
                                                  @if($w5s->staff_id==null)
                                                      <td><a class="btn-check" href="">+</a></td>
                                                  @else
-                                                     <td>{{$w5s->staff_id}}<br><a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
+                                                     @foreach($staff as$staffs)
+                                                         @if($w5s->staff_id==$staffs->id)
+                                                             <td>人員編號:{{$w5s->staff_id}}<br>
+                                                                 人員姓名:{{$staffs->name}}<br>
+                                                                 <a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
+                                                         @endif
+                                                     @endforeach
                                                  @endif
                                                  @if($w6s->staff_id==null)
                                                      <td><a class="btn-check" href="">+</a></td>
                                                  @else
-                                                     <td>{{$w6s->staff_id}}<br><a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
+                                                     @foreach($staff as$staffs)
+                                                         @if($w6s->staff_id==$staffs->id)
+                                                             <td>人員編號:{{$w6s->staff_id}}<br>
+                                                                 人員姓名:{{$staffs->name}}<br>
+                                                                 <a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
+                                                         @endif
+                                                     @endforeach
                                                  @endif
                                                  @if($w7s->staff_id==null)
                                                      <td><a class="btn-check" href="">+</a></td>
                                                  @else
-                                                     <td>{{$w7s->staff_id}}<br><a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
+                                                     @foreach($staff as$staffs)
+                                                         @if($w7s->staff_id==$staffs->id)
+                                                             <td>人員編號:{{$w7s->staff_id}}<br>
+                                                                 人員姓名:{{$staffs->name}}<br>
+                                                                 <a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
+                                                         @endif
+                                                     @endforeach
                                                  @endif
                                              </tr>
 
@@ -233,8 +361,9 @@
                                         @endforeach
                                     @endforeach
                                 @endforeach
-                              @endforeach
-                   
+                               @endforeach
+
+
 
                             </tbody>
                         </table>
