@@ -25,7 +25,13 @@ class StaffController extends Controller
         $_SESSION['w5']=$data5;
         $_SESSION['w6']=$data6;
         $_SESSION['w7']=$data7;
+        $_SESSION['open']=0;
         return view('schedule',['w1' => $data],['staff' => $staff]);
 
+    }
+    public function add($id)
+    {
+        $data = DB::table('per_week_schedules')->where('id',$id)->get();
+        return view('scheduleedit',['add'=>$data]);
     }
 }

@@ -119,7 +119,7 @@
                                                 @endforeach
                                             @endif
                                             @if($w2s->staff_id==null)
-                                                <td><a class="btn-check" href="">+</a></td>
+                                                <td><a class="btn-check" href="{{route('staff.add',$w2s->id)}}">+</a></td>
                                             @else
                                                 @foreach($staff as$staffs)
                                                     @if($w2s->staff_id==$staffs->id)
