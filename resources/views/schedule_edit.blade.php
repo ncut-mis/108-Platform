@@ -71,7 +71,7 @@
                 <div class="col-md-6" style="margin-left:35%;margin-top:3%;margin-bottom:3%">
                     <div class="bg-light rounded p-4">
                         <div class="d-flex align-items-center justify-content-between mb-4">
-                            <h3> <a class="a1"><i class="bi bi-brush"></i>&nbsp;修改</a></h3>
+                            <h3> <a class="a1"><i class="bi bi-pen"></i>&nbsp;修改</a></h3>
                         </div>
                         <form action="" name="form" method="GET">
                             <h4 style="color: #6b7280">人員編號:&nbsp;<input type="text" name="staffid" placeholder="{{$edits->staff_id}}"></h4><br>

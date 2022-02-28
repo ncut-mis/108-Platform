@@ -368,8 +368,13 @@
 
                             </tbody>
                         </table>
+
                     </div>
                 </div>
+                <br><center>
+                    <a class="btn btn-sm btn-secondary" style="" href="">全部清除</a>
+                    <a class="btn btn-sm btn-secondary" style="" href="">自動排班</a>
+                </center>
             </div>
         </div>
     </div>
