@@ -1,7 +1,7 @@
 @extends('layouts.master')
 <header>
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top"  style="background-color: lightblue">
-        <div class="container-fluid" >
+    <nav class="navbar navbar-expand-md navbar-dark"  style="background-color: lightblue">
+        <div class="container-fluid" style="margin-left:70%">
             <div class="collapse navbar-collapse navbar-right " id="navbarCollapse">
                 <ul class="nav nav-pills nav-fill"><br>
                     <li class="nav-item">
@@ -49,7 +49,8 @@
                             </div>
                         </div>
                     </li>
-                    <a href="#" class="sidebar-toggler flex-shrink-0">
+
+                    <a href="#" class="sidebar-toggler flex-shrink-0" style="margin:auto">
                         &nbsp;<i class="bi bi-arrow-up-right-square-fill"></i>
                     </a>
                     </li>
@@ -64,10 +65,10 @@
 <main>
     <div class="container-xxl position-relative bg-white d-flex p-0">
         <div class="content">
-            <div class="col-md-12">
+            <div class="col-md-12" style="margin-top:3%">
                 <div class="bg-light text-center rounded p-4">
                     <div class="d-flex align-items-center justify-content-between mb-4">
-                        <a><h3><i class="bi bi-card-checklist"></i>&nbsp;班表</h3></a>
+                        <h3><a class="a1"><i class="bi bi-card-checklist"></i>&nbsp;班表</a></h3>
                     </div>
                     <div class="table-responsive">
 
@@ -108,7 +109,7 @@
                                         <tr>
                                             <td>早<br>9:00~11:00</td>
                                             @if($w1s->staff_id==null)
-                                                <td><a class="btn-check" href="">+</a></td>
+                                                <td><h4><a class="" href="">+</a></h4></td>
                                             @else
                                                 @foreach($staff as$staffs)
                                                     @if($w1s->staff_id==$staffs->id)
@@ -119,7 +120,7 @@
                                                 @endforeach
                                             @endif
                                             @if($w2s->staff_id==null)
-                                                <td><a class="btn-check" href="{{route('staff.add',$w2s->id)}}">+</a></td>
+                                                <td><h4><a class="" href="{{route('staff.add',$w2s->id)}}">+</a></h4></td>
                                             @else
                                                 @foreach($staff as$staffs)
                                                     @if($w2s->staff_id==$staffs->id)
@@ -130,7 +131,7 @@
                                                 @endforeach
                                             @endif
                                             @if($w3s->staff_id==null)
-                                                <td><a class="btn-check" href="">+</a></td>
+                                                <td><h4><a class="" href="">+</a></h4></td>
                                             @else
                                                 @foreach($staff as$staffs)
                                                     @if($w3s->staff_id==$staffs->id)
@@ -141,7 +142,7 @@
                                                 @endforeach
                                             @endif
                                             @if($w4s->staff_id==null)
-                                                <td><a class="btn-check" href="">+</a></td>
+                                                <td><h4><a class="" href="">+</a></h4></td>
                                             @else
                                                 @foreach($staff as$staffs)
                                                     @if($w4s->staff_id==$staffs->id)
@@ -152,7 +153,7 @@
                                                 @endforeach
                                             @endif
                                             @if($w5s->staff_id==null)
-                                                <td><a class="btn-check" href="">+</a></td>
+                                                <td><h4><a class="" href="">+</a></h4></td>
                                             @else
                                                 @foreach($staff as$staffs)
                                                     @if($w5s->staff_id==$staffs->id)
@@ -163,7 +164,7 @@
                                                 @endforeach
                                             @endif
                                             @if($w6s->staff_id==null)
-                                                <td>人員編號:<a class="btn-check" href="">+</a></td>
+                                                <td><h4><a class="" href="">+</a></h4></td>
                                             @else
                                                 @foreach($staff as$staffs)
                                                     @if($w6s->staff_id==$staffs->id)
@@ -174,7 +175,7 @@
                                                 @endforeach
                                             @endif
                                             @if($w7s->staff_id==null)
-                                                <td><a class="btn-check" href="">+</a></td>
+                                                <td><h4><a class="" href="">+</a></h4></td>
                                             @else
                                                 @foreach($staff as$staffs)
                                                     @if($w7s->staff_id==$staffs->id)
@@ -192,7 +193,7 @@
                                             <tr>
                                                 <td>中<br>15:00~17:00</td>
                                                 @if($w1s->staff_id==null)
-                                                    <td><a class="btn-check" href="">+</a></td>
+                                                    <td><h4><a class="" href="">+</a></h4></td>
                                                 @else
                                                     @foreach($staff as$staffs)
                                                         @if($w1s->staff_id==$staffs->id)
@@ -203,7 +204,7 @@
                                                     @endforeach
                                                 @endif
                                                 @if($w2s->staff_id==null)
-                                                    <td><a class="btn-check" href="">+</a></td>
+                                                    <td><h4><a class="" href="">+</a></h4></td>
                                                 @else
                                                     @foreach($staff as$staffs)
                                                         @if($w2s->staff_id==$staffs->id)
@@ -214,7 +215,7 @@
                                                     @endforeach
                                                 @endif
                                                 @if($w3s->staff_id==null)
-                                                    <td><a class="btn-check" href="">+</a></td>
+                                                    <td><h4><a class="" href="">+</a></h4></td>
                                                 @else
                                                     @foreach($staff as$staffs)
                                                         @if($w3s->staff_id==$staffs->id)
@@ -225,7 +226,7 @@
                                                     @endforeach
                                                 @endif
                                                 @if($w4s->staff_id==null)
-                                                    <td><a class="btn-check" href="">+</a></td>
+                                                    <td><h4><a class="" href="">+</a></h4></td>
                                                 @else
                                                     @foreach($staff as$staffs)
                                                         @if($w4s->staff_id==$staffs->id)
@@ -236,7 +237,7 @@
                                                     @endforeach
                                                 @endif
                                                 @if($w5s->staff_id==null)
-                                                    <td><a class="btn-check" href="">+</a></td>
+                                                    <td><h4><a class="" href="">+</a></h4></td>
                                                 @else
                                                     @foreach($staff as$staffs)
                                                         @if($w5s->staff_id==$staffs->id)
@@ -247,7 +248,7 @@
                                                     @endforeach
                                                 @endif
                                                 @if($w6s->staff_id==null)
-                                                    <td>人員編號:<a class="btn-check" href="">+</a></td>
+                                                    <td><h4><a class="" href="">+</a></h4></td>
                                                 @else
                                                     @foreach($staff as$staffs)
                                                         @if($w6s->staff_id==$staffs->id)
@@ -258,7 +259,7 @@
                                                     @endforeach
                                                 @endif
                                                 @if($w7s->staff_id==null)
-                                                    <td><a class="btn-check" href="">+</a></td>
+                                                    <td><h4><a class="" href="">+</a></h4></td>
                                                 @else
                                                     @foreach($staff as$staffs)
                                                         @if($w7s->staff_id==$staffs->id)
@@ -276,7 +277,7 @@
                                              <tr>
                                                  <td>晚<br>18:00~21:00</td>
                                                  @if($w1s->staff_id==null)
-                                                     <td><a class="btn-check" href="">+</a></td>
+                                                     <td><h4><a class="" href="">+</a></h4></td>
                                                  @else
                                                      @foreach($staff as$staffs)
                                                          @if($w1s->staff_id==$staffs->id)
@@ -287,7 +288,7 @@
                                                      @endforeach
                                                  @endif
                                                  @if($w2s->staff_id==null)
-                                                     <td><a class="btn-check" href="">+</a></td>
+                                                     <td><h4><a class="" href="">+</a></h4></td>
                                                  @else
                                                      @foreach($staff as$staffs)
                                                          @if($w2s->staff_id==$staffs->id)
@@ -298,7 +299,7 @@
                                                      @endforeach
                                                  @endif
                                                  @if($w3s->staff_id==null)
-                                                     <td><a class="btn-check" href="">+</a></td>
+                                                     <td><h4><a class="" href="{{route('staff.add',$w3s->id)}}">+</a></h4></td>
                                                  @else
                                                      @foreach($staff as$staffs)
                                                          @if($w3s->staff_id==$staffs->id)
@@ -309,7 +310,7 @@
                                                      @endforeach
                                                  @endif
                                                  @if($w4s->staff_id==null)
-                                                     <td><a class="btn-check" href="">+</a></td>
+                                                     <td><h4><a class="" href="">+</a></h4></td>
                                                  @else
                                                      @foreach($staff as$staffs)
                                                          @if($w4s->staff_id==$staffs->id)
@@ -320,7 +321,7 @@
                                                      @endforeach
                                                  @endif
                                                  @if($w5s->staff_id==null)
-                                                     <td><a class="btn-check" href="">+</a></td>
+                                                     <td><h4><a class="" href="">+</a></h4></td>
                                                  @else
                                                      @foreach($staff as$staffs)
                                                          @if($w5s->staff_id==$staffs->id)
@@ -331,7 +332,7 @@
                                                      @endforeach
                                                  @endif
                                                  @if($w6s->staff_id==null)
-                                                     <td><a class="btn-check" href="">+</a></td>
+                                                     <td><h4><a class="" href="">+</a></h4></td>
                                                  @else
                                                      @foreach($staff as$staffs)
                                                          @if($w6s->staff_id==$staffs->id)
@@ -342,7 +343,7 @@
                                                      @endforeach
                                                  @endif
                                                  @if($w7s->staff_id==null)
-                                                     <td><a class="btn-check" href="">+</a></td>
+                                                     <td><h4><a class="" href="">+</a></h4></td>
                                                  @else
                                                      @foreach($staff as$staffs)
                                                          @if($w7s->staff_id==$staffs->id)

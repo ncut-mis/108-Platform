@@ -32,6 +32,6 @@ class StaffController extends Controller
     public function add($id)
     {
         $data = DB::table('per_week_schedules')->where('id',$id)->get();
-        return view('scheduleedit',['add'=>$data]);
+        return view('schedule_insert',['add'=>$data]);
     }
 }

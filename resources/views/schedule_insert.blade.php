@@ -1,7 +1,7 @@
 @extends('layouts.master')
-<header>
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top"  style="background-color: lightblue">
-        <div class="container-fluid" >
+<header xmlns="http://www.w3.org/1999/html">
+    <nav class="navbar navbar-expand-md navbar-dark"  style="background-color: lightblue">
+        <div class="container-fluid" style="margin-left:70%">
             <div class="collapse navbar-collapse navbar-right " id="navbarCollapse">
                 <ul class="nav nav-pills nav-fill"><br>
                     <li class="nav-item">
@@ -49,7 +49,8 @@
                             </div>
                         </div>
                     </li>
-                    <a href="#" class="sidebar-toggler flex-shrink-0">
+
+                    <a href="#" class="sidebar-toggler flex-shrink-0" style="margin:auto">
                         &nbsp;<i class="bi bi-arrow-up-right-square-fill"></i>
                     </a>
                     </li>
@@ -63,22 +64,26 @@
 </header>
 <main>
     @foreach($add as $adds)
-
+        <div class="container-xxl position-relative bg-white d-flex p-0">
                     <div class="container">
-                        <div class="col-md-12">
-                            <div class="bg-light text-center rounded p-4">
+                        <div class="col-md-6" style="margin-left:35%;margin-top:3%;margin-bottom:3%">
+                            <div class="bg-light rounded p-4">
                                 <div class="d-flex align-items-center justify-content-between mb-4">
-                                    <a><h2><i class=""></i>&nbsp;新增</h2></a>
+                                    <h3> <a class="a1"><i class="bi bi-brush"></i>&nbsp;新增</a></h3>
                                 </div>
-                                <h3>人員編號:&nbsp;<input type="text" name="staffid"></h3><br>
-                                <h3> 人員姓名:&nbsp;<input type="text" name="staffname"></h3><br>
-                                <h3> 開始時間:<a>{{$adds->start}}</a></h3><br>
-                                <h3> 結束時間:<a>{{$adds->end}}</a></h3><br>
-                        <h3>星期<a>{{$adds->week}}</a></h3><br>
+                                <form action="" name="form" method="GET">
+                                <h4 style="color: #6b7280">人員編號:&nbsp;<input type="text" name="staffid"></h4><br>
+                                <h4 style="color: #6b7280"> 人員姓名:&nbsp;<input type="text" name="staffname"></h4><br>
+                                <h4 style="color: #6b7280">開始時間:&nbsp;<a>{{$adds->start}}</a></h4><br>
+                                <h4 style="color: #6b7280">結束時間:&nbsp;<a>{{$adds->end}}</a></h4><br>
+                                <h4 style="color: #6b7280">星期<a>{{$adds->week}}</a></h4><br>
+                                    <center><input type='submit' class="btn-info" style="color:white" name='OK' value='送出'></center>
+                                </form>
                     </div>
                     </div>
                     </div>
         </div>
+
 
 
 

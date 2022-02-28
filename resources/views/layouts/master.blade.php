@@ -43,7 +43,7 @@
             font-family:Comic Sans MS, Comic Sans, cursive;
 
         }
-
+       .a1{}
     </style>
 </head>
 
@@ -66,15 +66,15 @@
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-person-bounding-box"></i>平台管理者 </a>
                     <div class="dropdown-menu bg-transparent border-1">
-                        <a  href="button.html" class="dropdown-item">個人資訊</a>
-                        <br><a href="typography.html" class="dropdown-item">登出</a>
-                        <br> <a href="element.html" class="dropdown-item">XXX</a>
+                        <a  href="" class="dropdown-item">個人資訊</a>
+                        <a href="" class="dropdown-item">新增平台使用者</a>
+                         <a href="" class="dropdown-item">登出</a>
                     </div>
                 </div>
-                <br>  <a href="{{route('adminhome.index')}}" class="nav-item nav-link"><i class="bi bi-house-door-fill"></i>首頁</a><br>
-                <br>  <a href="{{route('posts.index')}}" class="nav-item nav-link"><i class="fa fa-laptop me-2"></i>公告管理</a><br>
-                <br>  <a href="{{route('apply.index')}}" class="nav-item nav-link"><i class="fa fa-th me-2"></i>賣家申請管理</a><br>
-                <br> <a href="{{route('staff.schedule')}}" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>班表管理</a>
+               <br>   <a href="{{route('adminhome.index')}}" class="nav-item nav-link"><i class="bi bi-house-door-fill"></i>首頁</a><br>
+                  <a href="{{route('posts.index')}}" class="nav-item nav-link"><i class="fa fa-laptop me-2"></i>公告管理</a><br>
+                 <a href="{{route('apply.index')}}" class="nav-item nav-link"><i class="fa fa-th me-2"></i>賣家申請管理</a><br>
+                 <a href="{{route('staff.schedule')}}" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>班表管理</a>
 
             </div>
         </nav>

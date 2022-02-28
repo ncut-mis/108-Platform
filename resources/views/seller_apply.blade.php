@@ -1,7 +1,7 @@
 @extends('layouts.master')
 <header>
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top"  style="background-color: lightblue">
-        <div class="container-fluid" >
+    <nav class="navbar navbar-expand-md navbar-dark"  style="background-color: lightblue">
+        <div class="container-fluid" style="margin-left:70%">
             <div class="collapse navbar-collapse navbar-right " id="navbarCollapse">
                 <ul class="nav nav-pills nav-fill"><br>
                     <li class="nav-item">
@@ -49,7 +49,8 @@
                             </div>
                         </div>
                     </li>
-                    <a href="#" class="sidebar-toggler flex-shrink-0">
+
+                    <a href="#" class="sidebar-toggler flex-shrink-0" style="margin:auto">
                         &nbsp;<i class="bi bi-arrow-up-right-square-fill"></i>
                     </a>
                     </li>
@@ -64,10 +65,10 @@
 <main>
     <div class="container-xxl position-relative bg-white d-flex p-0">
         <div class="content">
-            <div class="col-md-12">
+            <div class="col-md-11" style="margin-left:6%;margin-top:3%">
                 <div class="bg-light text-center rounded p-4">
                     <div class="d-flex align-items-center justify-content-between mb-4">
-                        <a><h3><i class="bi bi-journal-arrow-down"></i>&nbsp;賣家申請單</h3></a>
+                        <h3><a class="a1"><i class="bi bi-journal-arrow-down"></i>&nbsp;賣家申請單</a></h3>
                     </div>
                     <div class="table-responsive">
                         <table class="table text-start align-middle table-bordered table-hover mb-0">
