@@ -115,7 +115,7 @@
                                                     @if($w1s->staff_id==$staffs->id)
                                                 <td>人員編號:{{$w1s->staff_id}}<br>
                                                     人員姓名:{{$staffs->name}}<br>
-                                                    <a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
+                                                    <a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="{{route('staff.edit',$w1s->id)}}">!</a></td>
                                                     @endif
                                                 @endforeach
                                             @endif

@@ -18,8 +18,8 @@ Route::get('/', [\App\Http\Controllers\AdminHomeController::class, 'index'])->na
 Route::get('/posts', [\App\Http\Controllers\PostController::class, 'index'])->name('posts.index');//公告管理頁面
 Route::get('/apply', [\App\Http\Controllers\ApplyController::class, 'index'])->name('apply.index');//賣家申請管理頁面
 Route::get('/schedule', [\App\Http\Controllers\StaffController::class, 'index'])->name('staff.schedule');//排班頁面
-Route::get('/schedule/{id}', [\App\Http\Controllers\StaffController::class, 'add'])->name('staff.add');//新增排班
-
+Route::get('/schedule_in/{id}', [\App\Http\Controllers\StaffController::class, 'add'])->name('staff.add');//新增排班
+Route::get('/schedule_ed/{id}', [\App\Http\Controllers\StaffController::class, 'edit'])->name('staff.edit');//修改排班
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
