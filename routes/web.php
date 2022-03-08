@@ -20,7 +20,7 @@ Route::get('/apply', [\App\Http\Controllers\ApplyController::class, 'index'])->n
 Route::get('/schedule', [\App\Http\Controllers\StaffController::class, 'index'])->name('staff.schedule');//排班頁面
 Route::get('/schedule_in/{id}', [\App\Http\Controllers\StaffController::class, 'add'])->name('staff.add');//新增排班
 Route::get('/schedule_ed/{id}', [\App\Http\Controllers\StaffController::class, 'edit'])->name('staff.edit');//修改排班
-
+Route::get('/s1', [\App\Http\Controllers\StaffController::class, 'check'])->name('staff.check');//檢測人員查看班表頁面
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
