@@ -29,3 +29,6 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 Route::get('/reg', function () {
     return view('register');
 });
+Route::get('/log', function () {
+    return view('login');
+});
