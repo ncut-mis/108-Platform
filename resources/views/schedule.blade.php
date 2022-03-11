@@ -69,20 +69,24 @@
                 <div class="bg-light text-center rounded p-4">
                     <div class="d-flex align-items-center justify-content-between mb-4">
                         <h3><a class="a1"><i class="bi bi-card-checklist"></i>&nbsp;班表</a></h3>
+                        <h3><a class=""><?php
+                                $month = date("n");
+                                echo "適用月份:".$month."月"; //抓系統當前月份
+                                ?></a></h3>
                     </div>
                     <div class="table-responsive">
 
-                        <table class="table text-start align-middle table-bordered table-hover mb-0">
+                        <table class="table text-start align-middle table-bordered table-hover mb-0" style="border:whitesmoke">
                             <thead>
-                            <tr class="text-dark">
+                            <tr class="text-dark" style="background-color:lightblue">
                                 <th scope="col"></th>
-                                <th scope="col">一</th>
-                                <th scope="col">二</th>
-                                <th scope="col">三</th>
-                                <th scope="col">四</th>
-                                <th scope="col">五</th>
-                                <th scope="col">六</th>
-                                <th scope="col">日</th>
+                                <th scope="col"style="color: #6b7280;text-align: center">一</th>
+                                <th scope="col"style="color: #6b7280;text-align: center">二</th>
+                                <th scope="col"style="color: #6b7280;text-align: center">三</th>
+                                <th scope="col"style="color: #6b7280;text-align: center">四</th>
+                                <th scope="col"style="color: #6b7280;text-align: center">五</th>
+                                <th scope="col"style="color: #6b7280;text-align: center">六</th>
+                                <th scope="col"style="color: #6b7280;text-align: center">日</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -107,81 +111,88 @@
 
                                                             @if($w1s->start=='09:00:00'&&$w2s->start=='09:00:00'&&$w3s->start=='09:00:00'&&$w4s->start=='09:00:00'&&$w5s->start=='09:00:00'&&$w6s->start=='09:00:00'&&$w7s->start=='09:00:00')
                                         <tr>
-                                            <td>早<br>9:00~11:00</td>
+                                            <td style="background-color:lightblue;text-align: center">早<br>9:00~11:00</td>
                                             @if($w1s->staff_id==null)
-                                                <td><h4><a class="" href="">+</a></h4></td>
+                                                <td></td>
                                             @else
                                                 @foreach($staff as$staffs)
                                                     @if($w1s->staff_id==$staffs->id)
-                                                <td>人員編號:{{$w1s->staff_id}}<br>
+                                                <td style="text-align: center">人員編號:{{$w1s->staff_id}}<br>
                                                     人員姓名:{{$staffs->name}}<br>
-                                                    <a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="{{route('staff.edit',$w1s->id)}}">!</a></td>
+                                                    <hr>
+                                                </td>
                                                     @endif
                                                 @endforeach
                                             @endif
                                             @if($w2s->staff_id==null)
-                                                <td><h4><a class="" href="{{route('staff.add',$w2s->id)}}">+</a></h4></td>
+                                                <td></td>
                                             @else
                                                 @foreach($staff as$staffs)
                                                     @if($w2s->staff_id==$staffs->id)
                                                 <td>人員編號:{{$w2s->staff_id}}<br>
                                                     人員姓名:{{$staffs->name}}<br>
-                                                    <a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
+                                                    <hr>
+                                                </td>
                                                     @endif
                                                 @endforeach
                                             @endif
                                             @if($w3s->staff_id==null)
-                                                <td><h4><a class="" href="">+</a></h4></td>
+                                                <td></td>
                                             @else
                                                 @foreach($staff as$staffs)
                                                     @if($w3s->staff_id==$staffs->id)
                                                 <td>人員編號:{{$w3s->staff_id}}<br>
                                                     人員姓名:{{$staffs->name}}<br>
-                                                    <a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
+                                                    <hr>
+                                                </td>
                                                     @endif
                                                 @endforeach
                                             @endif
                                             @if($w4s->staff_id==null)
-                                                <td><h4><a class="" href="">+</a></h4></td>
+                                                <td></td>
                                             @else
                                                 @foreach($staff as$staffs)
                                                     @if($w4s->staff_id==$staffs->id)
                                                 <td>人員編號:{{$w4s->staff_id}}<br>
                                                     人員姓名:{{$staffs->name}}<br>
-                                                    <a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
+                                                    <hr>
+                                                </td>
                                                     @endif
                                                 @endforeach
                                             @endif
                                             @if($w5s->staff_id==null)
-                                                <td><h4><a class="" href="">+</a></h4></td>
+                                                <td></td>
                                             @else
                                                 @foreach($staff as$staffs)
                                                     @if($w5s->staff_id==$staffs->id)
                                                 <td>人員編號:{{$w5s->staff_id}}<br>
                                                     人員姓名:{{$staffs->name}}<br>
-                                                    <a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
+                                                    <hr>
+                                                </td>
                                                     @endif
                                                 @endforeach
                                             @endif
                                             @if($w6s->staff_id==null)
-                                                <td><h4><a class="" href="">+</a></h4></td>
+                                                <td></td>
                                             @else
                                                 @foreach($staff as$staffs)
                                                     @if($w6s->staff_id==$staffs->id)
                                                 <td>人員編號:{{$w6s->staff_id}}<br>
                                                     人員姓名:{{$staffs->name}}<br>
-                                                    <a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
+                                                    <hr>
+                                                </td>
                                                     @endif
                                                 @endforeach
                                             @endif
                                             @if($w7s->staff_id==null)
-                                                <td><h4><a class="" href="">+</a></h4></td>
+                                                <td></td>
                                             @else
                                                 @foreach($staff as$staffs)
                                                     @if($w7s->staff_id==$staffs->id)
                                                 <td>人員編號:{{$w7s->staff_id}}<br>
                                                     人員姓名:{{$staffs->name}}<br>
-                                                    <a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
+                                                    <hr>
+                                                </td>
                                                     @endif
                                                 @endforeach
                                             @endif
@@ -191,81 +202,88 @@
                                     @if($w1s->start=='15:00:00'&&$w2s->start=='15:00:00'&&$w3s->start=='15:00:00'&&$w4s->start=='15:00:00'&&$w5s->start=='15:00:00'&&$w6s->start=='15:00:00'&&$w7s->start=='15:00:00')
 
                                             <tr>
-                                                <td>中<br>15:00~17:00</td>
+                                                <td style="background-color:lightblue;text-align: center">午<br>15:00~17:00</td>
                                                 @if($w1s->staff_id==null)
-                                                    <td><h4><a class="" href="">+</a></h4></td>
+                                                    <td></td>
                                                 @else
                                                     @foreach($staff as$staffs)
                                                         @if($w1s->staff_id==$staffs->id)
                                                             <td>人員編號:{{$w1s->staff_id}}<br>
                                                                 人員姓名:{{$staffs->name}}<br>
-                                                                <a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
+                                                                <hr>
+                                                            </td>
                                                         @endif
                                                     @endforeach
                                                 @endif
                                                 @if($w2s->staff_id==null)
-                                                    <td><h4><a class="" href="">+</a></h4></td>
+                                                    <td></td>
                                                 @else
                                                     @foreach($staff as$staffs)
                                                         @if($w2s->staff_id==$staffs->id)
                                                             <td>人員編號:{{$w2s->staff_id}}<br>
                                                                 人員姓名:{{$staffs->name}}<br>
-                                                                <a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
+                                                                <hr>
+                                                            </td>
                                                         @endif
                                                     @endforeach
                                                 @endif
                                                 @if($w3s->staff_id==null)
-                                                    <td><h4><a class="" href="">+</a></h4></td>
+                                                    <td></td>
                                                 @else
                                                     @foreach($staff as$staffs)
                                                         @if($w3s->staff_id==$staffs->id)
                                                             <td>人員編號:{{$w3s->staff_id}}<br>
                                                                 人員姓名:{{$staffs->name}}<br>
-                                                                <a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
+                                                                <hr>
+                                                            </td>
                                                         @endif
                                                     @endforeach
                                                 @endif
                                                 @if($w4s->staff_id==null)
-                                                    <td><h4><a class="" href="">+</a></h4></td>
+                                                    <td></td>
                                                 @else
                                                     @foreach($staff as$staffs)
                                                         @if($w4s->staff_id==$staffs->id)
                                                             <td>人員編號:{{$w4s->staff_id}}<br>
                                                                 人員姓名:{{$staffs->name}}<br>
-                                                                <a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
+                                                                <hr>
+                                                            </td>
                                                         @endif
                                                     @endforeach
                                                 @endif
                                                 @if($w5s->staff_id==null)
-                                                    <td><h4><a class="" href="">+</a></h4></td>
+                                                    <td></td>
                                                 @else
                                                     @foreach($staff as$staffs)
                                                         @if($w5s->staff_id==$staffs->id)
                                                             <td>人員編號:{{$w5s->staff_id}}<br>
                                                                 人員姓名:{{$staffs->name}}<br>
-                                                                <a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
+                                                                <hr>
+                                                            </td>
                                                         @endif
                                                     @endforeach
                                                 @endif
                                                 @if($w6s->staff_id==null)
-                                                    <td><h4><a class="" href="">+</a></h4></td>
+                                                    <td></td>
                                                 @else
                                                     @foreach($staff as$staffs)
                                                         @if($w6s->staff_id==$staffs->id)
                                                             <td>人員編號:{{$w6s->staff_id}}<br>
                                                                 人員姓名:{{$staffs->name}}<br>
-                                                                <a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
+                                                                <hr>
+                                                            </td>
                                                         @endif
                                                     @endforeach
                                                 @endif
                                                 @if($w7s->staff_id==null)
-                                                    <td><h4><a class="" href="">+</a></h4></td>
+                                                    <td></td>
                                                 @else
                                                     @foreach($staff as$staffs)
                                                         @if($w7s->staff_id==$staffs->id)
                                                             <td>人員編號:{{$w7s->staff_id}}<br>
                                                                 人員姓名:{{$staffs->name}}<br>
-                                                                <a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
+                                                                <hr>
+                                                            </td>
                                                         @endif
                                                     @endforeach
                                                 @endif
@@ -275,81 +293,88 @@
                                     @if($w1s->start=='18:00:00'&&$w2s->start=='18:00:00'&&$w3s->start=='18:00:00'&&$w4s->start=='18:00:00'&&$w5s->start=='18:00:00'&&$w6s->start=='18:00:00'&&$w7s->start=='18:00:00')
 
                                              <tr>
-                                                 <td>晚<br>18:00~21:00</td>
+                                                 <td style="background-color:lightblue;text-align: center">晚<br>18:00~21:00</td>
                                                  @if($w1s->staff_id==null)
-                                                     <td><h4><a class="" href="">+</a></h4></td>
+                                                     <td></td>
                                                  @else
                                                      @foreach($staff as$staffs)
                                                          @if($w1s->staff_id==$staffs->id)
                                                              <td>人員編號:{{$w1s->staff_id}}<br>
                                                                  人員姓名:{{$staffs->name}}<br>
-                                                                 <a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
+                                                                 <hr>
+                                                             </td>
                                                          @endif
                                                      @endforeach
                                                  @endif
                                                  @if($w2s->staff_id==null)
-                                                     <td><h4><a class="" href="">+</a></h4></td>
+                                                     <td></td>
                                                  @else
                                                      @foreach($staff as$staffs)
                                                          @if($w2s->staff_id==$staffs->id)
                                                              <td>人員編號:{{$w2s->staff_id}}<br>
                                                                  人員姓名:{{$staffs->name}}<br>
-                                                                 <a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
+                                                                 <hr>
+                                                             </td>
                                                          @endif
                                                      @endforeach
                                                  @endif
                                                  @if($w3s->staff_id==null)
-                                                     <td><h4><a class="" href="{{route('staff.add',$w3s->id)}}">+</a></h4></td>
+                                                     <td></td>
                                                  @else
                                                      @foreach($staff as$staffs)
                                                          @if($w3s->staff_id==$staffs->id)
                                                              <td>人員編號:{{$w3s->staff_id}}<br>
                                                                  人員姓名:{{$staffs->name}}<br>
-                                                                 <a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
+                                                                 <hr>
+                                                             </td>
                                                          @endif
                                                      @endforeach
                                                  @endif
                                                  @if($w4s->staff_id==null)
-                                                     <td><h4><a class="" href="">+</a></h4></td>
+                                                     <td></td>
                                                  @else
                                                      @foreach($staff as$staffs)
                                                          @if($w4s->staff_id==$staffs->id)
                                                              <td>人員編號:{{$w4s->staff_id}}<br>
                                                                  人員姓名:{{$staffs->name}}<br>
-                                                                 <a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
+                                                                 <hr>
+                                                             </td>
                                                          @endif
                                                      @endforeach
                                                  @endif
                                                  @if($w5s->staff_id==null)
-                                                     <td><h4><a class="" href="">+</a></h4></td>
+                                                     <td></td>
                                                  @else
                                                      @foreach($staff as$staffs)
                                                          @if($w5s->staff_id==$staffs->id)
                                                              <td>人員編號:{{$w5s->staff_id}}<br>
                                                                  人員姓名:{{$staffs->name}}<br>
-                                                                 <a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
+                                                                 <hr>
+                                                             </td>
                                                          @endif
                                                      @endforeach
                                                  @endif
                                                  @if($w6s->staff_id==null)
-                                                     <td><h4><a class="" href="">+</a></h4></td>
+                                                     <td></td>
                                                  @else
                                                      @foreach($staff as$staffs)
                                                          @if($w6s->staff_id==$staffs->id)
                                                              <td>人員編號:{{$w6s->staff_id}}<br>
                                                                  人員姓名:{{$staffs->name}}<br>
-                                                                 <a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
+                                                                 <hr>
+                                                             </td>
                                                          @endif
                                                      @endforeach
                                                  @endif
                                                  @if($w7s->staff_id==null)
-                                                     <td><h4><a class="" href="">+</a></h4></td>
+                                                     <td></td>
                                                  @else
                                                      @foreach($staff as$staffs)
                                                          @if($w7s->staff_id==$staffs->id)
                                                              <td>人員編號:{{$w7s->staff_id}}<br>
                                                                  人員姓名:{{$staffs->name}}<br>
-                                                                 <a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
+                                                                 <hr>
+                                                             </td>
                                                          @endif
                                                      @endforeach
                                                  @endif
@@ -372,8 +397,9 @@
                     </div>
                 </div>
                 <br><center>
-                    <a class="btn btn-sm btn-secondary" style="" href="">全部清除</a>
-                    <a class="btn btn-sm btn-secondary" style="" href="">自動排班</a>
+                    <a class="btn btn-sm btn-secondary" style="" href="">歷史班表</a>
+                    <a class="btn btn-sm btn-secondary" style="" href="{{route('staff.schedule')}}">本月班表</a>
+                    <a class="btn btn-sm btn-secondary" style="" href="">下個月班表</a>
                 </center>
             </div>
         </div>

@@ -177,7 +177,7 @@
                                                         @if($w1s->start=='15:00:00'&&$w2s->start=='15:00:00'&&$w3s->start=='15:00:00'&&$w4s->start=='15:00:00'&&$w5s->start=='15:00:00'&&$w6s->start=='15:00:00'&&$w7s->start=='15:00:00')
 
                                                             <tr>
-                                                                <td style="background-color:lightblue;text-align: center">中<br>15:00~17:00</td>
+                                                                <td style="background-color:lightblue;text-align: center">午<br>15:00~17:00</td>
                                                                 @if($w1s->staff_id==null)
                                                                     <td style="text-align: center"><h4><a class="" href="">+</a></h4></td>
                                                                 @elseif($w1s->staff_id=='111')<!--若人員編號為111 -->
