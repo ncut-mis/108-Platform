@@ -65,7 +65,7 @@
 <main>
     <div class="container-xxl position-relative bg-white d-flex p-0">
         <div class="content">
-            <div class="col-md-12" style="margin-top:3%">
+            <div class="col-md-8" style="margin-top:3%;float:left;">
                 <div class="bg-light text-center rounded p-4">
                     <div class="d-flex align-items-center justify-content-between mb-4">
                         <h3><a class="a1"><i class="bi bi-card-checklist"></i>&nbsp;班表</a></h3>
@@ -91,15 +91,10 @@
                             </thead>
                             <tbody>
                             <?php
-//                            $w2=$_SESSION['w2'];
-//                            $w3=$_SESSION['w3'];
-//                            $w4=$_SESSION['w4'];
-//                            $w5=$_SESSION['w5'];
-//                            $w6=$_SESSION['w6'];
-//                            $w7=$_SESSION['w7'];
-                                $w1_1=$_SESSION['w1_1'];
-                                $w1_2=$_SESSION['w1_2'];
-                                $w1_3=$_SESSION['w1_3'];
+
+                            $w1_1=$_SESSION['w1_1'];
+                            $w1_2=$_SESSION['w1_2'];
+                            $w1_3=$_SESSION['w1_3'];
 
                             $w2_1=$_SESSION['w2_1'];
                             $w2_2=$_SESSION['w2_2'];
@@ -141,12 +136,12 @@
                                                     if ($w1_1s->staff_id==null)
                                                         echo "";
                                                     else
-                                                       echo "人員編號".$w1_1s->staff_id."<br>人員姓名:".$staffs->name."<br><hr>";
+                                                       echo "編號:".$w1_1s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
 
                                                       }
 
                                                     }
-//{{--
+
 
                                                    ?>
 
@@ -163,7 +158,7 @@
                                                             if ($w2_1s->staff_id==null)
                                                                 echo "";
                                                             else
-                                                                echo "人員編號".$w2_1s->staff_id."<br>人員姓名:".$staffs->name."<br><hr>";
+                                                                echo "編號:".$w2_1s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
 
                                                         }
 
@@ -184,7 +179,7 @@
                                                             if ($w3_1s->staff_id==null)
                                                                 echo "";
                                                             else
-                                                                echo "人員編號".$w3_1s->staff_id."<br>人員姓名:".$staffs->name."<br><hr>";
+                                                                echo "編號:".$w3_1s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
 
                                                         }
 
@@ -206,7 +201,7 @@
                                                             if ($w4_1s->staff_id==null)
                                                                 echo "";
                                                             else
-                                                                echo "人員編號".$w4_1s->staff_id."<br>人員姓名:".$staffs->name."<br><hr>";
+                                                                echo "編號:".$w4_1s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
 
                                                         }
 
@@ -228,7 +223,7 @@
                                                             if ($w5_1s->staff_id==null)
                                                                 echo "";
                                                             else
-                                                                echo "人員編號".$w5_1s->staff_id."<br>人員姓名:".$staffs->name."<br><hr>";
+                                                                echo "編號:".$w5_1s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
 
                                                         }
 
@@ -250,7 +245,7 @@
                                                             if ($w6_1s->staff_id==null)
                                                                 echo "";
                                                             else
-                                                                echo "人員編號".$w6_1s->staff_id."<br>人員姓名:".$staffs->name."<br><hr>";
+                                                                echo "編號".$w6_1s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
 
                                                         }
 
@@ -272,7 +267,7 @@
                                                             if ($w7_1s->staff_id==null)
                                                                 echo "";
                                                             else
-                                                                echo "人員編號".$w7_1s->staff_id."<br>人員姓名:".$staffs->name."<br><hr>";
+                                                                echo "編號".$w7_1s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
 
                                                         }
 
@@ -297,7 +292,7 @@
                                                 if ($w1_2s->staff_id==null)
                                                     echo "";
                                                 else
-                                                    echo "人員編號".$w1_2s->staff_id."<br>人員姓名:".$staffs->name."<br><hr>";
+                                                    echo "編號:".$w1_2s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
 
                                             }
 
@@ -318,7 +313,7 @@
                                                 if ($w2_2s->staff_id==null)
                                                     echo "";
                                                 else
-                                                    echo "人員編號".$w2_2s->staff_id."<br>人員姓名:".$staffs->name."<br><hr>";
+                                                    echo "編號:".$w2_2s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
 
                                             }
 
@@ -339,7 +334,7 @@
                                                 if ($w3_2s->staff_id==null)
                                                     echo "";
                                                 else
-                                                    echo "人員編號".$w3_2s->staff_id."<br>人員姓名:".$staffs->name."<br><hr>";
+                                                    echo "編號:".$w3_2s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
 
                                             }
 
@@ -361,7 +356,7 @@
                                                 if ($w4_2s->staff_id==null)
                                                     echo "";
                                                 else
-                                                    echo "人員編號".$w4_2s->staff_id."<br>人員姓名:".$staffs->name."<br><hr>";
+                                                    echo "編號:".$w4_2s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
 
                                             }
 
@@ -383,7 +378,7 @@
                                                 if ($w5_2s->staff_id==null)
                                                     echo "";
                                                 else
-                                                    echo "人員編號".$w5_2s->staff_id."<br>人員姓名:".$staffs->name."<br><hr>";
+                                                    echo "編號:".$w5_2s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
 
                                             }
 
@@ -405,7 +400,7 @@
                                                 if ($w6_2s->staff_id==null)
                                                     echo "";
                                                 else
-                                                    echo "人員編號".$w6_2s->staff_id."<br>人員姓名:".$staffs->name."<br><hr>";
+                                                    echo "編號:".$w6_2s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
 
                                             }
 
@@ -427,7 +422,7 @@
                                                 if ($w7_2s->staff_id==null)
                                                     echo "";
                                                 else
-                                                    echo "人員編號".$w7_2s->staff_id."<br>人員姓名:".$staffs->name."<br><hr>";
+                                                    echo "編號:".$w7_2s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
 
                                             }
 
@@ -452,7 +447,7 @@
                                                 if ($w1_3s->staff_id==null)
                                                     echo "";
                                                 else
-                                                    echo "人員編號".$w1_3s->staff_id."<br>人員姓名:".$staffs->name."<br><hr>";
+                                                    echo "編號:".$w1_3s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
 
                                             }
 
@@ -474,7 +469,7 @@
                                                 if ($w2_3s->staff_id==null)
                                                     echo "";
                                                 else
-                                                    echo "人員編號".$w2_3s->staff_id."<br>人員姓名:".$staffs->name."<br><hr>";
+                                                    echo "編號:".$w2_3s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
 
                                             }
 
@@ -495,7 +490,7 @@
                                                 if ($w3_3s->staff_id==null)
                                                     echo "";
                                                 else
-                                                    echo "人員編號".$w3_3s->staff_id."<br>人員姓名:".$staffs->name."<br><hr>";
+                                                    echo "編號:".$w3_3s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
 
                                             }
 
@@ -517,7 +512,7 @@
                                                 if ($w4_3s->staff_id==null)
                                                     echo "";
                                                 else
-                                                    echo "人員編號".$w4_3s->staff_id."<br>人員姓名:".$staffs->name."<br><hr>";
+                                                    echo "編號:".$w4_3s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
 
                                             }
 
@@ -539,7 +534,7 @@
                                                 if ($w5_3s->staff_id==null)
                                                     echo "";
                                                 else
-                                                    echo "人員編號".$w5_3s->staff_id."<br>人員姓名:".$staffs->name."<br><hr>";
+                                                    echo "編號:".$w5_3s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
 
                                             }
 
@@ -561,7 +556,7 @@
                                                 if ($w6_3s->staff_id==null)
                                                     echo "";
                                                 else
-                                                    echo "人員編號".$w6_3s->staff_id."<br>人員姓名:".$staffs->name."<br><hr>";
+                                                    echo "編號:".$w6_3s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
 
                                             }
 
@@ -583,7 +578,7 @@
                                                 if ($w7_3s->staff_id==null)
                                                     echo "";
                                                 else
-                                                    echo "人員編號".$w7_3s->staff_id."<br>人員姓名:".$staffs->name."<br><hr>";
+                                                    echo "編號:".$w7_3s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
 
                                             }
 
@@ -606,6 +601,29 @@
                     <a class="btn btn-sm btn-secondary" style="" href="">下個月班表</a>
                 </center>
             </div>
+
+            <div class="col-md-3" style="float: right ;margin-right:3%;margin-top:3%;">
+                <div class="bg-light rounded p-4">
+                    <div class="d-flex align-items-center justify-content-between mb-4">
+                        <h3> <a class="a1"><i class="bi bi-pen"></i>&nbsp;選擇</a></h3>
+                    </div>
+                  @foreach($staff as $staffs)
+
+                        <a class="" style="" href="{{route('schedule.check',$staffs->id)}}">
+                            編號:{{$staffs->id}}
+                            <br>
+                            姓名:{{$staffs->name}}
+                            <br>
+                            負責項目:{{$staffs->job}}
+                            <br>
+                            <hr>
+                        </a>
+                    @endforeach
+
+
+
+            </div>
+
         </div>
     </div>
 

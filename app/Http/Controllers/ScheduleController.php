@@ -83,7 +83,7 @@ class ScheduleController extends Controller
         $staff=DB::table('staff')->get();
         return view('schedule_edit',['edit'=>$data],['staff'=>$staff]);
     }
-    public function check()
+    public function check($id)
     {
 
         $data1_1 = DB::table('per_week_schedules')->where('week','一')->where('start','09:00:00')->get();
@@ -110,7 +110,7 @@ class ScheduleController extends Controller
         $staff=DB::table('staff')->get();
         session_start();
 
-        $_SESSION['open']=0;
+        $_SESSION['sid']=$id;
         $_SESSION['w1_1']=$data1_1;
         $_SESSION['w1_2']=$data1_2;
         $_SESSION['w1_3']=$data1_3;
@@ -140,7 +140,7 @@ class ScheduleController extends Controller
         $_SESSION['w7_3']=$data7_3;
         $_SESSION['staff']=$staff;
 
-        return view('schedule_check',['staff' => $staff]);
+        return view('schedule_check');
 
     }
 }
