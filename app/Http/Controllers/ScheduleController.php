@@ -74,16 +74,66 @@ class ScheduleController extends Controller
     }
     public function add($id)
     {
-        $data = DB::table('per_week_schedules')->where('id',$id)->get();
-        return view('schedule_insert',['add'=>$data]);
+        session_start();
+        //start_尋找同個時段的另一個人是誰，判斷負責項目是否相同(有bug)
+
+//        $data=DB::table('per_week_schedules')->where('id',$id);
+//
+//        foreach ($data as $ds)
+//        {
+//            $st=$ds->start;
+//            $we=$ds->week;
+//            $mo=$ds->month;
+//        }
+//
+//        $data2=DB::table('per_week_schedules')->where('start',$st)->where('week',$we)->where('month',$mo);
+//
+//        foreach ($data2 as $d2s)
+//        {
+//            $an_staff=$d2s->staff_id;
+//
+//        }
+//        if($an_staff!=null){//判斷人員
+//        $data3=DB::table('staff')->where('id',$an_staff);
+//        $data4=DB::table('staff')->where('id',$_SESSION['sid']);
+//        foreach ($data3 as $d3s)
+//        {
+//            $an_staff_job=$d3s->job;
+//
+//        }
+//        foreach ($data4 as $d4s)
+//        {
+//            $now_job=$d4s->job;
+//
+//        }
+//
+//        if($an_staff_job!=$now_job)
+//         {
+//        DB::table('per_week_schedules')->where('id',$id)->update(
+//            [
+//
+//                'staff_id'=>$_SESSION['sid']
+//
+//
+//            ]
+//        );
+//         }
+//            //        echo "<script>alert('已新增該時段排班')</script>"; 有bug 提醒視窗跳不出來
+//            return redirect()->route('schedule.check',['staff' => $_SESSION['sid']]);
+//        }//end_尋找同個時段的另一個人是誰，判斷負責項目是否相同
+//        else
+            DB::table('per_week_schedules')->where('id',$id)->update(
+                [
+
+                    'staff_id'=>$_SESSION['sid']
+
+
+                ]
+            );
+        //        echo "<script>alert('已新增該時段排班')</script>"; 有bug 提醒視窗跳不出來
+        return redirect()->route('schedule.check',['staff' => $_SESSION['sid']]);
     }
-    public function edit($id)
-    {
-        $data = DB::table('per_week_schedules')->where('id',$id)->get();
-        $staff=DB::table('staff')->get();
-        return view('schedule_edit',['edit'=>$data],['staff'=>$staff]);
-    }
-    public function check($id)
+    public function check($staff)
     {
 
         $data1_1 = DB::table('per_week_schedules')->where('week','一')->where('start','09:00:00')->get();
@@ -107,10 +157,10 @@ class ScheduleController extends Controller
         $data7_1 = DB::table('per_week_schedules')->where('week','日')->where('start','09:00:00')->get();
         $data7_2 = DB::table('per_week_schedules')->where('week','日')->where('start','15:00:00')->get();
         $data7_3 = DB::table('per_week_schedules')->where('week','日')->where('start','18:00:00')->get();
-        $staff=DB::table('staff')->get();
+        $staff1=DB::table('staff')->get();
         session_start();
 
-        $_SESSION['sid']=$id;
+        $_SESSION['sid']=$staff;
         $_SESSION['w1_1']=$data1_1;
         $_SESSION['w1_2']=$data1_2;
         $_SESSION['w1_3']=$data1_3;
@@ -138,7 +188,7 @@ class ScheduleController extends Controller
         $_SESSION['w7_1']=$data7_1;
         $_SESSION['w7_2']=$data7_2;
         $_SESSION['w7_3']=$data7_3;
-        $_SESSION['staff']=$staff;
+        $_SESSION['staff']=$staff1;
 
         return view('schedule_check');
 
@@ -157,6 +207,7 @@ class ScheduleController extends Controller
             ]
         );
 //        echo "<script>alert('已刪除該時段排班')</script>"; 有bug 提醒視窗跳不出來
-        return redirect()->route('schedule.check',['id' => $_SESSION['sid']]);
+        return redirect()->route('schedule.check',['staff' => $_SESSION['sid']]);
     }
+
 }

@@ -130,8 +130,8 @@
                                     foreach ($w1_1 as $w1_1s)
 
                                     {
-                                               if ($w1_1s->staff_id==null)//在這裡加檢測類型的判斷
-                                                   echo  "<h4><a class='' href=''>+</a></h4><hr>";
+                                               if ($w1_1s->staff_id==null)
+                                                   echo  "<h4><a class='' href='/schedule_in/{$w1_1s->id}'>+</a></h4><hr>";
                                                if ($w1_1s->staff_id==$_SESSION['sid'])//當前檢測人員的id
                                                    echo "<strong><a style='color: gray;'>上班</a></strong>&nbsp;&nbsp;<a class='btn btn-sm btn-danger' href='/schedule_re/{$w1_1s->id}'>x</a><hr>";
 
@@ -146,8 +146,8 @@
                                     foreach ($w2_1 as $w2_1s)
 
                                     {
-                                        if ($w2_1s->staff_id==null)//在這裡加檢測類型的判斷
-                                            echo  "<h4><a class='' href=''>+</a></h4><hr>";
+                                        if ($w2_1s->staff_id==null)
+                                            echo  "<h4><a class='' href='/schedule_in/{$w2_1s->id}'>+</a></h4><hr>";
                                         if ($w2_1s->staff_id== $_SESSION['sid'])//當前檢測人員的id
                                             echo "<strong><a style='color: gray;'>上班</a></strong>&nbsp;&nbsp;<a class='btn btn-sm btn-danger' href='/schedule_re/{$w2_1s->id}'>x</a><hr>";
 
@@ -162,8 +162,8 @@
                                     foreach ($w3_1 as $w3_1s)
 
                                     {
-                                        if ($w3_1s->staff_id==null)//在這裡加檢測類型的判斷
-                                            echo  "<h4><a class='' href=''>+</a></h4><hr>";
+                                        if ($w3_1s->staff_id==null)
+                                            echo  "<h4><a class='' href='/schedule_in/{$w3_1s->id}'>+</a></h4><hr>";
                                         if ($w3_1s->staff_id==$_SESSION['sid'])//當前檢測人員的id
                                             echo "<strong><a style='color: gray;'>上班</a></strong>&nbsp;&nbsp;<a class='btn btn-sm btn-danger' href='/schedule_re/{$w3_1s->id}'>x</a><hr>";
 
@@ -179,8 +179,8 @@
                                     foreach ($w4_1 as $w4_1s)
 
                                     {
-                                        if ($w4_1s->staff_id==null)//在這裡加檢測類型的判斷
-                                            echo  "<h4><a class='' href=''>+</a></h4><hr>";
+                                        if ($w4_1s->staff_id==null)
+                                            echo  "<h4><a class='' href='/schedule_in/{$w4_1s->id}'>+</a></h4><hr>";
                                         if ($w4_1s->staff_id==$_SESSION['sid'])//當前檢測人員的id
                                             echo "<strong><a style='color: gray;'>上班</a></strong>&nbsp;&nbsp;<a class='btn btn-sm btn-danger' href='/schedule_re/{$w4_1s->id}'>x</a><hr>";
 
@@ -195,8 +195,8 @@
                                     foreach ($w5_1 as $w5_1s)
 
                                     {
-                                        if ($w5_1s->staff_id==null)//在這裡加檢測類型的判斷
-                                            echo  "<h4><a class='' href=''>+</a></h4><hr>";
+                                        if ($w5_1s->staff_id==null)
+                                            echo  "<h4><a class='' href='/schedule_in/{$w5_1s->id}'>+</a></h4><hr>";
                                         if ($w5_1s->staff_id==$_SESSION['sid'])//當前檢測人員的id
                                             echo "<strong><a style='color: gray;'>上班</a></strong>&nbsp;&nbsp;<a class='btn btn-sm btn-danger' href='/schedule_re/{$w5_1s->id}'>x</a><hr>";
 
@@ -213,7 +213,7 @@
 
                                     {
                                         if ($w6_1s->staff_id==null)//在這裡加檢測類型的判斷
-                                            echo  "<h4><a class='' href=''>+</a></h4><hr>";
+                                            echo  "<h4><a class='' href='/schedule_in/{$w6_1s->id}'>+</a></h4><hr>";
                                         if ($w6_1s->staff_id==$_SESSION['sid'])//當前檢測人員的id
                                             echo "<strong><a style='color: gray;'>上班</a></strong>&nbsp;&nbsp;<a class='btn btn-sm btn-danger' href='/schedule_re/{$w6_1s->id}'>x</a><hr>";
 
@@ -230,7 +230,7 @@
 
                                     {
                                         if ($w7_1s->staff_id==null)//在這裡加檢測類型的判斷
-                                            echo  "<h4><a class='' href=''>+</a></h4><hr>";
+                                            echo  "<h4><a class='' href='/schedule_in/{$w7_1s->id}'>+</a></h4><hr>";
                                         if ($w7_1s->staff_id==$_SESSION['sid'])//當前檢測人員的id
                                             echo "<strong><a style='color: gray;'>上班</a></strong>&nbsp;&nbsp;<a class='btn btn-sm btn-danger' href='/schedule_re/{$w7_1s->id}'>x</a><hr>";
 
@@ -249,8 +249,8 @@
                                     foreach ($w1_2 as $w1_2s)
 
                                     {
-                                        if ($w1_2s->staff_id==null)//在這裡加檢測類型的判斷
-                                            echo  "<h4><a class='' href=''>+</a></h4><hr>";
+                                        if ($w1_2s->staff_id==null)
+                                            echo  "<h4><a class='' href='/schedule_in/{$w1_2s->id}'>+</a></h4><hr>";
                                         if ($w1_2s->staff_id==$_SESSION['sid'])//當前檢測人員的id
                                             echo "<strong><a style='color: gray;'>上班</a></strong>&nbsp;&nbsp;<a class='btn btn-sm btn-danger' href='/schedule_re/{$w1_2s->id}'>x</a><hr>";
 
@@ -265,8 +265,8 @@
                                     foreach ($w2_2 as $w2_2s)
 
                                     {
-                                        if ($w2_2s->staff_id==null)//在這裡加檢測類型的判斷
-                                            echo  "<h4><a class='' href=''>+</a></h4><hr>";
+                                        if ($w2_2s->staff_id==null)
+                                            echo  "<h4><a class='' href='/schedule_in/{$w2_2s->id}'>+</a></h4><hr>";
                                         if ($w2_2s->staff_id==$_SESSION['sid'])//當前檢測人員的id
                                             echo "<strong><a style='color: gray;'>上班</a></strong>&nbsp;&nbsp;<a class='btn btn-sm btn-danger' href='/schedule_re/{$w2_2s->id}'>x</a><hr>";
 
@@ -281,8 +281,8 @@
                                     foreach ($w3_2 as $w3_2s)
 
                                     {
-                                        if ($w3_2s->staff_id==null)//在這裡加檢測類型的判斷
-                                            echo  "<h4><a class='' href=''>+</a></h4><hr>";
+                                        if ($w3_2s->staff_id==null)
+                                            echo  "<h4><a class='' href='/schedule_in/{$w3_2s->id}'>+</a></h4><hr>";
                                         if ($w3_2s->staff_id==$_SESSION['sid'])//當前檢測人員的id
                                             echo "<strong><a style='color: gray;'>上班</a></strong>&nbsp;&nbsp;<a class='btn btn-sm btn-danger' href='/schedule_re/{$w3_2s->id}'>x</a><hr>";
 
@@ -298,8 +298,8 @@
                                     foreach ($w4_2 as $w4_2s)
 
                                     {
-                                        if ($w4_2s->staff_id==null)//在這裡加檢測類型的判斷
-                                            echo  "<h4><a class='' href=''>+</a></h4><hr>";
+                                        if ($w4_2s->staff_id==null)
+                                            echo  "<h4><a class='' href='/schedule_in/{$w4_2s->id}'>+</a></h4><hr>";
                                         if ($w4_2s->staff_id==$_SESSION['sid'])//當前檢測人員的id
                                             echo "<strong><a style='color: gray;'>上班</a></strong>&nbsp;&nbsp;<a class='btn btn-sm btn-danger' href='/schedule_re/{$w4_2s->id}'>x</a><hr>";
 
@@ -314,8 +314,8 @@
                                     foreach ($w5_2 as $w5_2s)
 
                                     {
-                                        if ($w5_2s->staff_id==null)//在這裡加檢測類型的判斷
-                                            echo  "<h4><a class='' href=''>+</a></h4><hr>";
+                                        if ($w5_2s->staff_id==null)
+                                            echo  "<h4><a class='' href='/schedule_in/{$w5_2s->id}'>+</a></h4><hr>";
                                         if ($w5_2s->staff_id==$_SESSION['sid'])//當前檢測人員的id
                                             echo "<strong><a style='color: gray;'>上班</a></strong>&nbsp;&nbsp;<a class='btn btn-sm btn-danger' href='/schedule_re/{$w5_2s->id}'>x</a><hr>";
 
@@ -331,8 +331,8 @@
                                     foreach ($w6_2 as $w6_2s)
 
                                     {
-                                        if ($w6_2s->staff_id==null)//在這裡加檢測類型的判斷
-                                            echo  "<h4><a class='' href=''>+</a></h4><hr>";
+                                        if ($w6_2s->staff_id==null)
+                                            echo  "<h4><a class='' href='/schedule_in/{$w6_2s->id}'>+</a></h4><hr>";
                                         if ($w6_2s->staff_id==$_SESSION['sid'])//當前檢測人員的id
                                             echo "<strong><a style='color: gray;'>上班</a></strong>&nbsp;&nbsp;<a class='btn btn-sm btn-danger' href='/schedule_re/{$w6_2s->id}'>x</a><hr>";
 
@@ -348,8 +348,8 @@
                                     foreach ($w7_2 as $w7_2s)
 
                                     {
-                                        if ($w7_2s->staff_id==null)//在這裡加檢測類型的判斷
-                                            echo  "<h4><a class='' href=''>+</a></h4><hr>";
+                                        if ($w7_2s->staff_id==null)
+                                            echo  "<h4><a class='' href='/schedule_in/{$w7_2s->id}'>+</a></h4><hr>";
                                         if ($w7_2s->staff_id==$_SESSION['sid'])//當前檢測人員的id
                                             echo "<strong><a style='color: gray;'>上班</a></strong>&nbsp;&nbsp;<a class='btn btn-sm btn-danger' href='/schedule_re/{$w7_2s->id}'>x</a><hr>";
 
@@ -368,8 +368,8 @@
                                     foreach ($w1_3 as $w1_3s)
 
                                     {
-                                        if ($w1_3s->staff_id==null)//在這裡加檢測類型的判斷
-                                            echo  "<h4><a class='' href=''>+</a></h4><hr>";
+                                        if ($w1_3s->staff_id==null)
+                                            echo  "<h4><a class='' href='/schedule_in/{$w1_3s->id}'>+</a></h4><hr>";
                                         if ($w1_3s->staff_id==$_SESSION['sid'])//當前檢測人員的id
                                             echo "<strong><a style='color: gray;'>上班</a></strong>&nbsp;&nbsp;<a class='btn btn-sm btn-danger' href='/schedule_re/{$w1_3s->id}'>x</a><hr>";
 
@@ -384,8 +384,8 @@
                                     foreach ($w2_3 as $w2_3s)
 
                                     {
-                                        if ($w2_3s->staff_id==null)//在這裡加檢測類型的判斷
-                                            echo  "<h4><a class='' href=''>+</a></h4><hr>";
+                                        if ($w2_3s->staff_id==null)
+                                            echo  "<h4><a class='' href='/schedule_in/{$w2_3s->id}'>+</a></h4><hr>";
                                         if ($w2_3s->staff_id==$_SESSION['sid'])//當前檢測人員的id
                                             echo "<strong><a style='color: gray;'>上班</a></strong>&nbsp;&nbsp;<a class='btn btn-sm btn-danger' href='/schedule_re/{$w2_3s->id}'>x</a><hr>";
 
@@ -400,8 +400,8 @@
                                     foreach ($w3_3 as $w3_3s)
 
                                     {
-                                        if ($w3_3s->staff_id==null)//在這裡加檢測類型的判斷
-                                            echo  "<h4><a class='' href=''>+</a></h4><hr>";
+                                        if ($w3_3s->staff_id==null)
+                                            echo  "<h4><a class='' href='/schedule_in/{$w3_3s->id}'>+</a></h4><hr>";
                                         if ($w3_3s->staff_id==$_SESSION['sid'])//當前檢測人員的id
                                             echo "<strong><a style='color: gray;'>上班</a></strong>&nbsp;&nbsp;<a class='btn btn-sm btn-danger' href='/schedule_re/{$w3_3s->id}'>x</a><hr>";
 
@@ -417,8 +417,8 @@
                                     foreach ($w4_3 as $w4_3s)
 
                                     {
-                                        if ($w4_3s->staff_id==null)//在這裡加檢測類型的判斷
-                                            echo  "<h4><a class='' href=''>+</a></h4><hr>";
+                                        if ($w4_3s->staff_id==null)
+                                            echo  "<h4><a class='' href='/schedule_in/{$w4_3s->id}'>+</a></h4><hr>";
                                         if ($w4_3s->staff_id==$_SESSION['sid'])//當前檢測人員的id
                                             echo "<strong><a style='color: gray;'>上班</a></strong>&nbsp;&nbsp;<a class='btn btn-sm btn-danger' href='/schedule_re/{$w4_3s->id}'>x</a><hr>";
 
@@ -433,8 +433,8 @@
                                     foreach ($w5_3 as $w5_3s)
 
                                     {
-                                        if ($w5_3s->staff_id==null)//在這裡加檢測類型的判斷
-                                            echo  "<h4><a class='' href=''>+</a></h4><hr>";
+                                        if ($w5_3s->staff_id==null)
+                                            echo  "<h4><a class='' href='/schedule_in/{$w5_3s->id}'>+</a></h4><hr>";
                                         if ($w5_3s->staff_id==$_SESSION['sid'])//當前檢測人員的id
                                             echo "<strong><a style='color: gray;'>上班</a></strong>&nbsp;&nbsp;<a class='btn btn-sm btn-danger' href='/schedule_re/{$w5_3s->id}'>x</a><hr>";
 
@@ -450,8 +450,8 @@
                                     foreach ($w6_3 as $w6_3s)
 
                                     {
-                                        if ($w6_3s->staff_id==null)//在這裡加檢測類型的判斷
-                                            echo  "<h4><a class='' href=''>+</a></h4><hr>";
+                                        if ($w6_3s->staff_id==null)
+                                            echo  "<h4><a class='' href='/schedule_in/{$w6_3s->id}'>+</a></h4><hr>";
                                         if ($w6_3s->staff_id==$_SESSION['sid'])//當前檢測人員的id
                                             echo "<strong><a style='color: gray;'>上班</a></strong>&nbsp;&nbsp;<a class='btn btn-sm btn-danger' href='/schedule_re/{$w6_3s->id}'>x</a><hr>";
 
@@ -467,8 +467,8 @@
                                     foreach ($w7_3 as $w7_3s)
 
                                     {
-                                        if ($w7_3s->staff_id==null)//在這裡加檢測類型的判斷
-                                            echo  "<h4><a class='' href=''>+</a></h4><hr>";
+                                        if ($w7_3s->staff_id==null)
+                                            echo  "<h4><a class='' href='/schedule_in/{$w7_3s->id}'>+</a></h4><hr>";
                                         if ($w7_3s->staff_id==$_SESSION['sid'])//當前檢測人員的id
                                             echo "<strong><a style='color: gray;'>上班</a></strong>&nbsp;&nbsp;<a class='btn btn-sm btn-danger' href='/schedule_re/{$w7_3s->id}'>x</a><hr>";
 //x</a><hr>";
