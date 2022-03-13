@@ -605,7 +605,7 @@
             <div class="col-md-3" style="float: right ;margin-right:3%;margin-top:3%;">
                 <div class="bg-light rounded p-4">
                     <div class="d-flex align-items-center justify-content-between mb-4">
-                        <h3> <a class="a1"><i class="bi bi-pen"></i>&nbsp;選擇</a></h3>
+                        <h3> <a class="a1"><i class="bi bi-pen"></i>&nbsp;人員選擇</a></h3>
                     </div>
                   @foreach($staff as $staffs)
 
