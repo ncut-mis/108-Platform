@@ -21,6 +21,11 @@ Route::get('/schedule', [\App\Http\Controllers\ScheduleController::class, 'index
 Route::get('/schedule_in/{id}', [\App\Http\Controllers\ScheduleController::class, 'add'])->name('schedule.add');//新增值班時段
 Route::get('/schedule_re/{id}', [\App\Http\Controllers\ScheduleController::class, 'remove'])->name('schedule.remove');//刪除值班時段
 Route::get('/schedule/{staff}', [\App\Http\Controllers\ScheduleController::class, 'check'])->name('schedule.check');//查看檢測人員班表頁面
+Route::get('/schedule_next', [\App\Http\Controllers\ScheduleController::class, 'next'])->name('schedule.next');//下個月排班頁面
+Route::get('/schedule_test', [\App\Http\Controllers\ScheduleController::class, 'neschedule'])->name('schedule.test');//test
+Route::get('/schedule_t2', [\App\Http\Controllers\ScheduleController::class, 't2'])->name('schedule.test2');//test2
+
+
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
