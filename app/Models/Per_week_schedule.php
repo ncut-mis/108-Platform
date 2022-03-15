@@ -8,13 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Per_week_schedule extends Model
 {
     use HasFactory;
-    protected $table = 'sections';
+    protected $table = 'per_week_schedules';
     protected $fillable = [
         'id',
         'staff_id',
         'start',
         'end',
         'week',
+        'month',
     ];
     public function staff()
     {

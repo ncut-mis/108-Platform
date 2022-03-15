@@ -65,306 +65,530 @@
 <main>
     <div class="container-xxl position-relative bg-white d-flex p-0">
         <div class="content">
-            <div class="col-md-12" style="margin-top:3%">
+            <div class="col-md-8" style="margin-top:3%;float:left;">
                 <div class="bg-light text-center rounded p-4">
                     <div class="d-flex align-items-center justify-content-between mb-4">
                         <h3><a class="a1"><i class="bi bi-card-checklist"></i>&nbsp;班表</a></h3>
+                        <h3><a class=""><?php
+                                $month = date("n");
+                                echo "適用月份:".$month."月"; //抓系統當前月份
+                                ?></a></h3>
                     </div>
                     <div class="table-responsive">
 
-                        <table class="table text-start align-middle table-bordered table-hover mb-0">
+                        <table class="table text-start align-middle table-bordered table-hover mb-0" style="border:whitesmoke">
                             <thead>
-                            <tr class="text-dark">
+                            <tr class="text-dark" style="background-color:lightblue">
                                 <th scope="col"></th>
-                                <th scope="col">一</th>
-                                <th scope="col">二</th>
-                                <th scope="col">三</th>
-                                <th scope="col">四</th>
-                                <th scope="col">五</th>
-                                <th scope="col">六</th>
-                                <th scope="col">日</th>
+                                <th scope="col"style="color: #6b7280;text-align: center">一</th>
+                                <th scope="col"style="color: #6b7280;text-align: center">二</th>
+                                <th scope="col"style="color: #6b7280;text-align: center">三</th>
+                                <th scope="col"style="color: #6b7280;text-align: center">四</th>
+                                <th scope="col"style="color: #6b7280;text-align: center">五</th>
+                                <th scope="col"style="color: #6b7280;text-align: center">六</th>
+                                <th scope="col"style="color: #6b7280;text-align: center">日</th>
                             </tr>
                             </thead>
                             <tbody>
                             <?php
-                            $w2=$_SESSION['w2'];
-                            $w3=$_SESSION['w3'];
-                            $w4=$_SESSION['w4'];
-                            $w5=$_SESSION['w5'];
-                            $w6=$_SESSION['w6'];
-                            $w7=$_SESSION['w7'];
 
+                            $w1_1=$_SESSION['w1_1'];
+                            $w1_2=$_SESSION['w1_2'];
+                            $w1_3=$_SESSION['w1_3'];
+
+                            $w2_1=$_SESSION['w2_1'];
+                            $w2_2=$_SESSION['w2_2'];
+                            $w2_3=$_SESSION['w2_3'];
+
+                            $w3_1=$_SESSION['w3_1'];
+                            $w3_2=$_SESSION['w3_2'];
+                            $w3_3=$_SESSION['w3_3'];
+
+                            $w4_1=$_SESSION['w4_1'];
+                            $w4_2=$_SESSION['w4_2'];
+                            $w4_3=$_SESSION['w4_3'];
+
+                            $w5_1=$_SESSION['w5_1'];
+                            $w5_2=$_SESSION['w5_2'];
+                            $w5_3=$_SESSION['w5_3'];
+
+                            $w6_1=$_SESSION['w6_1'];
+                            $w6_2=$_SESSION['w6_2'];
+                            $w6_3=$_SESSION['w6_3'];
+
+                            $w7_1=$_SESSION['w7_1'];
+                            $w7_2=$_SESSION['w7_2'];
+                            $w7_3=$_SESSION['w7_3'];
+
+                            $staff=$_SESSION['staff'];
                             ?>
+                                        <tr><!--早上 -->
+                                            <td style="background-color:lightblue;text-align: center">早<br>9:00~11:00</td>
+                                                <td style="text-align: center">
+                                                <?php
+
+                                                    foreach ($w1_1 as $w1_1s)
+                                                    {
+
+                                                        foreach ($staff as $staffs)
+                                                            if($w1_1s->staff_id==$staffs->id)
+                                                      {
+                                                    if ($w1_1s->staff_id==null)
+                                                        echo "";
+                                                    else
+                                                       echo "編號:".$w1_1s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+
+                                                      }
+
+                                                    }
 
 
-                                @foreach ($w1 as $w1s)
-                                @foreach ($w2 as $w2s)
-                                    @foreach ($w3 as $w3s)
-                                        @foreach ($w4 as $w4s)
-                                            @foreach ($w5 as $w5s)
-                                                @foreach ($w6 as $w6s)
-                                                    @foreach ($w7 as $w7s)
+                                                   ?>
 
-                                                            @if($w1s->start=='09:00:00'&&$w2s->start=='09:00:00'&&$w3s->start=='09:00:00'&&$w4s->start=='09:00:00'&&$w5s->start=='09:00:00'&&$w6s->start=='09:00:00'&&$w7s->start=='09:00:00')
-                                        <tr>
-                                            <td>早<br>9:00~11:00</td>
-                                            @if($w1s->staff_id==null)
-                                                <td><h4><a class="" href="">+</a></h4></td>
-                                            @else
-                                                @foreach($staff as$staffs)
-                                                    @if($w1s->staff_id==$staffs->id)
-                                                <td>人員編號:{{$w1s->staff_id}}<br>
-                                                    人員姓名:{{$staffs->name}}<br>
-                                                    <a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="{{route('staff.edit',$w1s->id)}}">!</a></td>
-                                                    @endif
-                                                @endforeach
-                                            @endif
-                                            @if($w2s->staff_id==null)
-                                                <td><h4><a class="" href="{{route('staff.add',$w2s->id)}}">+</a></h4></td>
-                                            @else
-                                                @foreach($staff as$staffs)
-                                                    @if($w2s->staff_id==$staffs->id)
-                                                <td>人員編號:{{$w2s->staff_id}}<br>
-                                                    人員姓名:{{$staffs->name}}<br>
-                                                    <a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
-                                                    @endif
-                                                @endforeach
-                                            @endif
-                                            @if($w3s->staff_id==null)
-                                                <td><h4><a class="" href="">+</a></h4></td>
-                                            @else
-                                                @foreach($staff as$staffs)
-                                                    @if($w3s->staff_id==$staffs->id)
-                                                <td>人員編號:{{$w3s->staff_id}}<br>
-                                                    人員姓名:{{$staffs->name}}<br>
-                                                    <a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
-                                                    @endif
-                                                @endforeach
-                                            @endif
-                                            @if($w4s->staff_id==null)
-                                                <td><h4><a class="" href="">+</a></h4></td>
-                                            @else
-                                                @foreach($staff as$staffs)
-                                                    @if($w4s->staff_id==$staffs->id)
-                                                <td>人員編號:{{$w4s->staff_id}}<br>
-                                                    人員姓名:{{$staffs->name}}<br>
-                                                    <a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
-                                                    @endif
-                                                @endforeach
-                                            @endif
-                                            @if($w5s->staff_id==null)
-                                                <td><h4><a class="" href="">+</a></h4></td>
-                                            @else
-                                                @foreach($staff as$staffs)
-                                                    @if($w5s->staff_id==$staffs->id)
-                                                <td>人員編號:{{$w5s->staff_id}}<br>
-                                                    人員姓名:{{$staffs->name}}<br>
-                                                    <a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
-                                                    @endif
-                                                @endforeach
-                                            @endif
-                                            @if($w6s->staff_id==null)
-                                                <td><h4><a class="" href="">+</a></h4></td>
-                                            @else
-                                                @foreach($staff as$staffs)
-                                                    @if($w6s->staff_id==$staffs->id)
-                                                <td>人員編號:{{$w6s->staff_id}}<br>
-                                                    人員姓名:{{$staffs->name}}<br>
-                                                    <a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
-                                                    @endif
-                                                @endforeach
-                                            @endif
-                                            @if($w7s->staff_id==null)
-                                                <td><h4><a class="" href="">+</a></h4></td>
-                                            @else
-                                                @foreach($staff as$staffs)
-                                                    @if($w7s->staff_id==$staffs->id)
-                                                <td>人員編號:{{$w7s->staff_id}}<br>
-                                                    人員姓名:{{$staffs->name}}<br>
-                                                    <a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
-                                                    @endif
-                                                @endforeach
-                                            @endif
+                                                </td>
+                                            <td style="text-align: center">
+                                                <?php
+
+                                                foreach ($w2_1 as $w2_1s)
+                                                {
+
+                                                    foreach ($staff as $staffs)
+                                                        if($w2_1s->staff_id==$staffs->id)
+                                                        {
+                                                            if ($w2_1s->staff_id==null)
+                                                                echo "";
+                                                            else
+                                                                echo "編號:".$w2_1s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+
+                                                        }
+
+                                                }
+
+                                                ?>
+
+                                            </td>
+                                            <td style="text-align: center">
+                                                <?php
+
+                                                foreach ($w3_1 as $w3_1s)
+                                                {
+
+                                                    foreach ($staff as $staffs)
+                                                        if($w3_1s->staff_id==$staffs->id)
+                                                        {
+                                                            if ($w3_1s->staff_id==null)
+                                                                echo "";
+                                                            else
+                                                                echo "編號:".$w3_1s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+
+                                                        }
+
+                                                }
+
+
+                                                ?>
+
+                                            </td>
+                                            <td style="text-align: center">
+                                                <?php
+
+                                                foreach ($w4_1 as $w4_1s)
+                                                {
+
+                                                    foreach ($staff as $staffs)
+                                                        if($w4_1s->staff_id==$staffs->id)
+                                                        {
+                                                            if ($w4_1s->staff_id==null)
+                                                                echo "";
+                                                            else
+                                                                echo "編號:".$w4_1s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+
+                                                        }
+
+                                                }
+
+
+                                                ?>
+
+                                            </td>
+                                            <td style="text-align: center">
+                                                <?php
+
+                                                foreach ($w5_1 as $w5_1s)
+                                                {
+
+                                                    foreach ($staff as $staffs)
+                                                        if($w5_1s->staff_id==$staffs->id)
+                                                        {
+                                                            if ($w5_1s->staff_id==null)
+                                                                echo "";
+                                                            else
+                                                                echo "編號:".$w5_1s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+
+                                                        }
+
+                                                }
+
+
+                                                ?>
+
+                                            </td>
+                                            <td style="text-align: center">
+                                                <?php
+
+                                                foreach ($w6_1 as $w6_1s)
+                                                {
+
+                                                    foreach ($staff as $staffs)
+                                                        if($w6_1s->staff_id==$staffs->id)
+                                                        {
+                                                            if ($w6_1s->staff_id==null)
+                                                                echo "";
+                                                            else
+                                                                echo "編號".$w6_1s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+
+                                                        }
+
+                                                }
+
+
+                                                ?>
+
+                                            </td>
+                                            <td style="text-align: center">
+                                                <?php
+
+                                                foreach ($w7_1 as $w7_1s)
+                                                {
+
+                                                    foreach ($staff as $staffs)
+                                                        if($w7_1s->staff_id==$staffs->id)
+                                                        {
+                                                            if ($w7_1s->staff_id==null)
+                                                                echo "";
+                                                            else
+                                                                echo "編號".$w7_1s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+
+                                                        }
+
+                                                }
+
+
+                                                ?>
+
+                                            </td>
                                         </tr>
-                                    @endif
+                            <tr><!--午-->
+                                <td style="background-color:lightblue;text-align: center">午<br>15:00~17:00</td>
+                                <td style="text-align: center">
+                                    <?php
 
-                                    @if($w1s->start=='15:00:00'&&$w2s->start=='15:00:00'&&$w3s->start=='15:00:00'&&$w4s->start=='15:00:00'&&$w5s->start=='15:00:00'&&$w6s->start=='15:00:00'&&$w7s->start=='15:00:00')
+                                    foreach ($w1_2 as $w1_2s)
+                                    {
 
-                                            <tr>
-                                                <td>中<br>15:00~17:00</td>
-                                                @if($w1s->staff_id==null)
-                                                    <td><h4><a class="" href="">+</a></h4></td>
-                                                @else
-                                                    @foreach($staff as$staffs)
-                                                        @if($w1s->staff_id==$staffs->id)
-                                                            <td>人員編號:{{$w1s->staff_id}}<br>
-                                                                人員姓名:{{$staffs->name}}<br>
-                                                                <a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
-                                                        @endif
-                                                    @endforeach
-                                                @endif
-                                                @if($w2s->staff_id==null)
-                                                    <td><h4><a class="" href="">+</a></h4></td>
-                                                @else
-                                                    @foreach($staff as$staffs)
-                                                        @if($w2s->staff_id==$staffs->id)
-                                                            <td>人員編號:{{$w2s->staff_id}}<br>
-                                                                人員姓名:{{$staffs->name}}<br>
-                                                                <a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
-                                                        @endif
-                                                    @endforeach
-                                                @endif
-                                                @if($w3s->staff_id==null)
-                                                    <td><h4><a class="" href="">+</a></h4></td>
-                                                @else
-                                                    @foreach($staff as$staffs)
-                                                        @if($w3s->staff_id==$staffs->id)
-                                                            <td>人員編號:{{$w3s->staff_id}}<br>
-                                                                人員姓名:{{$staffs->name}}<br>
-                                                                <a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
-                                                        @endif
-                                                    @endforeach
-                                                @endif
-                                                @if($w4s->staff_id==null)
-                                                    <td><h4><a class="" href="">+</a></h4></td>
-                                                @else
-                                                    @foreach($staff as$staffs)
-                                                        @if($w4s->staff_id==$staffs->id)
-                                                            <td>人員編號:{{$w4s->staff_id}}<br>
-                                                                人員姓名:{{$staffs->name}}<br>
-                                                                <a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
-                                                        @endif
-                                                    @endforeach
-                                                @endif
-                                                @if($w5s->staff_id==null)
-                                                    <td><h4><a class="" href="">+</a></h4></td>
-                                                @else
-                                                    @foreach($staff as$staffs)
-                                                        @if($w5s->staff_id==$staffs->id)
-                                                            <td>人員編號:{{$w5s->staff_id}}<br>
-                                                                人員姓名:{{$staffs->name}}<br>
-                                                                <a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
-                                                        @endif
-                                                    @endforeach
-                                                @endif
-                                                @if($w6s->staff_id==null)
-                                                    <td><h4><a class="" href="">+</a></h4></td>
-                                                @else
-                                                    @foreach($staff as$staffs)
-                                                        @if($w6s->staff_id==$staffs->id)
-                                                            <td>人員編號:{{$w6s->staff_id}}<br>
-                                                                人員姓名:{{$staffs->name}}<br>
-                                                                <a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
-                                                        @endif
-                                                    @endforeach
-                                                @endif
-                                                @if($w7s->staff_id==null)
-                                                    <td><h4><a class="" href="">+</a></h4></td>
-                                                @else
-                                                    @foreach($staff as$staffs)
-                                                        @if($w7s->staff_id==$staffs->id)
-                                                            <td>人員編號:{{$w7s->staff_id}}<br>
-                                                                人員姓名:{{$staffs->name}}<br>
-                                                                <a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
-                                                        @endif
-                                                    @endforeach
-                                                @endif
-                                            </tr>
-                                               @endif
+                                        foreach ($staff as $staffs)
+                                            if($w1_2s->staff_id==$staffs->id)
+                                            {
+                                                if ($w1_2s->staff_id==null)
+                                                    echo "";
+                                                else
+                                                    echo "編號:".$w1_2s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
 
-                                    @if($w1s->start=='18:00:00'&&$w2s->start=='18:00:00'&&$w3s->start=='18:00:00'&&$w4s->start=='18:00:00'&&$w5s->start=='18:00:00'&&$w6s->start=='18:00:00'&&$w7s->start=='18:00:00')
+                                            }
 
-                                             <tr>
-                                                 <td>晚<br>18:00~21:00</td>
-                                                 @if($w1s->staff_id==null)
-                                                     <td><h4><a class="" href="">+</a></h4></td>
-                                                 @else
-                                                     @foreach($staff as$staffs)
-                                                         @if($w1s->staff_id==$staffs->id)
-                                                             <td>人員編號:{{$w1s->staff_id}}<br>
-                                                                 人員姓名:{{$staffs->name}}<br>
-                                                                 <a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
-                                                         @endif
-                                                     @endforeach
-                                                 @endif
-                                                 @if($w2s->staff_id==null)
-                                                     <td><h4><a class="" href="">+</a></h4></td>
-                                                 @else
-                                                     @foreach($staff as$staffs)
-                                                         @if($w2s->staff_id==$staffs->id)
-                                                             <td>人員編號:{{$w2s->staff_id}}<br>
-                                                                 人員姓名:{{$staffs->name}}<br>
-                                                                 <a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
-                                                         @endif
-                                                     @endforeach
-                                                 @endif
-                                                 @if($w3s->staff_id==null)
-                                                     <td><h4><a class="" href="{{route('staff.add',$w3s->id)}}">+</a></h4></td>
-                                                 @else
-                                                     @foreach($staff as$staffs)
-                                                         @if($w3s->staff_id==$staffs->id)
-                                                             <td>人員編號:{{$w3s->staff_id}}<br>
-                                                                 人員姓名:{{$staffs->name}}<br>
-                                                                 <a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
-                                                         @endif
-                                                     @endforeach
-                                                 @endif
-                                                 @if($w4s->staff_id==null)
-                                                     <td><h4><a class="" href="">+</a></h4></td>
-                                                 @else
-                                                     @foreach($staff as$staffs)
-                                                         @if($w4s->staff_id==$staffs->id)
-                                                             <td>人員編號:{{$w4s->staff_id}}<br>
-                                                                 人員姓名:{{$staffs->name}}<br>
-                                                                 <a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
-                                                         @endif
-                                                     @endforeach
-                                                 @endif
-                                                 @if($w5s->staff_id==null)
-                                                     <td><h4><a class="" href="">+</a></h4></td>
-                                                 @else
-                                                     @foreach($staff as$staffs)
-                                                         @if($w5s->staff_id==$staffs->id)
-                                                             <td>人員編號:{{$w5s->staff_id}}<br>
-                                                                 人員姓名:{{$staffs->name}}<br>
-                                                                 <a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
-                                                         @endif
-                                                     @endforeach
-                                                 @endif
-                                                 @if($w6s->staff_id==null)
-                                                     <td><h4><a class="" href="">+</a></h4></td>
-                                                 @else
-                                                     @foreach($staff as$staffs)
-                                                         @if($w6s->staff_id==$staffs->id)
-                                                             <td>人員編號:{{$w6s->staff_id}}<br>
-                                                                 人員姓名:{{$staffs->name}}<br>
-                                                                 <a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
-                                                         @endif
-                                                     @endforeach
-                                                 @endif
-                                                 @if($w7s->staff_id==null)
-                                                     <td><h4><a class="" href="">+</a></h4></td>
-                                                 @else
-                                                     @foreach($staff as$staffs)
-                                                         @if($w7s->staff_id==$staffs->id)
-                                                             <td>人員編號:{{$w7s->staff_id}}<br>
-                                                                 人員姓名:{{$staffs->name}}<br>
-                                                                 <a class="btn btn-sm btn-danger" href="">x</a>&nbsp;<a class="btn btn-sm btn-primary" href="">!</a></td>
-                                                         @endif
-                                                     @endforeach
-                                                 @endif
-                                             </tr>
+                                    }
 
-                                                        @endif
-                                                    @endforeach
-                                               @endforeach
-                                            @endforeach
-                                        @endforeach
-                                    @endforeach
-                                @endforeach
-                               @endforeach
+                                    ?>
+
+                                </td>
+                                <td style="text-align: center">
+                                    <?php
+
+                                    foreach ($w2_2 as $w2_2s)
+                                    {
+
+                                        foreach ($staff as $staffs)
+                                            if($w2_2s->staff_id==$staffs->id)
+                                            {
+                                                if ($w2_2s->staff_id==null)
+                                                    echo "";
+                                                else
+                                                    echo "編號:".$w2_2s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+
+                                            }
+
+                                    }
+
+                                    ?>
+
+                                </td>
+                                <td style="text-align: center">
+                                    <?php
+
+                                    foreach ($w3_2 as $w3_2s)
+                                    {
+
+                                        foreach ($staff as $staffs)
+                                            if($w3_2s->staff_id==$staffs->id)
+                                            {
+                                                if ($w3_2s->staff_id==null)
+                                                    echo "";
+                                                else
+                                                    echo "編號:".$w3_2s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+
+                                            }
+
+                                    }
 
 
+                                    ?>
+
+                                </td>
+                                <td style="text-align: center">
+                                    <?php
+
+                                    foreach ($w4_2 as $w4_2s)
+                                    {
+
+                                        foreach ($staff as $staffs)
+                                            if($w4_2s->staff_id==$staffs->id)
+                                            {
+                                                if ($w4_2s->staff_id==null)
+                                                    echo "";
+                                                else
+                                                    echo "編號:".$w4_2s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+
+                                            }
+
+                                    }
+
+
+                                    ?>
+
+                                </td>
+                                <td style="text-align: center">
+                                    <?php
+
+                                    foreach ($w5_2 as $w5_2s)
+                                    {
+
+                                        foreach ($staff as $staffs)
+                                            if($w5_2s->staff_id==$staffs->id)
+                                            {
+                                                if ($w5_2s->staff_id==null)
+                                                    echo "";
+                                                else
+                                                    echo "編號:".$w5_2s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+
+                                            }
+
+                                    }
+
+
+                                    ?>
+
+                                </td>
+                                <td style="text-align: center">
+                                    <?php
+
+                                    foreach ($w6_2 as $w6_2s)
+                                    {
+
+                                        foreach ($staff as $staffs)
+                                            if($w6_2s->staff_id==$staffs->id)
+                                            {
+                                                if ($w6_2s->staff_id==null)
+                                                    echo "";
+                                                else
+                                                    echo "編號:".$w6_2s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+
+                                            }
+
+                                    }
+
+
+                                    ?>
+
+                                </td>
+                                <td style="text-align: center">
+                                    <?php
+
+                                    foreach ($w7_2 as $w7_2s)
+                                    {
+
+                                        foreach ($staff as $staffs)
+                                            if($w7_2s->staff_id==$staffs->id)
+                                            {
+                                                if ($w7_2s->staff_id==null)
+                                                    echo "";
+                                                else
+                                                    echo "編號:".$w7_2s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+
+                                            }
+
+                                    }
+
+
+                                    ?>
+
+                                </td>
+                            </tr>
+                            <tr><!--晚-->
+                                <td style="background-color:lightblue;text-align: center">晚<br>18:00~21:00</td>
+                                <td style="text-align: center">
+                                    <?php
+
+                                    foreach ($w1_3 as $w1_3s)
+                                    {
+
+                                        foreach ($staff as $staffs)
+                                            if($w1_3s->staff_id==$staffs->id)
+                                            {
+                                                if ($w1_3s->staff_id==null)
+                                                    echo "";
+                                                else
+                                                    echo "編號:".$w1_3s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+
+                                            }
+
+                                    }
+
+
+                                    ?>
+
+                                </td>
+                                <td style="text-align: center">
+                                    <?php
+
+                                    foreach ($w2_3 as $w2_3s)
+                                    {
+
+                                        foreach ($staff as $staffs)
+                                            if($w2_3s->staff_id==$staffs->id)
+                                            {
+                                                if ($w2_3s->staff_id==null)
+                                                    echo "";
+                                                else
+                                                    echo "編號:".$w2_3s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+
+                                            }
+
+                                    }
+
+                                    ?>
+
+                                </td>
+                                <td style="text-align: center">
+                                    <?php
+
+                                    foreach ($w3_3 as $w3_3s)
+                                    {
+
+                                        foreach ($staff as $staffs)
+                                            if($w3_3s->staff_id==$staffs->id)
+                                            {
+                                                if ($w3_3s->staff_id==null)
+                                                    echo "";
+                                                else
+                                                    echo "編號:".$w3_3s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+
+                                            }
+
+                                    }
+
+
+                                    ?>
+
+                                </td>
+                                <td style="text-align: center">
+                                    <?php
+
+                                    foreach ($w4_3 as $w4_3s)
+                                    {
+
+                                        foreach ($staff as $staffs)
+                                            if($w4_3s->staff_id==$staffs->id)
+                                            {
+                                                if ($w4_3s->staff_id==null)
+                                                    echo "";
+                                                else
+                                                    echo "編號:".$w4_3s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+
+                                            }
+
+                                    }
+
+
+                                    ?>
+
+                                </td>
+                                <td style="text-align: center">
+                                    <?php
+
+                                    foreach ($w5_3 as $w5_3s)
+                                    {
+
+                                        foreach ($staff as $staffs)
+                                            if($w5_3s->staff_id==$staffs->id)
+                                            {
+                                                if ($w5_3s->staff_id==null)
+                                                    echo "";
+                                                else
+                                                    echo "編號:".$w5_3s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+
+                                            }
+
+                                    }
+
+
+                                    ?>
+
+                                </td>
+                                <td style="text-align: center">
+                                    <?php
+
+                                    foreach ($w6_3 as $w6_3s)
+                                    {
+
+                                        foreach ($staff as $staffs)
+                                            if($w6_3s->staff_id==$staffs->id)
+                                            {
+                                                if ($w6_3s->staff_id==null)
+                                                    echo "";
+                                                else
+                                                    echo "編號:".$w6_3s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+
+                                            }
+
+                                    }
+
+
+                                    ?>
+
+                                </td>
+                                <td style="text-align: center">
+                                    <?php
+
+                                    foreach ($w7_3 as $w7_3s)
+                                    {
+
+                                        foreach ($staff as $staffs)
+                                            if($w7_3s->staff_id==$staffs->id)
+                                            {
+                                                if ($w7_3s->staff_id==null)
+                                                    echo "";
+                                                else
+                                                    echo "編號:".$w7_3s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+
+                                            }
+
+                                    }
+
+
+                                    ?>
+
+                                </td>
+                            </tr>
 
                             </tbody>
                         </table>
@@ -372,10 +596,34 @@
                     </div>
                 </div>
                 <br><center>
-                    <a class="btn btn-sm btn-secondary" style="" href="">全部清除</a>
-                    <a class="btn btn-sm btn-secondary" style="" href="">自動排班</a>
+                    <a class="btn btn-sm btn-secondary" style="" href="{{route('schedule.test2')}}">t2</a>
+                    <a class="btn btn-sm btn-secondary" style="" href="{{route('staff.schedule')}}">本月班表</a>
+                    <a class="btn btn-sm btn-secondary" style="" href="{{route('schedule.build')}}">下個月班表</a>
                 </center>
             </div>
+
+            <div class="col-md-3" style="float: right ;margin-right:3%;margin-top:3%;">
+                <div class="bg-light rounded p-4">
+                    <div class="d-flex align-items-center justify-content-between mb-4">
+                        <h3> <a class="a1"><i class="bi bi-pen"></i>&nbsp;人員選擇</a></h3>
+                    </div>
+                  @foreach($staff as $staffs)
+
+                        <a class="" style="" href="{{route('schedule.check',$staffs->id)}}">
+                            編號:{{$staffs->id}}
+                            <br>
+                            姓名:{{$staffs->name}}
+                            <br>
+                            負責項目:{{$staffs->job}}
+                            <br>
+                            <hr>
+                        </a>
+                    @endforeach
+
+
+
+            </div>
+
         </div>
     </div>
 
