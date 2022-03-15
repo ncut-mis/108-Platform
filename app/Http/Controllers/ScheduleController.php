@@ -132,8 +132,16 @@ class ScheduleController extends Controller
 
                 ]
             );
-        //        echo "<script>alert('已新增該時段排班')</script>"; 有bug 提醒視窗跳不出來
+//               echo "<script>alert('已新增該時段排班')</script>"; //有bug 提醒視窗跳不出來
+//        $data=DB::table('per_week_schedules')->where('id',$id);
+//       $now=$data->month->get();foreach也抓不到值
+//        $month = date("n");
+//        if($now==$month)
+//        {
         return redirect()->route('schedule.check',['staff' => $_SESSION['sid']]);
+//        }
+//        else
+//            return redirect()->route('schedule.checknext',['staff' => $_SESSION['sid']]);
     }
     public function check($staff)
     {
@@ -213,8 +221,11 @@ class ScheduleController extends Controller
     }
     public function next()
     {
+
         $month = date("n")+1;
         if($month>12){$month=$month-12;}
+
+
         $data1_1 = DB::table('per_week_schedules')->where('week','一')->where('start','09:00:00')->where('month',$month)->get();
         $data1_2 = DB::table('per_week_schedules')->where('week','一')->where('start','15:00:00')->where('month',$month)->get();
         $data1_3 = DB::table('per_week_schedules')->where('week','一')->where('start','18:00:00')->where('month',$month)->get();
@@ -275,11 +286,26 @@ class ScheduleController extends Controller
         $_SESSION['staff']=$staff;
 
         return view('schedule_next',['staff' => $staff]);
+        }
 
-    }
+
+
+
     public  function neschedule()//產生下個月班表空間
     {
         $month = date("n")+1;
+        $search = DB::table('per_week_schedules')->where('month',$month)->get();
+        $count=0;
+        foreach ($search as $searchs)
+        {
+            $count+=1;
+        }
+        if($count>1)//判斷下個月的班表是否建立
+        {
+            return redirect()->route('schedule.next');
+
+        }
+
         for($k=1;$k<=2;$k++){
         for ($t=1;$t<=7;$t++){
             if ($t==1){ $we='一';}
@@ -322,15 +348,109 @@ class ScheduleController extends Controller
         }
         }
     }
+        return redirect()->route('schedule.next');
     }
-public  function t2()
+    public  function t2()
 {
-    $month = date("n")+1;
+//    $month = date("n")+1;
 //    DB::table('per_week_schedules')->delete('month',$month);
-    $t2 = Per_week_schedule::where('month',$month);
-    $t2->delete();
+    $t2 = Per_week_schedule::where('month',5)->delete();
+
 
 
 
 }
+    public function checknext($staff)
+    {
+        $month = date("n")+1;
+        if($month>12){$month=$month-12;}
+        $data1_1 = DB::table('per_week_schedules')->where('week','一')->where('start','09:00:00')->where('month',$month)->get();
+        $data1_2 = DB::table('per_week_schedules')->where('week','一')->where('start','15:00:00')->where('month',$month)->get();
+        $data1_3 = DB::table('per_week_schedules')->where('week','一')->where('start','18:00:00')->where('month',$month)->get();
+        $data2_1 = DB::table('per_week_schedules')->where('week','二')->where('start','09:00:00')->where('month',$month)->get();
+        $data2_2 = DB::table('per_week_schedules')->where('week','二')->where('start','15:00:00')->where('month',$month)->get();
+        $data2_3 = DB::table('per_week_schedules')->where('week','二')->where('start','18:00:00')->where('month',$month)->get();
+        $data3_1 = DB::table('per_week_schedules')->where('week','三')->where('start','09:00:00')->where('month',$month)->get();
+        $data3_2 = DB::table('per_week_schedules')->where('week','三')->where('start','15:00:00')->where('month',$month)->get();
+        $data3_3 = DB::table('per_week_schedules')->where('week','三')->where('start','18:00:00')->where('month',$month)->get();
+        $data4_1 = DB::table('per_week_schedules')->where('week','四')->where('start','09:00:00')->where('month',$month)->get();
+        $data4_2 = DB::table('per_week_schedules')->where('week','四')->where('start','15:00:00')->where('month',$month)->get();
+        $data4_3 = DB::table('per_week_schedules')->where('week','四')->where('start','18:00:00')->where('month',$month)->get();
+        $data5_1 = DB::table('per_week_schedules')->where('week','五')->where('start','09:00:00')->where('month',$month)->get();
+        $data5_2 = DB::table('per_week_schedules')->where('week','五')->where('start','15:00:00')->where('month',$month)->get();
+        $data5_3 = DB::table('per_week_schedules')->where('week','五')->where('start','18:00:00')->where('month',$month)->get();
+        $data6_1 = DB::table('per_week_schedules')->where('week','六')->where('start','09:00:00')->where('month',$month)->get();
+        $data6_2 = DB::table('per_week_schedules')->where('week','六')->where('start','15:00:00')->where('month',$month)->get();
+        $data6_3 = DB::table('per_week_schedules')->where('week','六')->where('start','18:00:00')->where('month',$month)->get();
+        $data7_1 = DB::table('per_week_schedules')->where('week','日')->where('start','09:00:00')->where('month',$month)->get();
+        $data7_2 = DB::table('per_week_schedules')->where('week','日')->where('start','15:00:00')->where('month',$month)->get();
+        $data7_3 = DB::table('per_week_schedules')->where('week','日')->where('start','18:00:00')->where('month',$month)->get();
+        $staff1=DB::table('staff')->get();
+        session_start();
+
+        $_SESSION['sid']=$staff;
+        $_SESSION['w1_1']=$data1_1;
+        $_SESSION['w1_2']=$data1_2;
+        $_SESSION['w1_3']=$data1_3;
+
+        $_SESSION['w2_1']=$data2_1;
+        $_SESSION['w2_2']=$data2_2;
+        $_SESSION['w2_3']=$data2_3;
+
+        $_SESSION['w3_1']=$data3_1;
+        $_SESSION['w3_2']=$data3_2;
+        $_SESSION['w3_3']=$data3_3;
+
+        $_SESSION['w4_1']=$data4_1;
+        $_SESSION['w4_2']=$data4_2;
+        $_SESSION['w4_3']=$data4_3;
+
+        $_SESSION['w5_1']=$data5_1;
+        $_SESSION['w5_2']=$data5_2;
+        $_SESSION['w5_3']=$data5_3;
+
+        $_SESSION['w6_1']=$data6_1;
+        $_SESSION['w6_2']=$data6_2;
+        $_SESSION['w6_3']=$data6_3;
+
+        $_SESSION['w7_1']=$data7_1;
+        $_SESSION['w7_2']=$data7_2;
+        $_SESSION['w7_3']=$data7_3;
+        $_SESSION['staff']=$staff1;
+
+        return view('schedule_next_check');
+
+    }
+    public function addnext($id)
+    {
+        session_start();
+
+        DB::table('per_week_schedules')->where('id',$id)->update(
+            [
+
+                'staff_id'=>$_SESSION['sid']
+
+
+            ]
+        );
+
+        return redirect()->route('schedule.checknext',['staff' => $_SESSION['sid']]);
+
+    }
+    public function removenext($id)
+    {
+        session_start();
+        DB::table('per_week_schedules')->where('id',$id)->update(
+            [
+
+
+
+                'staff_id'=>null
+
+
+            ]
+        );
+//        echo "<script>alert('已刪除該時段排班')</script>"; 有bug 提醒視窗跳不出來
+        return redirect()->route('schedule.checknext',['staff' => $_SESSION['sid']]);
+    }
 }

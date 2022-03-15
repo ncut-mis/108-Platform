@@ -596,9 +596,9 @@
                     </div>
                 </div>
                 <br><center>
-                    <a class="btn btn-sm btn-secondary" style="" href="">歷史班表</a>
+                    <a class="btn btn-sm btn-secondary" style="" href="{{route('schedule.test2')}}">t2</a>
                     <a class="btn btn-sm btn-secondary" style="" href="{{route('staff.schedule')}}">本月班表</a>
-                    <a class="btn btn-sm btn-secondary" style="" href="{{route('schedule.next')}}">下個月班表</a>
+                    <a class="btn btn-sm btn-secondary" style="" href="{{route('schedule.build')}}">下個月班表</a>
                 </center>
             </div>
 

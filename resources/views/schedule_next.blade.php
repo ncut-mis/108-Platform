@@ -598,8 +598,6 @@
                 </div>
                 <br><center>
                     <a class="btn btn-sm btn-secondary" style="" href="{{route('staff.schedule')}}">返回本月班表</a>
-                    <a class="btn btn-sm btn-secondary" style="" href="{{route('schedule.test')}}">tt</a>
-                    <a class="btn btn-sm btn-secondary" style="" href="{{route('schedule.test2')}}">t2</a>
 
                 </center>
             </div>
@@ -611,7 +609,7 @@
                     </div>
                     @foreach($staff as $staffs)
 
-                        <a class="" style="" href="{{route('schedule.check',$staffs->id)}}">
+                        <a class="" style="" href="{{route('schedule.checknext',$staffs->id)}}">
                             編號:{{$staffs->id}}
                             <br>
                             姓名:{{$staffs->name}}
