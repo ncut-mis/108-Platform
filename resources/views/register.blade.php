@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>DASHMIN - Bootstrap Admin Template</title>
+    <title>REGISTER</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -66,15 +66,15 @@
                         <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
                         <label for="floatingPassword">Password</label>
                     </div>
-                    <div class="d-flex align-items-center justify-content-between mb-4">
+                    <!--<div class="d-flex align-items-center justify-content-between mb-4">
                         <div class="form-check">
                             <input type="checkbox" class="form-check-input" id="exampleCheck1">
                             <label class="form-check-label" for="exampleCheck1">Check me out</label>
                         </div>
                         <a href="">Forgot Password</a>
-                    </div>
+                    </div>-->
                     <button type="submit" class="btn btn-primary py-3 w-100 mb-4">Sign Up</button>
-                    <p class="text-center mb-0">Already have an Account? <a href="">Sign In</a></p>
+                    <p class="text-center mb-0">Already have an Account? <a href="/log">Sign In</a></p>
                 </div>
             </div>
         </div>
