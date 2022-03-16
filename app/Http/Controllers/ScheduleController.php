@@ -77,53 +77,55 @@ class ScheduleController extends Controller
     public function add($id)
     {
         session_start();
-        //start_尋找同個時段的另一個人是誰，判斷負責項目是否相同(有bug)
+        //start_尋找同個時段的另一個人是誰，判斷負責項目是否相同
 
-//        $data=DB::table('per_week_schedules')->where('id',$id);
-//
-//        foreach ($data as $ds)
-//        {
-//            $st=$ds->start;
-//            $we=$ds->week;
-//            $mo=$ds->month;
-//        }
-//
-//        $data2=DB::table('per_week_schedules')->where('start',$st)->where('week',$we)->where('month',$mo);
-//
-//        foreach ($data2 as $d2s)
-//        {
-//            $an_staff=$d2s->staff_id;
-//
-//        }
-//        if($an_staff!=null){//判斷人員
-//        $data3=DB::table('staff')->where('id',$an_staff);
-//        $data4=DB::table('staff')->where('id',$_SESSION['sid']);
-//        foreach ($data3 as $d3s)
-//        {
-//            $an_staff_job=$d3s->job;
-//
-//        }
-//        foreach ($data4 as $d4s)
-//        {
-//            $now_job=$d4s->job;
-//
-//        }
-//
-//        if($an_staff_job!=$now_job)
-//         {
-//        DB::table('per_week_schedules')->where('id',$id)->update(
-//            [
-//
-//                'staff_id'=>$_SESSION['sid']
-//
-//
-//            ]
-//        );
-//         }
-//            //        echo "<script>alert('已新增該時段排班')</script>"; 有bug 提醒視窗跳不出來
-//            return redirect()->route('schedule.check',['staff' => $_SESSION['sid']]);
-//        }//end_尋找同個時段的另一個人是誰，判斷負責項目是否相同
-//        else
+        $data=DB::table('per_week_schedules')->where('id',$id)->get();
+
+        foreach ($data as $ds)
+        {
+            $st=$ds->start;
+            $we=$ds->week;
+            $mo=$ds->month;
+        }
+
+        $data2=DB::table('per_week_schedules')->where('start',$st)->where('week',$we)->where('month',$mo)->get();
+
+        foreach ($data2 as $d2s)
+        {
+            $an_staff=$d2s->staff_id;
+
+        }
+        if($an_staff!=null){//判斷該時段是否有人了
+        $data3=DB::table('staff')->where('id',$an_staff)->get();
+        $data4=DB::table('staff')->where('id',$_SESSION['sid'])->get();
+        foreach ($data3 as $d3s)
+        {
+            $an_staff_job=$d3s->job;
+
+        }
+        foreach ($data4 as $d4s)
+        {
+            $now_job=$d4s->job;
+
+        }
+
+        if($an_staff_job!=$now_job)//如果與另一個該時段的檢測人員負責項目不同則可新增值班時段
+         {
+        DB::table('per_week_schedules')->where('id',$id)->update(
+            [
+
+                'staff_id'=>$_SESSION['sid']
+
+
+            ]
+        );
+             //        echo "<script>alert('已新增該時段排班')</script>"; 有bug 提醒視窗跳不出來
+         }
+
+
+        }//end_尋找同個時段的另一個人是誰，判斷負責項目是否相同
+        else{//該時段沒有人
+
             DB::table('per_week_schedules')->where('id',$id)->update(
                 [
 
@@ -132,16 +134,12 @@ class ScheduleController extends Controller
 
                 ]
             );
-//               echo "<script>alert('已新增該時段排班')</script>"; //有bug 提醒視窗跳不出來
-//        $data=DB::table('per_week_schedules')->where('id',$id);
-//       $now=$data->month->get();foreach也抓不到值
-//        $month = date("n");
-//        if($now==$month)
-//        {
+
+}
+
+
         return redirect()->route('schedule.check',['staff' => $_SESSION['sid']]);
-//        }
-//        else
-//            return redirect()->route('schedule.checknext',['staff' => $_SESSION['sid']]);
+
     }
     public function check($staff)
     {
@@ -205,6 +203,7 @@ class ScheduleController extends Controller
     }
     public function remove($id)
     {
+
         session_start();
         DB::table('per_week_schedules')->where('id',$id)->update(
             [
@@ -424,15 +423,65 @@ class ScheduleController extends Controller
     public function addnext($id)
     {
         session_start();
+        //start_尋找同個時段的另一個人是誰，判斷負責項目是否相同
 
-        DB::table('per_week_schedules')->where('id',$id)->update(
-            [
+        $data=DB::table('per_week_schedules')->where('id',$id)->get();
 
-                'staff_id'=>$_SESSION['sid']
+        foreach ($data as $ds)
+        {
+            $st=$ds->start;
+            $we=$ds->week;
+            $mo=$ds->month;
+        }
+
+        $data2=DB::table('per_week_schedules')->where('start',$st)->where('week',$we)->where('month',$mo)->get();
+
+        foreach ($data2 as $d2s)
+        {
+            $an_staff=$d2s->staff_id;
+
+        }
+        if($an_staff!=null){//判斷該時段是否有人了
+            $data3=DB::table('staff')->where('id',$an_staff)->get();
+            $data4=DB::table('staff')->where('id',$_SESSION['sid'])->get();
+            foreach ($data3 as $d3s)
+            {
+                $an_staff_job=$d3s->job;
+
+            }
+            foreach ($data4 as $d4s)
+            {
+                $now_job=$d4s->job;
+
+            }
+
+            if($an_staff_job!=$now_job)//如果與另一個該時段的檢測人員負責項目不同則可新增值班時段
+            {
+                DB::table('per_week_schedules')->where('id',$id)->update(
+                    [
+
+                        'staff_id'=>$_SESSION['sid']
 
 
-            ]
-        );
+                    ]
+                );
+                //        echo "<script>alert('已新增該時段排班')</script>"; 有bug 提醒視窗跳不出來
+            }
+
+
+        }//end_尋找同個時段的另一個人是誰，判斷負責項目是否相同
+        else{//該時段沒有人
+
+            DB::table('per_week_schedules')->where('id',$id)->update(
+                [
+
+                    'staff_id'=>$_SESSION['sid']
+
+
+                ]
+            );
+
+        }
 
         return redirect()->route('schedule.checknext',['staff' => $_SESSION['sid']]);
 

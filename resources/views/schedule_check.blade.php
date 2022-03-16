@@ -464,14 +464,14 @@
                                 <td style="text-align: center">
                                     <?php
 
-                                    foreach ($w7_3 as $w7_3s)
+                                  foreach ($w7_3 as $w7_3s)
 
                                     {
                                         if ($w7_3s->staff_id==null)
                                             echo  "<h4><a class=''  href='/schedule/add/{$w7_3s->id}'>+</a></h4><hr>";
                                         if ($w7_3s->staff_id==$_SESSION['sid'])//當前檢測人員的id
-                                            echo "<strong><a style='color: gray;'>上班</a></strong>&nbsp;&nbsp;<a class='btn btn-sm btn-danger' href='/schedule/remove/{$w7_3s->id}'>x</a><hr>";
-//x</a><hr>";
+                                            echo "<strong><a style='color: gray;'>上班</a></strong>&nbsp;&nbsp;<a class='btn btn-sm btn-danger'  href='/schedule/remove/{$w7_3s->id}'>x</a><hr>";
+
 
                                     }
 
