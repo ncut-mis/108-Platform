@@ -33,6 +33,8 @@ Route::get('/schedule/add/next/{id}', [\App\Http\Controllers\ScheduleController:
 Route::get('/schedule/remove/next/{id}', [\App\Http\Controllers\ScheduleController::class, 'removenext'])->name('schedule.removenext');//刪除下個月值班時段
 
 Route::get('/staff', [\App\Http\Controllers\StaffController::class, 'index'])->name('staffhome.index');//平台人員首頁
+Route::get('/staff/schedule', [\App\Http\Controllers\StaffController::class, 'check'])->name('staffschedule.index');//檢測人員查看班表
+
 
 
 

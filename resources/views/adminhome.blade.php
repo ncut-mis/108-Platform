@@ -109,6 +109,8 @@
 
       <?php
     $apply_status= $_SESSION['apply_status'];
+    $schedule_status= $_SESSION['schedule_status'];
+
     $i=0;
         foreach ($apply_status as $ss)
         {
@@ -124,6 +126,22 @@
                </div>";
 
            }
+    $j=0;
+    foreach ($schedule_status as $sss)
+    {
+        $j+=1;
+
+    }
+    if($j>0)
+    {
+        echo
+        "<div class='' style=''> <div class='alert alert-danger alert-dismissable'>
+               <a type='button' class='close' style='color: #6b7280;font-size:25px'data-dismiss='alert' aria-hidden='true'>&times;</a>
+              &nbsp; <i class='fa fa-info-circle'></i>  <strong>提醒 ! </strong>本月仍有空白值班時段!
+               </div>";
+
+    }
+
         ?>
 </div>
 </div>
