@@ -16,7 +16,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [\App\Http\Controllers\AdminHomeController::class, 'index'])->name('adminhome.index');//平台人員首頁
 Route::get('/posts', [\App\Http\Controllers\PostController::class, 'index'])->name('posts.index');//公告管理頁面
+
 Route::get('/apply', [\App\Http\Controllers\ApplyController::class, 'index'])->name('apply.index');//賣家申請管理頁面
+Route::get('/apply/{apply}/pass', [\App\Http\Controllers\ApplyController::class, 'pass'])->name('apply.pass');//通過賣家申請
+Route::get('/apply/{apply}/fail', [\App\Http\Controllers\ApplyController::class, 'fail'])->name('apply.fail');//不通過賣家申請
+
 Route::get('/schedule', [\App\Http\Controllers\ScheduleController::class, 'index'])->name('staff.schedule');//排班頁面
 Route::get('/schedule/add/{id}', [\App\Http\Controllers\ScheduleController::class, 'add'])->name('schedule.add');//新增值班時段
 Route::get('/schedule/remove/{id}', [\App\Http\Controllers\ScheduleController::class, 'remove'])->name('schedule.remove');//刪除值班時段

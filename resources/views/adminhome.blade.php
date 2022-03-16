@@ -105,16 +105,26 @@
     </div>
 </div>
 <br><br>
-    <div class="col-md-3" style="float: right ;margin-right:3%">
-        <div class="alert alert-danger alert-dismissable">
-            <a type="button" class="close" style="color: #6b7280;font-size:25px"data-dismiss="alert" aria-hidden="true">&times;</a>
-            &nbsp; <i class="fa fa-info-circle"></i>  <strong>通知！</strong>XXXX!
-        </div>
-        <div class="alert alert-danger alert-dismissable">
-          <a type="button" class="close" style="color: #6b7280;font-size:25px" data-dismiss="alert" aria-hidden="true">&times;</a>
-           &nbsp; <i class="fa fa-info-circle"></i>  <strong>通知！</strong>XXXX!
-        </div>
-    </div>
+
+
+      <?php
+    $apply_status= $_SESSION['apply_status'];
+    $i=0;
+        foreach ($apply_status as $ss)
+        {
+            $i+=1;
+
+        }
+       if($i>0)
+           {
+               echo
+               "<div class='col-md-3' style='float: right ;margin-right:3%'> <div class='alert alert-danger alert-dismissable'>
+               <a type='button' class='close' style='color: #6b7280;font-size:25px'data-dismiss='alert' aria-hidden='true'>&times;</a>
+              &nbsp; <i class='fa fa-info-circle'></i>  <strong>提醒 ! </strong>有賣家申請尚未處理!
+               </div>";
+
+           }
+        ?>
 </div>
 </div>
 

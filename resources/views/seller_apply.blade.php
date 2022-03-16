@@ -91,8 +91,8 @@
                                 <td>{{$applies->bank_branch}}</td>
                                 <td>{{$applies->account}}</td>
                                 <td>
-                                    <a class="btn btn-sm btn-primary" href="">通過</a>&nbsp;/&nbsp;
-                                    <a class="btn btn-sm btn-danger" href="">不通過</a>
+                                    <a class="btn btn-sm btn-primary" href="{{route('apply.pass',$applies->id)}}">通過</a>&nbsp;/&nbsp;
+                                    <a class="btn btn-sm btn-danger" href="{{route('apply.fail',$applies->id)}}">不通過</a>
                                 </td>
                             </tr>
                                     @endif
