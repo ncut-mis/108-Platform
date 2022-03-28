@@ -33,11 +33,3 @@ Route::get('/schedule/remove/next/{id}', [\App\Http\Controllers\ScheduleControll
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
-
-
-Route::get('/reg', function () {
-    return view('register');
-});
-Route::get('/log', function () {
-    return view('login');
-});
