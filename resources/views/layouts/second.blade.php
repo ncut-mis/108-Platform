@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>平台管理者頁面</title>
+    <title>平台人員頁面</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -43,7 +43,7 @@
             font-family:Comic Sans MS, Comic Sans, cursive;
 
         }
-       .a1{}
+        .a1{}
     </style>
 </head>
 
@@ -64,17 +64,14 @@
 
             <div class="navbar-nav w-100">
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-person-bounding-box"></i>平台管理者 </a>
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-person-bounding-box"></i>XXX</a>
                     <div class="dropdown-menu bg-transparent border-1">
                         <a  href="" class="dropdown-item">個人資訊</a>
-                        <a href="" class="dropdown-item">新增平台使用者</a>
-                         <a href="" class="dropdown-item">登出</a>
+                        <a href="" class="dropdown-item">登出</a>
                     </div>
                 </div>
-               <br>   <a href="{{route('adminhome.index')}}" class="nav-item nav-link"><i class="bi bi-house-door-fill"></i>首頁</a><br>
-                  <a href="{{route('posts.index')}}" class="nav-item nav-link"><i class="fa fa-laptop me-2"></i>公告管理</a><br>
-                 <a href="{{route('apply.index')}}" class="nav-item nav-link"><i class="fa fa-th me-2"></i>賣家申請管理</a><br>
-                 <a href="{{route('staff.schedule')}}" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>班表管理</a>
+                <br>   <a href="{{route('staffhome.index')}}" class="nav-item nav-link"><i class="bi bi-house-door-fill"></i>首頁</a><br>
+                <a href="{{route('staffschedule.index')}}" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>查看班表</a>
 
             </div>
         </nav>
@@ -83,42 +80,42 @@
 
 </header>
 
-        <!-- Widgets End -->
+<!-- Widgets End -->
 
 <footer>
-        <!-- Footer Start -->
-        <div class="container-fluid pt-4 px-4">
-            <div class="bg-light rounded-top p-4">
-                <div class="row">
-                    <div class="col-12 col-sm-12 text-center text-sm-end">
-                        &copy; <a href="#">Your Site Name</a>, All Right Reserved.
-                    </div>
-
+    <!-- Footer Start -->
+    <div class="container-fluid pt-4 px-4">
+        <div class="bg-light rounded-top p-4">
+            <div class="row">
+                <div class="col-12 col-sm-12 text-center text-sm-end">
+                    &copy; <a href="#">Your Site Name</a>, All Right Reserved.
                 </div>
+
             </div>
         </div>
-        <!-- Footer End -->
+    </div>
+    <!-- Footer End -->
 
     <!-- Content End -->
 
 
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
-</div>
+    </div>
 
-<!-- JavaScript Libraries -->
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="{{asset('lib/chart/chart.min.js')}}"></script>
-<script src="{{asset('lib/easing/easing.min.js')}}"></script>
-<script src="{{asset('lib/waypoints/waypoints.min.js')}}"></script>
-<script src="{{asset('lib/owlcarousel/owl.carousel.min.js')}}"></script>
-<script src="{{asset('ib/tempusdominus/js/moment.min.js')}}l"></script>
-<script src="{{asset('lib/tempusdominus/js/moment-timezone.min.js')}}"></script>
-<script src="{{asset('lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js')}}"></script>
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{asset('lib/chart/chart.min.js')}}"></script>
+    <script src="{{asset('lib/easing/easing.min.js')}}"></script>
+    <script src="{{asset('lib/waypoints/waypoints.min.js')}}"></script>
+    <script src="{{asset('lib/owlcarousel/owl.carousel.min.js')}}"></script>
+    <script src="{{asset('ib/tempusdominus/js/moment.min.js')}}l"></script>
+    <script src="{{asset('lib/tempusdominus/js/moment-timezone.min.js')}}"></script>
+    <script src="{{asset('lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js')}}"></script>
 
-<!-- Template Javascript -->
-<script src="{{asset('js/main.js')}}"></script>
+    <!-- Template Javascript -->
+    <script src="{{asset('js/main.js')}}"></script>
 </footer>
 
 </html>

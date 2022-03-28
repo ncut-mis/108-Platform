@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.second')
 <header>
     <nav class="navbar navbar-expand-md navbar-dark"  style="background-color: lightblue">
         <div class="container-fluid" style="margin-left:70%">
@@ -68,7 +68,7 @@
             <div class="col-md-8" style="margin-top:3%;float:left;">
                 <div class="bg-light text-center rounded p-4">
                     <div class="d-flex align-items-center justify-content-between mb-4">
-                        <h3><a class="a1"><i class="bi bi-card-checklist"></i>&nbsp;班表 人員編號:<?php echo $_SESSION['sid']; ?></a></h3>
+                        <h3><a class="a1"><i class="bi bi-card-checklist"></i>&nbsp;班表 人員編號:111</a></h3>
                         <h3><a class=""><?php
                                 $month = date("n");
                                 echo "適用月份:".$month."月"; //抓系統當前月份
@@ -119,7 +119,7 @@
                             $w7_2=$_SESSION['w7_2'];
                             $w7_3=$_SESSION['w7_3'];
 
-                            $staff=$_SESSION['staff'];
+
 
                             ?>
                             <tr><!--早上 -->
@@ -130,10 +130,10 @@
                                     foreach ($w1_1 as $w1_1s)
 
                                     {
-                                               if ($w1_1s->staff_id==null)
-                                                   echo  "<h4><a class='' href='/schedule/add/{$w1_1s->id}'>+</a></h4><hr>";
-                                               if ($w1_1s->staff_id==$_SESSION['sid'])//當前檢測人員的id
-                                                   echo "<strong><a style='color: gray;'>上班</a></strong>&nbsp;&nbsp;<a class='btn btn-sm btn-danger' href='/schedule/remove/{$w1_1s->id}'>x</a><hr>";
+                                        if ($w1_1s->staff_id==null)
+                                            echo  "";
+                                        if ($w1_1s->staff_id=='111')//當前檢測人員的id
+                                            echo "<strong><a style='color: gray;'>上班</a></strong>&nbsp;&nbsp;<hr>";
 
                                     }
 
@@ -147,9 +147,9 @@
 
                                     {
                                         if ($w2_1s->staff_id==null)
-                                            echo  "<h4><a class='' href='/schedule/add/{$w2_1s->id}'>+</a></h4><hr>";
-                                        if ($w2_1s->staff_id== $_SESSION['sid'])//當前檢測人員的id
-                                            echo "<strong><a style='color: gray;'>上班</a></strong>&nbsp;&nbsp;<a class='btn btn-sm btn-danger' href='/schedule/remove/{$w2_1s->id}'>x</a><hr>";
+                                            echo  "";
+                                        if ($w2_1s->staff_id=='111')//當前檢測人員的id
+                                            echo "<strong><a style='color: gray;'>上班</a></strong>&nbsp;&nbsp;<hr>";
 
                                     }
 
@@ -163,9 +163,9 @@
 
                                     {
                                         if ($w3_1s->staff_id==null)
-                                            echo  "<h4><a class='' href='/schedule/add/{$w3_1s->id}'>+</a></h4><hr>";
-                                        if ($w3_1s->staff_id==$_SESSION['sid'])//當前檢測人員的id
-                                            echo "<strong><a style='color: gray;'>上班</a></strong>&nbsp;&nbsp;<a class='btn btn-sm btn-danger' href='/schedule/remove/{$w3_1s->id}'>x</a><hr>";
+                                            echo  "";
+                                        if ($w3_1s->staff_id=='111')//當前檢測人員的id
+                                            echo "<strong><a style='color: gray;'>上班</a></strong>&nbsp;&nbsp;<hr>";
 
                                     }
 
@@ -180,9 +180,9 @@
 
                                     {
                                         if ($w4_1s->staff_id==null)
-                                            echo  "<h4><a class='' href='/schedule/add/{$w4_1s->id}'>+</a></h4><hr>";
-                                        if ($w4_1s->staff_id==$_SESSION['sid'])//當前檢測人員的id
-                                            echo "<strong><a style='color: gray;'>上班</a></strong>&nbsp;&nbsp;<a class='btn btn-sm btn-danger' href='/schedule/remove/{$w4_1s->id}'>x</a><hr>";
+                                            echo  "";
+                                        if ($w4_1s->staff_id=='111')//當前檢測人員的id
+                                            echo "<strong><a style='color: gray;'>上班</a></strong>&nbsp;&nbsp;";
 
                                     }
 
@@ -196,9 +196,9 @@
 
                                     {
                                         if ($w5_1s->staff_id==null)
-                                            echo  "<h4><a class='' href='/schedule/add/{$w5_1s->id}'>+</a></h4><hr>";
-                                        if ($w5_1s->staff_id==$_SESSION['sid'])//當前檢測人員的id
-                                            echo "<strong><a style='color: gray;'>上班</a></strong>&nbsp;&nbsp;<a class='btn btn-sm btn-danger' href='/schedule/remove/{$w5_1s->id}'>x</a><hr>";
+                                            echo  "";
+                                        if ($w5_1s->staff_id=='111')//當前檢測人員的id
+                                            echo "<strong><a style='color: gray;'>上班</a></strong>&nbsp;&nbsp;<hr>";
 
                                     }
 
@@ -213,9 +213,9 @@
 
                                     {
                                         if ($w6_1s->staff_id==null)//在這裡加檢測類型的判斷
-                                            echo  "<h4><a class='' href='/schedule/add/{$w6_1s->id}'>+</a></h4><hr>";
-                                        if ($w6_1s->staff_id==$_SESSION['sid'])//當前檢測人員的id
-                                            echo "<strong><a style='color: gray;'>上班</a></strong>&nbsp;&nbsp;<a class='btn btn-sm btn-danger' href='/schedule/remove/{$w6_1s->id}'>x</a><hr>";
+                                            echo  "";
+                                        if ($w6_1s->staff_id=='111')//當前檢測人員的id
+                                            echo "<strong><a style='color: gray;'>上班</a></strong>&nbsp;&nbsp;<hr>";
 
                                     }
 
@@ -230,9 +230,9 @@
 
                                     {
                                         if ($w7_1s->staff_id==null)//在這裡加檢測類型的判斷
-                                            echo  "<h4><a class='' href='/schedule/add/{$w7_1s->id}'>+</a></h4><hr>";
-                                        if ($w7_1s->staff_id==$_SESSION['sid'])//當前檢測人員的id
-                                            echo "<strong><a style='color: gray;'>上班</a></strong>&nbsp;&nbsp;<a class='btn btn-sm btn-danger' href='/schedule/remove/{$w7_1s->id}'>x</a><hr>";
+                                            echo  "";
+                                        if ($w7_1s->staff_id=='111')//當前檢測人員的id
+                                            echo "<strong><a style='color: gray;'>上班</a></strong>&nbsp;&nbsp;<hr>";
 
                                     }
 
@@ -250,9 +250,9 @@
 
                                     {
                                         if ($w1_2s->staff_id==null)
-                                            echo  "<h4><a class='' href='/schedule/add/{$w1_2s->id}'>+</a></h4><hr>";
-                                        if ($w1_2s->staff_id==$_SESSION['sid'])//當前檢測人員的id
-                                            echo "<strong><a style='color: gray;'>上班</a></strong>&nbsp;&nbsp;<a class='btn btn-sm btn-danger' href='/schedule/remove/{$w1_2s->id}'>x</a><hr>";
+                                            echo  "";
+                                        if ($w1_2s->staff_id=='111')//當前檢測人員的id
+                                            echo "<strong><a style='color: gray;'>上班</a></strong>&nbsp;&nbsp;<hr>";
 
                                     }
 
@@ -266,9 +266,9 @@
 
                                     {
                                         if ($w2_2s->staff_id==null)
-                                            echo  "<h4><a class='' href='/schedule/add/{$w2_2s->id}'>+</a></h4><hr>";
-                                        if ($w2_2s->staff_id==$_SESSION['sid'])//當前檢測人員的id
-                                            echo "<strong><a style='color: gray;'>上班</a></strong>&nbsp;&nbsp;<a class='btn btn-sm btn-danger' href='/schedule/remove/{$w2_2s->id}'>x</a><hr>";
+                                            echo  "";
+                                        if ($w2_2s->staff_id=='111')//當前檢測人員的id
+                                            echo "<strong><a style='color: gray;'>上班</a></strong>&nbsp;&nbsp;<hr>";
 
                                     }
 
@@ -282,9 +282,9 @@
 
                                     {
                                         if ($w3_2s->staff_id==null)
-                                            echo  "<h4><a class='' href='/schedule/add/{$w3_2s->id}'>+</a></h4><hr>";
-                                        if ($w3_2s->staff_id==$_SESSION['sid'])//當前檢測人員的id
-                                            echo "<strong><a style='color: gray;'>上班</a></strong>&nbsp;&nbsp;<a class='btn btn-sm btn-danger' href='/schedule/remove/{$w3_2s->id}'>x</a><hr>";
+                                            echo  "";
+                                        if ($w3_2s->staff_id=='111')//當前檢測人員的id
+                                            echo "<strong><a style='color: gray;'>上班</a></strong>&nbsp;&nbsp;<hr>";
 
                                     }
 
@@ -299,9 +299,9 @@
 
                                     {
                                         if ($w4_2s->staff_id==null)
-                                            echo  "<h4><a class='' href='/schedule/add/{$w4_2s->id}'>+</a></h4><hr>";
-                                        if ($w4_2s->staff_id==$_SESSION['sid'])//當前檢測人員的id
-                                            echo "<strong><a style='color: gray;'>上班</a></strong>&nbsp;&nbsp;<a class='btn btn-sm btn-danger' href='/schedule/remove/{$w4_2s->id}'>x</a><hr>";
+                                            echo  "";
+                                        if ($w4_2s->staff_id=='111')//當前檢測人員的id
+                                            echo "<strong><a style='color: gray;'>上班</a></strong>&nbsp;&nbsp;<hr>";
 
                                     }
 
@@ -315,9 +315,9 @@
 
                                     {
                                         if ($w5_2s->staff_id==null)
-                                            echo  "<h4><a class='' href='/schedule/add/{$w5_2s->id}'>+</a></h4><hr>";
-                                        if ($w5_2s->staff_id==$_SESSION['sid'])//當前檢測人員的id
-                                            echo "<strong><a style='color: gray;'>上班</a></strong>&nbsp;&nbsp;<a class='btn btn-sm btn-danger' href='/schedule/remove/{$w5_2s->id}'>x</a><hr>";
+                                            echo  "";
+                                        if ($w5_2s->staff_id=='111')//當前檢測人員的id
+                                            echo "<strong><a style='color: gray;'>上班</a></strong>&nbsp;&nbsp;<hr>";
 
                                     }
 
@@ -332,9 +332,9 @@
 
                                     {
                                         if ($w6_2s->staff_id==null)
-                                            echo  "<h4><a class='' href='/schedule/add/{$w6_2s->id}'>+</a></h4><hr>";
-                                        if ($w6_2s->staff_id==$_SESSION['sid'])//當前檢測人員的id
-                                            echo "<strong><a style='color: gray;'>上班</a></strong>&nbsp;&nbsp;<a class='btn btn-sm btn-danger' href='/schedule/remove/{$w6_2s->id}'>x</a><hr>";
+                                            echo  "";
+                                        if ($w6_2s->staff_id=='111')//當前檢測人員的id
+                                            echo "<strong><a style='color: gray;'>上班</a></strong>&nbsp;&nbsp;<hr>";
 
                                     }
 
@@ -349,9 +349,9 @@
 
                                     {
                                         if ($w7_2s->staff_id==null)
-                                            echo  "<h4><a class='' href='/schedule/add/{$w7_2s->id}'>+</a></h4><hr>";
-                                        if ($w7_2s->staff_id==$_SESSION['sid'])//當前檢測人員的id
-                                            echo "<strong><a style='color: gray;'>上班</a></strong>&nbsp;&nbsp;<a class='btn btn-sm btn-danger' href='/schedule/remove/{$w7_2s->id}'>x</a><hr>";
+                                            echo  "";
+                                        if ($w7_2s->staff_id=='111')//當前檢測人員的id
+                                            echo "<strong><a style='color: gray;'>上班</a></strong>&nbsp;&nbsp;<hr>";
 
                                     }
 
@@ -369,9 +369,9 @@
 
                                     {
                                         if ($w1_3s->staff_id==null)
-                                            echo  "<h4><a class='' href='/schedule/add/{$w1_3s->id}'>+</a></h4><hr>";
-                                        if ($w1_3s->staff_id==$_SESSION['sid'])//當前檢測人員的id
-                                            echo "<strong><a style='color: gray;'>上班</a></strong>&nbsp;&nbsp;<a class='btn btn-sm btn-danger' href='/schedule/remove/{$w1_3s->id}'>x</a><hr>";
+                                            echo  "";
+                                        if ($w1_3s->staff_id=='111')//當前檢測人員的id
+                                            echo "<strong><a style='color: gray;'>上班</a></strong>&nbsp;&nbsp;<hr>";
 
                                     }
 
@@ -385,9 +385,9 @@
 
                                     {
                                         if ($w2_3s->staff_id==null)
-                                            echo  "<h4><a class='' href='/schedule/add/{$w2_3s->id}'>+</a></h4><hr>";
-                                        if ($w2_3s->staff_id==$_SESSION['sid'])//當前檢測人員的id
-                                            echo "<strong><a style='color: gray;'>上班</a></strong>&nbsp;&nbsp;<a class='btn btn-sm btn-danger' href='/schedule/remove/{$w2_3s->id}'>x</a><hr>";
+                                            echo  "";
+                                        if ($w2_3s->staff_id=='111')//當前檢測人員的id
+                                            echo "<strong><a style='color: gray;'>上班</a></strong>&nbsp;&nbsp;<hr>";
 
                                     }
 
@@ -401,9 +401,9 @@
 
                                     {
                                         if ($w3_3s->staff_id==null)
-                                            echo  "<h4><a class='' href='/schedule/add/{$w3_3s->id}'>+</a></h4><hr>";
-                                        if ($w3_3s->staff_id==$_SESSION['sid'])//當前檢測人員的id
-                                            echo "<strong><a style='color: gray;'>上班</a></strong>&nbsp;&nbsp;<a class='btn btn-sm btn-danger' href='/schedule/remove/{$w3_3s->id}'>x</a><hr>";
+                                            echo  "";
+                                        if ($w3_3s->staff_id=='111')//當前檢測人員的id
+                                            echo "<strong><a style='color: gray;'>上班</a></strong>&nbsp;&nbsp;<hr>";
 
                                     }
 
@@ -418,9 +418,9 @@
 
                                     {
                                         if ($w4_3s->staff_id==null)
-                                            echo  "<h4><a class='' href='/schedule/add/{$w4_3s->id}'>+</a></h4><hr>";
-                                        if ($w4_3s->staff_id==$_SESSION['sid'])//當前檢測人員的id
-                                            echo "<strong><a style='color: gray;'>上班</a></strong>&nbsp;&nbsp;<a class='btn btn-sm btn-danger' href='/schedule/remove/{$w4_3s->id}'>x</a><hr>";
+                                            echo  "";
+                                        if ($w4_3s->staff_id=='111')//當前檢測人員的id
+                                            echo "<strong><a style='color: gray;'>上班</a></strong>&nbsp;&nbsp;<hr>";
 
                                     }
 
@@ -434,9 +434,9 @@
 
                                     {
                                         if ($w5_3s->staff_id==null)
-                                            echo  "<h4><a class='' href='/schedule/add/{$w5_3s->id}'>+</a></h4><hr>";
-                                        if ($w5_3s->staff_id==$_SESSION['sid'])//當前檢測人員的id
-                                            echo "<strong><a style='color: gray;'>上班</a></strong>&nbsp;&nbsp;<a class='btn btn-sm btn-danger' href='/schedule/remove/{$w5_3s->id}'>x</a><hr>";
+                                            echo  "";
+                                        if ($w5_3s->staff_id=='111')//當前檢測人員的id
+                                            echo "<strong><a style='color: gray;'>上班</a></strong>&nbsp;&nbsp;<hr>";
 
                                     }
 
@@ -451,9 +451,9 @@
 
                                     {
                                         if ($w6_3s->staff_id==null)
-                                            echo  "<h4><a class='' href='/schedule/add/{$w6_3s->id}'>+</a></h4><hr>";
-                                        if ($w6_3s->staff_id==$_SESSION['sid'])//當前檢測人員的id
-                                            echo "<strong><a style='color: gray;'>上班</a></strong>&nbsp;&nbsp;<a class='btn btn-sm btn-danger' href='/schedule/remove/{$w6_3s->id}'>x</a><hr>";
+                                            echo  "";
+                                        if ($w6_3s->staff_id=='111')//當前檢測人員的id
+                                            echo "<strong><a style='color: gray;'>上班</a></strong>&nbsp;&nbsp;<hr>";
 
                                     }
 
@@ -464,13 +464,13 @@
                                 <td style="text-align: center">
                                     <?php
 
-                                  foreach ($w7_3 as $w7_3s)
+                                    foreach ($w7_3 as $w7_3s)
 
                                     {
                                         if ($w7_3s->staff_id==null)
-                                            echo  "<h4><a class=''  href='/schedule/add/{$w7_3s->id}'>+</a></h4><hr>";
-                                        if ($w7_3s->staff_id==$_SESSION['sid'])//當前檢測人員的id
-                                            echo "<strong><a style='color: gray;'>上班</a></strong>&nbsp;&nbsp;<a class='btn btn-sm btn-danger'  href='/schedule/remove/{$w7_3s->id}'>x</a><hr>";
+                                            echo  "";
+                                        if ($w7_3s->staff_id=='111')//當前檢測人員的id
+                                            echo "<strong><a style='color: gray;'>上班</a></strong>&nbsp;&nbsp;<hr>";
 
 
                                     }
@@ -486,29 +486,9 @@
 
                     </div>
                 </div>
-                <br><center>
-                    <a class="btn btn-sm btn-secondary" style="" href="{{route('staff.schedule')}}">返回</a>
-                </center>
+
             </div>
-            <div class="col-md-3" style="float: right ;margin-right:3%;margin-top:3%;">
-                <div class="bg-light rounded p-4">
-                    <div class="d-flex align-items-center justify-content-between mb-4">
-                        <h3> <a class="a1"><i class="bi bi-pen"></i>&nbsp;人員選擇</a></h3>
-                    </div>
-                    @foreach($staff as $staffs)
 
-                        <a class="" style="" href="{{route('schedule.check',$staffs->id)}}">
-                            編號:{{$staffs->id}}
-                            <br>
-                            姓名:{{$staffs->name}}
-                            <br>
-                            負責項目:{{$staffs->job}}
-                            <br>
-                            <hr>
-                        </a>
-                    @endforeach
-
-                </div>
-    </div>
 
 </main>
+
