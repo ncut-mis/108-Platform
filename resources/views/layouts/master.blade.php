@@ -68,7 +68,7 @@
                     <div class="dropdown-menu bg-transparent border-1">
                         <a href="" class="dropdown-item">個人資訊</a>
                         <a href="" class="dropdown-item">新增平台使用者</a>
-                        <a href="{{ route('login') }}" class="dropdown-item">登出</a>
+                        <a href="{{ route('home.index') }}" class="dropdown-item">登出</a>
                     </div>
                 </div>
                <br>
