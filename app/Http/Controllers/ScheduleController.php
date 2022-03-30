@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Per_weekSchedule;
 use App\Models\PerWeekSchedule;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use phpDocumentor\Reflection\Element;
@@ -396,7 +396,11 @@ class ScheduleController extends Controller
 {
 //    $month = date("n")+1;
 //    DB::table('per_week_schedules')->delete('month',$month);
+
     $t2 = PerWeekSchedule::where('month',4)->delete();
+
+    $t2 = PerWeekSchedule::where('month',5)->delete();
+
 
 
 
