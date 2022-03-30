@@ -67,7 +67,14 @@
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-person-bounding-box"></i>XXX</a>
                     <div class="dropdown-menu bg-transparent border-1">
                         <a  href="" class="dropdown-item">個人資訊</a>
-                        <a href="" class="dropdown-item">登出</a>
+                        <a class="dropdown-item" href="{{ route('logout') }}" style="font-size:15px;color: #6b7280"
+                           onclick="event.preventDefault();
+                           document.getElementById('logout-form').submit();">
+                            {{ __('登出') }}
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
                     </div>
                 </div>
                 <br>   <a href="{{route('staffhome.index')}}" class="nav-item nav-link"><i class="bi bi-house-door-fill"></i>首頁</a><br>

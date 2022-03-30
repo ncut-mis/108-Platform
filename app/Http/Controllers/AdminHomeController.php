@@ -22,7 +22,14 @@ class AdminHomeController extends Controller
             $_SESSION['apply_status']=$data;
             $_SESSION['schedule_status']=$data2;
 
-            return view('adminhome');
+            if(auth()->user()->job=='管理者')
+            {
+                return view('adminhome');
+            }
+            else
+            {
+                return view('staffhome');
+            }
         }
         else
         {
