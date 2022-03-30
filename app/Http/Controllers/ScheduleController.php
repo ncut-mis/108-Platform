@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Per_weekSchedule;
+use App\Models\PerWeekSchedule;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use phpDocumentor\Reflection\Element;
@@ -290,7 +291,7 @@ class ScheduleController extends Controller
 
 
 
-    public  function neschedule()//產生下個月班表空間
+    public  function build()//產生下個月班表空間
     {
         $month = date("n")+1;
         $search = DB::table('per_week_schedules')->where('month',$month)->get();
@@ -349,11 +350,53 @@ class ScheduleController extends Controller
     }
         return redirect()->route('schedule.next');
     }
+    public function addspace()
+    {
+        $en="";
+        $st="";
+        $month = date("n");
+        if(isset($_GET['week'])&&$_GET['period'])
+        {
+            $we=$_GET['week'];
+            $per=$_GET['period'];
+        }
+
+                    if($per=='早')
+                    {
+                        $st='09:00:00';
+                        $en='11:00:00';
+                    }
+                    if($per=='午')
+                    {
+                        $st='15:00:00';
+                        $en='17:00:00';
+                    }
+                    if($per=='晚')
+                    {
+                        $st='18:00:00';
+                        $en='21:00:00';
+                    }
+                    DB::table('per_week_schedules')->insert(
+                        [
+
+                            'staff_id'=>null,
+
+                            'start'=>$st,
+                            'end'=>$en,
+                            'week'=>$we,
+                            'month'=>$month
+
+
+                        ]
+                    );
+        return redirect()->route('schedule.index');
+
+    }
     public  function t2()
 {
 //    $month = date("n")+1;
 //    DB::table('per_week_schedules')->delete('month',$month);
-    $t2 = Per_weekSchedule::where('month',5)->delete();
+    $t2 = PerWeekSchedule::where('month',4)->delete();
 
 
 

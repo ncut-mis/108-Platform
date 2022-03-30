@@ -27,7 +27,8 @@ Route::get('/schedule/add/{id}', [\App\Http\Controllers\ScheduleController::clas
 Route::get('/schedule/remove/{id}', [\App\Http\Controllers\ScheduleController::class, 'remove'])->name('schedule.remove');//刪除值班時段
 Route::get('/schedule/{staff}', [\App\Http\Controllers\ScheduleController::class, 'check'])->name('schedule.check');//查看檢測人員班表頁面
 Route::get('/schedule_next', [\App\Http\Controllers\ScheduleController::class, 'next'])->name('schedule.next');//下個月排班頁面
-Route::get('/schedule/next/build', [\App\Http\Controllers\ScheduleController::class, 'neschedule'])->name('schedule.build');//建立空白班表
+Route::get('/schedule/next/build', [\App\Http\Controllers\ScheduleController::class, 'build'])->name('schedule.build');//建立空白班表
+Route::get('/schedule/space/build', [\App\Http\Controllers\ScheduleController::class, 'addspace'])->name('schedule.addspace');//建立單一空間
 Route::get('/schedule_t2', [\App\Http\Controllers\ScheduleController::class, 't2'])->name('schedule.test2');//test2_刪除工具
 Route::get('/schedule/next/{staff}', [\App\Http\Controllers\ScheduleController::class, 'checknext'])->name('schedule.checknext');//查看下個月檢測人員班表頁面
 Route::get('/schedule/add/next/{id}', [\App\Http\Controllers\ScheduleController::class, 'addnext'])->name('schedule.addnext');//新增下個月值班時段

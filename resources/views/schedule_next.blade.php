@@ -597,7 +597,7 @@
                     </div>
                 </div>
                 <br><center>
-                    <a class="btn btn-sm btn-secondary" style="" href="{{route('staff.schedule')}}">返回本月班表</a>
+                    <a class="btn btn-sm btn-secondary" style="" href="{{route('schedule.index')}}">返回本月班表</a>
 
                 </center>
             </div>
