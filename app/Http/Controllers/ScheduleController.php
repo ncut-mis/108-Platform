@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Per_week_schedule;
+use App\Models\Per_weekSchedule;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use phpDocumentor\Reflection\Element;
@@ -353,7 +353,7 @@ class ScheduleController extends Controller
 {
 //    $month = date("n")+1;
 //    DB::table('per_week_schedules')->delete('month',$month);
-    $t2 = Per_week_schedule::where('month',5)->delete();
+    $t2 = Per_weekSchedule::where('month',5)->delete();
 
 
 
