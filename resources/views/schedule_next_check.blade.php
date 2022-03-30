@@ -497,7 +497,7 @@
                         <h3> <a class="a1"><i class="bi bi-pen"></i>&nbsp;人員選擇</a></h3>
                     </div>
                     @foreach($staff as $staffs)
-
+                        @if($staffs->job!='管理者')
                         <a class="" style="" href="{{route('schedule.checknext',$staffs->id)}}">
                             編號:{{$staffs->id}}
                             <br>
@@ -507,6 +507,7 @@
                             <br>
                             <hr>
                         </a>
+                        @endif
                     @endforeach
 
                 </div>

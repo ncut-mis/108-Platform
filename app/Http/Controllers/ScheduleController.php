@@ -72,6 +72,21 @@ class ScheduleController extends Controller
         $_SESSION['w7_3']=$data7_3;
         $_SESSION['staff']=$staff;
 
+        $search = DB::table('per_week_schedules')->where('month',$month+1)->get();
+        $count=0;
+        foreach ($search as $searchs)
+        {
+            $count+=1;
+        }
+        if($count>1)//判斷下個月的班表是否建立
+        {
+            $_SESSION['have']=1;
+
+        }
+        else
+        {
+            $_SESSION['have']=0;
+        }
         return view('schedule',['staff' => $staff]);
 
     }
@@ -293,6 +308,12 @@ class ScheduleController extends Controller
 
     public  function build()//產生下個月班表空間
     {
+        $number='';
+        if(isset($_GET['number']))
+        {
+            $number=$_GET['number'];
+
+        }
         $month = date("n")+1;
         $search = DB::table('per_week_schedules')->where('month',$month)->get();
         $count=0;
@@ -306,7 +327,7 @@ class ScheduleController extends Controller
 
         }
 
-        for($k=1;$k<=2;$k++){
+        for($k=1;$k<=$number;$k++){
         for ($t=1;$t<=7;$t++){
             if ($t==1){ $we='一';}
             if ($t==2){ $we='二';}
@@ -354,11 +375,13 @@ class ScheduleController extends Controller
     {
         $en="";
         $st="";
+        $nu="";
         $month = date("n");
-        if(isset($_GET['week'])&&$_GET['period'])
+        if(isset($_GET['week'])&&$_GET['period']&&$_GET['number'])
         {
             $we=$_GET['week'];
             $per=$_GET['period'];
+            $nu=$_GET['number'];
         }
 
                     if($per=='早')
@@ -376,19 +399,22 @@ class ScheduleController extends Controller
                         $st='18:00:00';
                         $en='21:00:00';
                     }
-                    DB::table('per_week_schedules')->insert(
-                        [
+                    for ($i=1;$i<=$nu;$i++)
+                    {
+                        DB::table('per_week_schedules')->insert(
+                            [
 
-                            'staff_id'=>null,
+                                'staff_id'=>null,
+                                'start'=>$st,
+                                'end'=>$en,
+                                'week'=>$we,
+                                'month'=>$month
 
-                            'start'=>$st,
-                            'end'=>$en,
-                            'week'=>$we,
-                            'month'=>$month
 
+                            ]
+                        );
+                    }
 
-                        ]
-                    );
         return redirect()->route('schedule.index');
 
     }
@@ -399,7 +425,7 @@ class ScheduleController extends Controller
 
     $t2 = PerWeekSchedule::where('month',4)->delete();
 
-    $t2 = PerWeekSchedule::where('month',5)->delete();
+//    $t2 = PerWeekSchedule::where('month',5)->delete();
 
 
 

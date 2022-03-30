@@ -491,10 +491,10 @@
                     <a class="btn btn-sm btn-secondary" style="" href="{{route('schedule.index')}}">返回</a>
                 </center>
                 <br>
-                <div id="demo" class="collapse">
-                    <h4> <a class="a1"><i class="bi bi-pen"></i>&nbsp;選擇星期和時段</a></h4>
+                <div id="demo" class="collapse" style="margin-left: 5%">
+                    <h4> <a class="a1"><i class="bi bi-pen"></i>&nbsp;選擇星期和時段</a></h4><br>
                     <form action="{{route('schedule.addspace')}}" method="GET">
-                        星期:
+                        星期:&nbsp;
                         <select name="week" style="color:gray;font-weight:bold">
                             <option value="一"> 一 </option>
                             <option value="二"> 二 </option>
@@ -504,14 +504,22 @@
                             <option value="六"> 六 </option>
                             <option value="日"> 日 </option>
                         </select>
-                        時段:
+                        時段:&nbsp;
                         <select name="period" style="color:gray;font-weight:bold">
                             <option value="早"> 早 </option>
                             <option value="午"> 午 </option>
                             <option value="晚"> 晚 </option>
 
                         </select>
+                        人數:&nbsp;
+                        <select name="number" style="color:gray;font-weight:bold">
+                            <option value="1"> 1 </option>
+                            <option value="2"> 2 </option>
+                            <option value="3"> 3 </option>
+                            <option value="3"> 4 </option>
+                            <option value="3"> 5 </option>
 
+                        </select>&nbsp;
                         <input type="submit" class="btn btn-sm btn-secondary" value="新增">
                     </form>
 
@@ -523,7 +531,7 @@
                         <h3> <a class="a1"><i class="bi bi-pen"></i>&nbsp;人員選擇</a></h3>
                     </div>
                     @foreach($staff as $staffs)
-                        @if($staffs->job!='管理員')
+                        @if($staffs->job!='管理者')
                         <a class="" style="" href="{{route('schedule.check',$staffs->id)}}">
                             編號:{{$staffs->id}}
                             <br>
