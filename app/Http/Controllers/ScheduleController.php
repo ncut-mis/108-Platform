@@ -499,7 +499,7 @@ class ScheduleController extends Controller
 
             ]
         );
-//        echo "<script>alert('已刪除該時段排班')</script>"; 有bug 提醒視窗跳不出來
+        // echo "<script>alert('已刪除該時段排班')</script>";  有bug 提醒視窗跳不出來
         return redirect()->route('schedule.checknext',['staff' => $_SESSION['sid']]);
     }
 }
