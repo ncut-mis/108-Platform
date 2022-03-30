@@ -9,6 +9,7 @@ class AdminHomeController extends Controller
 {
     public function index()
     {
+        if(\Illuminate\Support\Facades\Auth::check()){
         $month = date("n");
         session_start();
         $data = DB::table('sellers')->where('status',0)->get();
@@ -17,5 +18,11 @@ class AdminHomeController extends Controller
         $_SESSION['schedule_status']=$data2;
 
         return view('adminhome');
+    }
+        else
+        {
+            return redirect()->route('login');
+
+        }
     }
 }
