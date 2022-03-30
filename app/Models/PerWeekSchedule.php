@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Per_week_schedule extends Model
+class PerWeekSchedule extends Model
 {
     use HasFactory;
     protected $table = 'per_week_schedules';

@@ -487,7 +487,7 @@
                     </div>
                 </div>
                 <br><center>
-                    <a class="btn btn-sm btn-secondary" style="" href="{{route('staff.schedule')}}">返回</a>
+                    <a class="btn btn-sm btn-secondary" style="" href="{{route('schedule.index')}}">返回</a>
                 </center>
             </div>
             <div class="col-md-3" style="float: right ;margin-right:3%;margin-top:3%;">

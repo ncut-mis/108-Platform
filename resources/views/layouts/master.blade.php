@@ -82,7 +82,7 @@
                 <a href="{{route('adminhome.index')}}" class="nav-item nav-link"><i class="bi bi-house-door-fill"></i>首頁</a><br>
                 <a href="{{route('posts.index')}}" class="nav-item nav-link"><i class="fa fa-laptop me-2"></i>公告管理</a><br>
                 <a href="{{route('apply.index')}}" class="nav-item nav-link"><i class="fa fa-th me-2"></i>賣家申請管理</a><br>
-                <a href="{{route('staff.schedule')}}" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>班表管理</a>
+                <a href="{{route('schedule.index')}}" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>班表管理</a>
 
             </div>
         </nav>

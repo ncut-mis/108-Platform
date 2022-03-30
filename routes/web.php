@@ -22,7 +22,7 @@ Route::get('/apply', [\App\Http\Controllers\ApplyController::class, 'index'])->n
 Route::get('/apply/{apply}/pass', [\App\Http\Controllers\ApplyController::class, 'pass'])->name('apply.pass');//通過賣家申請
 Route::get('/apply/{apply}/fail', [\App\Http\Controllers\ApplyController::class, 'fail'])->name('apply.fail');//不通過賣家申請
 
-Route::get('/schedule', [\App\Http\Controllers\ScheduleController::class, 'index'])->name('staff.schedule');//排班頁面
+Route::get('/schedule', [\App\Http\Controllers\ScheduleController::class, 'index'])->name('schedule.index');//排班頁面
 Route::get('/schedule/add/{id}', [\App\Http\Controllers\ScheduleController::class, 'add'])->name('schedule.add');//新增值班時段
 Route::get('/schedule/remove/{id}', [\App\Http\Controllers\ScheduleController::class, 'remove'])->name('schedule.remove');//刪除值班時段
 Route::get('/schedule/{staff}', [\App\Http\Controllers\ScheduleController::class, 'check'])->name('schedule.check');//查看檢測人員班表頁面
