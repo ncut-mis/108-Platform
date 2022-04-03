@@ -67,7 +67,7 @@
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-person-bounding-box"></i>平台管理者 </a>
                     <div class="dropdown-menu bg-transparent border-1">
                       {{--  <a href="" class="dropdown-item" style="color: #6b7280">個人資訊</a>--}}
-                        <a class="dropdown-item"  href="{{ route('register') }}" style="color: #6b7280">新增平台使用者</a>
+                        <a class="dropdown-item"  href="{{ route('home.index') }}" style="color: #6b7280">新增平台使用者</a>
                         <a class="dropdown-item" href="{{ route('logout') }}" style="font-size:15px;color: #6b7280"
                            onclick="event.preventDefault();
                            document.getElementById('logout-form').submit();">

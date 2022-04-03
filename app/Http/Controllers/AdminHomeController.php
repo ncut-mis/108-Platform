@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\PerWeekSchedule;
 use App\Models\Seller;
+use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class AdminHomeController extends Controller
 {
@@ -37,4 +37,5 @@ class AdminHomeController extends Controller
 
         }
     }
+
 }
