@@ -66,7 +66,7 @@
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-person-bounding-box"></i>XXX</a>
                     <div class="dropdown-menu bg-transparent border-1">
-                        <a  href="" class="dropdown-item">個人資訊</a>
+                        <a  href="" class="dropdown-item" style="color: #6b7280">個人資訊</a>
                         <a class="dropdown-item" href="{{ route('logout') }}" style="font-size:15px;color: #6b7280"
                            onclick="event.preventDefault();
                            document.getElementById('logout-form').submit();">

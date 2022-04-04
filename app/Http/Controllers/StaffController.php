@@ -75,4 +75,8 @@ class StaffController extends Controller
 
         return view('staff_checkschedule');
     }
+    public function detail()
+    {
+        return view('staff_checkschedule_detail');
+    }
 }

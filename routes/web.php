@@ -37,6 +37,9 @@ Route::get('/schedule/remove/next/{id}', [\App\Http\Controllers\ScheduleControll
 
 Route::get('/staff', [\App\Http\Controllers\StaffController::class, 'index'])->name('staffhome.index');//平台人員首頁
 Route::get('/staff/schedule', [\App\Http\Controllers\StaffController::class, 'check'])->name('staffschedule.index');//檢測人員查看班表
+Route::get('/staff/schedule/detail', [\App\Http\Controllers\StaffController::class, 'detail'])->name('staffschedule.detail');//檢測人員查看班表
+
+
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
