@@ -21,7 +21,7 @@ class AdminHomeController extends Controller
             $data2 = PerWeekSchedule::where('month',$month)->where('staff_id',null)->get();
             $_SESSION['apply_status']=$data;
             $_SESSION['schedule_status']=$data2;
-
+            $t2 = PerWeekSchedule::where('month',$month-1)->delete();//自動刪除前一個月的班表
             if(auth()->user()->job=='管理者')
             {
                 return view('adminhome');
