@@ -77,6 +77,9 @@ class StaffController extends Controller
     }
     public function detail()
     {
+        $data1 = DB::table('exams')->where('staff_id','111')->get();
+        $_SESSION['detail']=$data1;
+
         return view('staff_checkschedule_detail');
     }
 }

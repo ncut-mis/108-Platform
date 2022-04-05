@@ -76,32 +76,50 @@
                         <?php
                         date_default_timezone_set('Asia/Taipei');//時區調整
                         $start='09:00:00';
-                        $test='';
+                        $detail=$_SESSION['detail'];
+                        $_SESSION['t1']=0;
 
-                        for($i=1;$i<=6;$i++)
+                   for($i=1;$i<=6;$i++)
                         {
-
                             $temp=date("H:i:s", strtotime($start."+15 minute"));
 
-                            if($i%2==0)//之後改成判斷資料庫是否有這筆資料
+                                foreach ($detail as $details)
+                                {
+
+                            if($start==$details->start)//之後改成判斷資料庫是否有這筆資料
                             {
                                 echo" <input type='checkbox' name='' value='' checked>";
                                 echo "&nbsp";
                                 echo $start."~".$temp;
                                 echo "&nbsp<hr>";
                                 echo"<a href='' class='btn btn-sm btn-secondary'>前往會議室</a><br><br>";
+                                $_SESSION['t1']=1;
+
 
                             }
-                            else
+                            else if ($start!=$details->start)
                             {
-                                echo" <input type='checkbox' name='' value='' >";
-                                echo "&nbsp";
-                                echo $start."~".$temp;
-                                echo "&nbsp<hr><br><br>";
+                                $_SESSION['t1']=0;
+                            }
 
                             }
-                            $start=$temp;
+                          if( $_SESSION['t1']==0&&$start!=$details->start)
+
+                         {
+                            echo" <input type='checkbox' name='' value='' >";
+                            echo "&nbsp";
+                            echo $start."~".$temp;
+                            echo "&nbsp<hr><br><br>";
+
                         }
+
+
+                                     $start=$temp;
+                            }
+
+
+
+
 
 
 
@@ -111,31 +129,44 @@
                           <?php
                           date_default_timezone_set('Asia/Taipei');//時區調整
 
+//                          for($i=7;$i<=12;$i++)
+//                          {
+//                              $temp=date("H:i:s", strtotime($start."+15 minute"));
+//
+//                              foreach ($detail as $details)
+//                              {
+//
+//                                  if($start==$details->start)//之後改成判斷資料庫是否有這筆資料
+//                                  {
+//                                      echo" <input type='checkbox' name='' value='' checked>";
+//                                      echo "&nbsp";
+//                                      echo $start."~".$temp;
+//                                      echo "&nbsp<hr>";
+//                                      echo"<a href='' class='btn btn-sm btn-secondary'>前往會議室</a><br><br>";
+//                                      $_SESSION['t1']=1;
+//
+//
+//                                  }
+//                                  else if ($start!=$details->start)
+//                                  {
+//                                      $_SESSION['t1']=0;
+//                                  }
+//
+//                              }
+//                              if( $_SESSION['t1']==0&&$start!=$details->start)
+//
+//                              {
+//                                  echo" <input type='checkbox' name='' value='' >";
+//                                  echo "&nbsp";
+//                                  echo $start."~".$temp;
+//                                  echo "&nbsp<hr><br><br>";
+//
+//                              }
+//
+//
+//                              $start=$temp;
+//                          }
 
-                          for($i=7;$i<=12;$i++)
-                          {
-
-                              $temp=date("H:i:s", strtotime($start."+15 minute"));
-
-                              if($i%2==0)//之後改成判斷資料庫是否有這筆資料
-                              {
-                                  echo" <input type='checkbox' name='' value='' checked>";
-                                  echo "&nbsp";
-                                  echo $start."~".$temp;
-                                  echo "&nbsp<hr>";
-                                  echo"<a href='' class='btn btn-sm btn-secondary'>前往會議室</a><br><br>";
-
-                              }
-                              else
-                              {
-                                  echo" <input type='checkbox' name='' value='' >";
-                                  echo "&nbsp";
-                                  echo $start."~".$temp;
-                                  echo "&nbsp<hr><br><br>";
-
-                              }
-                              $start=$temp;
-                          }
 
 
 
