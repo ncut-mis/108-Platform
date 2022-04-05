@@ -613,6 +613,7 @@
 
                 </center>
                 <br>
+
                 <div id="demo" class="collapse" style="margin-left: 5%">
                     <h4> <a class="a1"><i class="bi bi-pen"></i>&nbsp;選擇星期和時段</a></h4><br>
                         <form action="{{route('schedule.addspace')}}" method="GET">
