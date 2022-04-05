@@ -75,8 +75,8 @@
                     <div class="" style="font-size:25px ;float: left;align-content: center;">
                         <?php
                         date_default_timezone_set('Asia/Taipei');//時區調整
-                        $start='09:00:00';
-                        $detail=$_SESSION['detail'];
+                        $start= $_SESSION['start'];
+                        $detail=$_SESSION['staff_detail'];
                         $_SESSION['tt']=0;
 
                    for($i=1;$i<=6;$i++)
@@ -85,17 +85,37 @@
 
                                 foreach ($detail as $details)
                                 {
+                                    $d=explode("-",$details->date);
+                                    $f=date("w",mktime(0,0,0,$d[1],$d[2],$d[0]));
+                                    if($f==0)
+                                        $wk='日';
+                                    else if ($f==1)
+                                        $wk='一';
+                                    else if ($f==2)
+                                        $wk='二';
+                                    else if ($f==3)
+                                        $wk='三';
+                                    else if ($f==4)
+                                        $wk='四';
+                                    else if ($f==5)
+                                        $wk='五';
+                                    else if ($f==6)
+                                        $wk='六';
+                                    if($_SESSION['week']==$wk)//日期星期的判斷
+                                        {
+                                            if($start==$details->start)//判斷資料庫是否有這筆資料
+                                            {
+                                                $_SESSION['tt']=1;
+                                                break;
+                                            }
+                                            else
+                                            {
+                                                $_SESSION['tt']=0;
+                                            }
+                                        }
 
-                                  if($start==$details->start)//之後改成判斷資料庫是否有這筆資料
-                                  {
-                                      $_SESSION['tt']=1;
-                                      break;
-                                  }
-                                else
-                                 {
-                                    $_SESSION['tt']=0;
-                                 }
                                 }
+
                                 if($_SESSION['tt']==0)
                                 {
                                     echo" <input type='checkbox' name='' value='' >";
@@ -117,6 +137,8 @@
                                      $start=$temp;
                             }
 
+
+
                         ?>
                     </div>
                       <div class="" style="font-size:25px;float: left;margin-left: 25%;align-content: center;">
@@ -129,16 +151,35 @@
 
                               foreach ($detail as $details)
                               {
+                                  $d=explode("-",$details->date);
+                                  $f=date("w",mktime(0,0,0,$d[1],$d[2],$d[0]));
+                                  if($f==0)
+                                      $wk='日';
+                                  else if ($f==1)
+                                      $wk='一';
+                                  else if ($f==2)
+                                      $wk='二';
+                                  else if ($f==3)
+                                      $wk='三';
+                                  else if ($f==4)
+                                      $wk='四';
+                                  else if ($f==5)
+                                      $wk='五';
+                                  else if ($f==6)
+                                      $wk='六';
+                                  if($_SESSION['week']==$wk)//日期星期的判斷
+                                      {
+                                          if($start==$details->start)//之後改成判斷資料庫是否有這筆資料
+                                          {
+                                              $_SESSION['tt']=1;
+                                              break;
+                                          }
+                                          else
+                                          {
+                                              $_SESSION['tt']=0;
+                                          }
+                                      }
 
-                                  if($start==$details->start)//之後改成判斷資料庫是否有這筆資料
-                                  {
-                                      $_SESSION['tt']=1;
-                                      break;
-                                  }
-                                  else
-                                  {
-                                      $_SESSION['tt']=0;
-                                  }
                               }
                               if($_SESSION['tt']==0)
                               {

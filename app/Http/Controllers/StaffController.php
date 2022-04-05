@@ -75,11 +75,26 @@ class StaffController extends Controller
 
         return view('staff_checkschedule');
     }
-    public function detail()
+    public function detail($detail)
     {
-        $data1 = DB::table('exams')->where('staff_id','111')->get();
-        $_SESSION['detail']=$data1;
+
+        $data1 = DB::table('exams')->where('staff_id','111')->get();//當前檢測人員id
+        $_SESSION['staff_detail']=$data1;
+        $data2 = DB::table('per_week_schedules')->where('id',$detail)->get();
+
+        if(isset($detail))
+         {
+             foreach ($data2 as $d2s)
+              {
+             $_SESSION['start']=$d2s->start;
+             $_SESSION['week']=$d2s->week;
+
+             }
+
+         }
+
 
         return view('staff_checkschedule_detail');
+
     }
 }
