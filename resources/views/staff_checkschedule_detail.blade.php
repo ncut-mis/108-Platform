@@ -71,8 +71,9 @@
                         <h3><a class="a1"><i class="bi bi-card-checklist"></i>&nbsp;詳細時段</a></h3>
 
                     </div>
+                    <table class="table text-start align-middle table-bordered table-hover mb-0" style="border:whitesmoke">
                     <div class="" style="font-size:25px ;float: left;align-content: center;">
-                  <?php
+                        <?php
                         date_default_timezone_set('Asia/Taipei');//時區調整
                         $start='09:00:00';
                         $test='';
@@ -106,7 +107,7 @@
 
                         ?>
                     </div>
-                      <div class="" style="font-size:25px;float: left;margin-left: 20%;align-content: center;">
+                      <div class="" style="font-size:25px;float: left;margin-left: 25%;align-content: center;">
                           <?php
                           date_default_timezone_set('Asia/Taipei');//時區調整
 
@@ -140,6 +141,7 @@
 
                           ?>
                     </div>
+                    </table>
                 </div>
             </div>
         </div>
