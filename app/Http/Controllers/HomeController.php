@@ -13,12 +13,6 @@ class HomeController extends Controller
 
     public function index()
     {
-        /*if (Auth::check()) {
-            //$staff = auth()->staff()->id;
-            return view('adminhome');
-        } else {
-            return view('auth.login');
-        }*/
         return view('reg');
     }
 
