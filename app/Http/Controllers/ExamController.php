@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Exam;
 use App\Http\Requests\StoreExamRequest;
 use App\Http\Requests\UpdateExamRequest;
+use App\Models\Product;
 
 class ExamController extends Controller
 {
@@ -13,9 +15,21 @@ class ExamController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        //
+        $exam_data = Exam::where('id', $id)->get();//取得檢測資料
+        foreach ($exam_data as $ds)
+        {
+            $p_id=$ds->product_id;
+        }
+         $product=Product::where('id',$p_id)->get();//檢測的商品
+        foreach ($product as $ps)
+        {
+            $c_id=$ps->category_id;
+        }
+        $type=Category::where('id',$c_id)->get();//檢測的類別
+
+        return view('exam',compact('exam_data','product','type'));
     }
 
     /**
