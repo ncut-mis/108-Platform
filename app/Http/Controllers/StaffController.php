@@ -9,6 +9,8 @@ class StaffController extends Controller
 {
     public function index()
     {
+        $data1=DB::table('exams')->where('staff_id',auth()->user()->id)->where('date',date("Y-m-d"))->get();
+        $_SESSION['exam']=$data1;
         return view('staffhome');
     }
     public function check()
@@ -78,7 +80,7 @@ class StaffController extends Controller
     public function detail($detail)
     {
 
-        $data1 = DB::table('exams')->where('staff_id','111')->get();//當前檢測人員id
+        $data1 = DB::table('exams')->where('staff_id',auth()->user()->id)->get();//當前檢測人員id
         $_SESSION['staff_detail']=$data1;
         $data2 = DB::table('per_week_schedules')->where('id',$detail)->get();
 

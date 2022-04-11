@@ -62,52 +62,90 @@
     </nav>
 
 </header>
-
 <main>
-    <div class="container-xxl position-relative bg-white d-flex p-0">
-        <div class="content">
-            <div class="col-md-8" style="float: left;margin:2%">
+    <div class="container-xxl position-relative bg-white d-flex p-0" >
+        <div class="content" >
+            <div class="col-md-10" style="margin-top:3%;margin-left:5%; float:left;">
                 <div class="bg-light text-center rounded p-4">
                     <div class="d-flex align-items-center justify-content-between mb-4">
-                        <h3> <a class="a1"><i class="bi bi-brush"></i>&nbsp; 公告區</a></h3>
-                    </div>
-                    <div class="table-responsive">
-                        <table class="table text-start align-middle table-bordered table-hover mb-0">
-                            <thead>
-                            <tr class="text-dark">
-                                <th scope="col">Date</th>
-                                <th scope="col">XXX</th>
-                                <th scope="col">XXX</th>
-                                <th scope="col">XXX</th>
-                                <th scope="col">XXX</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td>XXX</td>
-                                <td>XXX</td>
-                                <td>XXX</td>
-                                <td>XXX</td>
-                                <td>XXX</td>
+                        <h3><a class="a1"><i class="bi bi-card-checklist"></i>&nbsp;<?php echo date('m/d'); ?>&nbsp;所有被預約時段</a></h3>
 
-                            </tr>
-                            <tr>
-                                <td>XXX</td>
-                                <td>XXX</td>
-                                <td>XXX</td>
-                                <td>XXX</td>
-                                <td>XXX</td>
-                            </tr>
-
-                            </tbody>
-                        </table>
                     </div>
+                    <table class="table text-start align-middle table-bordered table-hover mb-0" style="border:whitesmoke">
+                        <div class="container" style="font-size:25px ;float: left;align-content: center;">
+                            <?php
+                            date_default_timezone_set('Asia/Taipei');//時區調整
+                            $start='9:00:00';
+                            $_SESSION['tt']=0;
+                            $count=0;
+
+                            for($i=1;$i<=96;$i++)//1個小時有4個15分鐘，所以24小時有96個
+                            {
+                                $temp=date("H:i:s", strtotime($start."+15 minute"));
+
+
+                                    foreach ($_SESSION['exam'] as $datas)
+                                {
+                                    $count++;
+
+                                        if($start==$datas->start)//判斷資料庫是否有這筆資料
+                                        {
+                                            $_SESSION['tt']=1;
+                                            break;
+                                        }
+                                        else
+                                        {
+                                            $_SESSION['tt']=0;
+                                        }
+
+                                }
+
+
+                                 if ($_SESSION['tt']==1)
+                                {
+
+                                    echo"<div class='' style='margin-bottom:3%;margin-top:5%;'>";
+                                    echo $start."~".$temp;
+                                    echo "&nbsp";
+                                    echo"&nbsp;<a href='' class='btn btn-sm btn-secondary'>進行檢測</a><br><br><hr>";
+                                    echo"</div>";
+
+                                }
+
+
+                                $start=$temp;
+                            }
+                            if($count==0) echo "<strong><a>今日已無檢測</a></strong>";
+//                            $count=0;
+//                             foreach ($_SESSION['exam'] as $datas)
+//                                 {
+//                                     $count++;
+//                                     if($count>0)
+//                                     {
+//                                         echo $datas->start."~".$datas->end;
+//                                         echo "&nbsp<hr>";
+//                                         echo"<a href='' class='btn btn-sm btn-secondary'>進行檢測</a><br><br>";
+//                                     }
+//
+//
+//
+//                                 }
+//                                      if($count==0) echo "<strong><a>今日已無檢測</a></strong>";
+
+
+
+                            ?>
+
+
+                        </div>
+
+                    </table>
                 </div>
             </div>
-            <br><br>
-
         </div>
     </div>
 
+
 </main>
+
 

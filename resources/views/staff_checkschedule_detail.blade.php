@@ -194,7 +194,7 @@
                                   echo "&nbsp";
                                   echo $start."~".$temp;
                                   echo "&nbsp<hr>";
-                                  echo"<a href='' class='btn btn-sm btn-secondary'>前往會議室</a><br><br>";
+                                  echo"<a href='' class='btn btn-sm btn-secondary'>進行檢測</a><br><br>";
 
                               }
 

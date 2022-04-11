@@ -24,11 +24,11 @@ class AdminHomeController extends Controller
             $t2 = PerWeekSchedule::where('month',$month-1)->delete();//自動刪除前一個月的班表
             if(auth()->user()->job=='管理者')
             {
-                return view('adminhome');
+                return redirect()->route('adminhome.index');
             }
             else
             {
-                return view('staffhome');
+                return redirect()->route('staffhome.index');
             }
         }
         else
