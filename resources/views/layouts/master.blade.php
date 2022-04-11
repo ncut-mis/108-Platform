@@ -64,10 +64,9 @@
 
             <div class="navbar-nav w-100">
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-person-bounding-box"></i>平台管理者 </a>
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-person-bounding-box"></i>平台管理者<?php if(\Illuminate\Support\Facades\Auth::check()){ $un=auth()->user()->name; echo "  ".$un;}else{}?></a>
                     <div class="dropdown-menu bg-transparent border-1">
                       {{--  <a href="" class="dropdown-item" style="color: #6b7280">個人資訊</a>--}}
-                        <a class="dropdown-item"  href="{{ route('home.index') }}" style="color: #6b7280">新增平台使用者</a>
                         <a class="dropdown-item" href="{{ route('logout') }}" style="font-size:15px;color: #6b7280"
                            onclick="event.preventDefault();
                            document.getElementById('logout-form').submit();">
@@ -79,8 +78,9 @@
                     </div>
                 </div>
                <br>
-                <a href="{{route('adminhome.index')}}" class="nav-item nav-link"><i class="bi bi-house-door-fill"></i>首頁</a><br>
+                <a href="{{route('adminhome.index')}}" class="nav-item nav-link"><i class="bi bi-house-door-fill"></i>&nbsp;首頁</a><br>
                 <a href="{{route('posts.index')}}" class="nav-item nav-link"><i class="fa fa-laptop me-2"></i>公告管理</a><br>
+                <a href="{{route('home.index')}}" class="nav-item nav-link"><i class="bi bi-person-plus-fill"></i>&nbsp;新增平台使用者</a><br>
                 <a href="{{route('apply.index')}}" class="nav-item nav-link"><i class="fa fa-th me-2"></i>賣家申請管理</a><br>
                 <a href="{{route('schedule.index')}}" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>班表管理</a>
 
