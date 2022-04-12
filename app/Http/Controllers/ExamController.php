@@ -28,8 +28,19 @@ class ExamController extends Controller
             $c_id=$ps->category_id;
         }
         $type=Category::where('id',$c_id)->get();//檢測的類別
+        foreach ($type as $types)
+        {
+            if($types->name=='名牌服飾')
+                $question=array("是否有明顯污漬(正反)","是否有脫線狀況(正反)","容易摩擦處是否有毛球or破損(正反)","扣子/拉鍊是否有缺少或無法正常使用","是否為*特殊材質","是否未持有該商品的保證卡或發票(是為1分，否為5分)");
+          else  if($types->name=='書籍')
+                $question=array("書本是否有污漬","書本內容是否有缺頁、掉頁","書本是否有摺痕","書本內容是否有劃線、註記","書本是否有黃斑(書口、內頁被陽光曬到褪色)","書本是否泡過水");
+          else  if($types->name=='鋼筆')
+              $question=array("外觀是否有刮痕、凹陷…(以明顯程度評分)","筆尖是否有刮痕或維修過的痕跡","筆舌內是否有乾枯的墨水堆積、斷裂、變形");
+          else  if($types->name=='專輯')
+              $question=array("能否正常播放","專輯外盒/封面是否有損壞(或污漬)","CD片是否有刮痕","寫真書內頁是否有缺頁","專輯是否有附成員明信片","成員明信片是否有缺少","專輯是否有附專輯小卡","專輯小卡是否有缺少","專輯是否有附海報","海報是否有污漬");
+        }
 
-        return view('exam',compact('exam_data','product','type'));
+        return view('exam',compact('exam_data','product','type','question'));
     }
 
     /**
