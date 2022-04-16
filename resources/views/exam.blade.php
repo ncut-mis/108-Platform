@@ -74,17 +74,17 @@
                    </div>
                     @endforeach
                         @foreach($product as $products)
-                            <div style="margin-left:5%;float: left;margin-bottom:3%;margin-top:5%">
-
-                                <h4> <a style="color: gray">檢測商品名稱:{{$products->name}}</a><br><br>
-                                    <a href="https://meet.google.com/jan-rghb-tsa" target="_blank" style="color:white" class="btn btn-sm btn-secondary">開啟會議室</a>
-                                </h4>
-
-
-                            </div>
-                            <div style="margin-right:5%;float: right;margin-bottom:3%">
+                            <div style="margin-right:5%;float:left ;margin-bottom:3%">
                                 <img src="{{ asset('img/'.$products->pictures.'') }}" alt="" height="200">
                             </div>
+
+                            <div style="margin-left:5%;float:right;margin-bottom:3%;margin-top:5%;">
+{{--                                    <a style="color: gray">檢測商品名稱:{{$products->name}}</a>--}}
+                                    <br><br>
+                                    <a href=<?php echo $_SESSION['link'];?> target="_blank" style="color:white;width:auto;height:auto;font-size:20px;" class="btn btn-sm btn-secondary">開啟會議室</a>
+
+                            </div>
+
                         @endforeach
 
                     <table class="table text-start align-middle table-bordered table-hover mb-0" style="border:whitesmoke">
@@ -96,7 +96,7 @@
                              </tr>
                        </thead>
                         <tbody>
-                        <div class="" style="background-color:lightblue;margin-top:5%">
+                        <div  style="background-color:lightblue;margin-top:5%">
 
                             @foreach($question as $questions)
                                 @foreach($exam_data as $es)
@@ -114,23 +114,66 @@
                         </div>
                         </tbody>
                     </table>
-                        <button class="btn btn-outline-dark" type="submit" style="background-color: lavender" >計算得分</button>
+                        <br>
+                        <?php if(!isset($_GET['qu'])) echo " <button class='btn btn-outline-dark' type='submit' style='background-color: lavender' >計算得分</button>"; ?>
+
                         </form>
                     <?php
                         $score=0;
                         if(isset($_GET['qu']))
                         {
+                            $b=$_GET['qu'];
+                            for($i=0;$i<count($b);$i++)
+                            {
+                                $score+=$b[$i];
 
-                         $b=$_GET['qu'];
-                          for($i=0;$i<count($b);$i++)
-                          {
-                              $score+=$b[$i];
-                              echo $b[$i]."<br>";
-                          }
+                            }
 
-                       echo"總計". $score;
+
+                            if($_SESSION['exam_type']=="名牌服飾")
+                            {
+                                if($score>=15&&$score<=19)
+                                    $_SESSION['exam_paas']="通過";
+                                else  if($score>=20&&$score<=25)
+                                    $_SESSION['exam_paas']="優良";
+                                else
+                                    $_SESSION['exam_paas']="不通過";
+                            }
+                            else  if($_SESSION['exam_type']=="書籍")
+                            {
+                                 if($score>=20&&$score<=24)
+                                    $_SESSION['exam_paas']="通過";
+                             else if($score>=25&&$score<=30)
+                                    $_SESSION['exam_paas']="優良";
+                             else
+                                    $_SESSION['exam_paas']="不通過";
+                            }
+                            else  if($_SESSION['exam_type']=="鋼筆")
+                            {
+                                if($score>=10&&$score<=13)
+                                    $_SESSION['exam_paas']="通過";
+                                else  if($score>=14&&$score<=15)
+                                    $_SESSION['exam_paas']="優良";
+                                else
+                                    $_SESSION['exam_paas']="不通過";
+                            }
+                            else  if($_SESSION['exam_type']=="專輯")
+                            {
+                                if($score>=35&&$score<=40)
+                                    $_SESSION['exam_paas']="通過";
+                                else  if($score>=40&&$score<=50)
+                                    $_SESSION['exam_paas']="優良";
+                                else
+                                    $_SESSION['exam_paas']="不通過";
+                            }
+                            echo "<div style=''><strong><h3 style='color: gray'>";
+                            echo "<br>"."總分:".$score."<br>";
+                            echo $_SESSION['exam_paas']."<br>";
+                            echo "</h3></strong></div>";
+                            echo "<div style='float: right;margin-right:3% '>";
+                            echo" <a class='btn btn-sm btn-secondary' style='' href='/exams/finish'>結束檢測</a>";
+                            echo "</div>";
                         }
-
 
                         ?>
                 </div>

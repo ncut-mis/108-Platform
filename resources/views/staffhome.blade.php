@@ -78,6 +78,8 @@
                             $start='9:00:00';
                             $_SESSION['tt']=0;
                             $count=0;
+                            $now=date("H:i:s");
+
 
                             for($i=1;$i<=96;$i++)//1個小時有4個15分鐘，所以24小時有96個
                             {
@@ -86,10 +88,11 @@
 
                                     foreach ($_SESSION['exam'] as $datas)
                                 {
-                                    $count++;
 
-                                        if($start==$datas->start)//判斷資料庫是否有這筆資料
+
+                                        if($start==$datas->start&&strtotime($now)<strtotime($start))//判斷資料庫是否有這筆資料且當前時間不超過檢測時間
                                         {
+                                            $count++;
                                             $_SESSION['tt']=1;
                                             break;
                                         }
