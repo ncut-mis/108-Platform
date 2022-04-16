@@ -65,7 +65,7 @@
             <div class="navbar-nav w-100">
                 <div class="nav-item dropdown">
                 <?php
-                   echo "<a href='#' class='nav-link dropdown-toggle' data-bs-toggle='dropdown'><i class='bi bi-person-bounding-box'></i>".auth()->user()->id."</a>";
+                   echo "<a href='#' class='nav-link dropdown-toggle' data-bs-toggle='dropdown'><i class='bi bi-person-bounding-box'></i>".auth()->user()->id."&nbsp;".auth()->user()->name."</a>";
                 ?>
                    <div class="dropdown-menu bg-transparent border-1">
                         {{--<a  href="" class="dropdown-item" style="color: #6b7280">個人資訊</a>--}}
