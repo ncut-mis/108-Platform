@@ -45,6 +45,7 @@
         }
        .a1{}
     </style>
+
 </head>
 
 <header>
@@ -57,7 +58,9 @@
 {{--    </div>--}}
     <!-- Spinner End -->
 
-
+    <a href="#" class="sidebar-toggler flex-shrink-0" style="margin:auto">
+        &nbsp;<i class="bi bi-arrow-up-right-square-fill"></i>
+    </a>
     <!-- Sidebar Start -->
     <div class="sidebar pe-4 pb-3">
         <nav class="navbar bg-light navbar-light ">
