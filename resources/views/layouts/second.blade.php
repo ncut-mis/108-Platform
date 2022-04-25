@@ -64,8 +64,23 @@
 
             <div class="navbar-nav w-100">
                 <div class="nav-item dropdown">
-                <?php
-                   echo "<a href='#' class='nav-link dropdown-toggle' data-bs-toggle='dropdown'><i class='bi bi-person-bounding-box'></i>".auth()->user()->id."&nbsp;".auth()->user()->name."</a>";
+                <?php //人員編號目前固定最多三碼
+                   if(strlen(auth()->user()->id)==1)
+                       {
+                           echo "<a href='#' class='nav-link dropdown-toggle' data-bs-toggle='dropdown'><i class='bi bi-person-bounding-box'>
+                         </i>  00".auth()->user()->id."&nbsp;".auth()->user()->name."</a>";
+                       }
+                   else if (strlen(auth()->user()->id)==2)
+                       {
+                           echo "<a href='#' class='nav-link dropdown-toggle' data-bs-toggle='dropdown'><i class='bi bi-person-bounding-box'>
+                         </i>  0".auth()->user()->id."&nbsp;".auth()->user()->name."</a>";
+                       }
+                   else
+                       {
+                           echo "<a href='#' class='nav-link dropdown-toggle' data-bs-toggle='dropdown'><i class='bi bi-person-bounding-box'>
+                         </i>  ".auth()->user()->id."&nbsp;".auth()->user()->name."</a>";
+                       }
+
                 ?>
                    <div class="dropdown-menu bg-transparent border-1">
                         {{--<a  href="" class="dropdown-item" style="color: #6b7280">個人資訊</a>--}}
@@ -78,8 +93,8 @@
                             @csrf
                         </form>
                     </div>
-                </div>
-                <br>   <a href="{{route('staffhome.index')}}" class="nav-item nav-link"><i class="bi bi-house-door-fill"></i>首頁</a><br>
+                </div><br>
+                <a href="{{route('staffhome.index')}}" class="nav-item nav-link"><i class="bi bi-house-door-fill"></i>  首頁</a><br>
                 <a href="{{route('staffschedule.index')}}" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>查看班表</a>
 
             </div>

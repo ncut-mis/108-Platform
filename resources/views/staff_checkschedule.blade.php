@@ -69,7 +69,19 @@
                 <div class="bg-light text-center rounded p-4">
                     <div class="d-flex align-items-center justify-content-between mb-4">
                        <?php
-                        echo "<h3><a class='a1'><i class='bi bi-card-checklist'></i>"."&nbsp;班表 人員編號：".auth()->user()->id."</a></h3>";
+                        if(strlen(auth()->user()->id)==1)
+                        {
+                            echo "<h3><a class='a1'><i class='bi bi-card-checklist'></i>"."&nbsp;班表 人員編號：00".auth()->user()->id."</a></h3>";
+                        }
+                        else if (strlen(auth()->user()->id)==2)
+                        {
+                            echo "<h3><a class='a1'><i class='bi bi-card-checklist'></i>"."&nbsp;班表 人員編號：0".auth()->user()->id."</a></h3>";
+                        }
+                        else
+                        {
+                            echo "<h3><a class='a1'><i class='bi bi-card-checklist'></i>"."&nbsp;班表 人員編號：".auth()->user()->id."</a></h3>";
+                        }
+
                         ?>
                         <h3><a class=""><?php
                                 $month = date("n");
