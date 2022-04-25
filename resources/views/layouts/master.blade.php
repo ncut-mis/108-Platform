@@ -45,19 +45,22 @@
         }
        .a1{}
     </style>
+
 </head>
 
 <header>
 
     <!-- Spinner Start -->
-    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
-    </div>
+{{--    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">--}}
+{{--        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">--}}
+{{--            <span class="sr-only">Loading...</span>--}}
+{{--        </div>--}}
+{{--    </div>--}}
     <!-- Spinner End -->
 
-
+    <a href="#" class="sidebar-toggler flex-shrink-0" style="margin:auto">
+        &nbsp;<i class="bi bi-arrow-up-right-square-fill"></i>
+    </a>
     <!-- Sidebar Start -->
     <div class="sidebar pe-4 pb-3">
         <nav class="navbar bg-light navbar-light ">

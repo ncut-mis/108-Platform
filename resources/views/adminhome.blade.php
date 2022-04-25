@@ -50,6 +50,7 @@
                         </div>
                     </li>
                     <?php //if(\Illuminate\Support\Facades\Auth::check()){ $un=auth()->user()->name; echo "歡迎使用者:&nbsp;".$un;}else{}?>
+
                     <a href="#" class="sidebar-toggler flex-shrink-0" style="margin:auto">
                         &nbsp;<i class="bi bi-arrow-up-right-square-fill"></i>
                     </a>
