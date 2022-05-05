@@ -104,7 +104,7 @@
                                       <td style="background-color:lightblue"><< <a style="color:gray;">{{$questions->content}}</a></td>
                                       <td>
                                           <form  method="GET"  action='{{route('exams.index',$es->id)}}'>
-                                             <input class="container" type='number' name='qu[]' step='1' min='0' max='5'>
+                                             <input class="container" type='number' name='qu[]' value='0' step='1' min='0' max='5'>
 
                                       </td>
                                   </tr>
@@ -134,7 +134,7 @@
                                                 <td style="background-color:lightblue"><< <a style="color:gray;">{{$extra_questions->content}}</a></td>
                                                 <td>
 
-                                                        <input class="container" type='number' name='qu2[]' step='1' min='0' max='5'>
+                                                        <input class="container" type='number' name='qu2[]' value='0' step='1' min='0' max='5'>
 
                                                 </td>
 
