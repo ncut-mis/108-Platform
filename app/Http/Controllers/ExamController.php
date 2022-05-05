@@ -7,6 +7,7 @@ use App\Models\Exam;
 use App\Http\Requests\StoreExamRequest;
 use App\Http\Requests\UpdateExamRequest;
 use App\Models\Product;
+use App\Models\QualityItem;
 use Illuminate\Support\Facades\DB;
 
 class ExamController extends Controller
@@ -32,38 +33,35 @@ class ExamController extends Controller
         {
             $c_id=$ps->category_id;
         }
+        $_SESSION['cid']= $c_id;
         $type=Category::where('id',$c_id)->get();//檢測的類別
         $_SESSION['link']='';
         $_SESSION['exam_paas']='';
         foreach ($type as $types)
         {
-            if($types->name=='名牌服飾'){
-                $question=array("是否有明顯污漬(正反)","是否有脫線狀況(正反)","容易摩擦處是否有毛球or破損(正反)","扣子/拉鍊是否有缺少或無法正常使用","是否為*特殊材質","是否未持有該商品的保證卡或發票(是為1分，否為5分)");
+            $question=QualityItem::where('category_id',$types->id)->where('extra',0)->get();//一般檢測項目
+            $extra_question=QualityItem::where('category_id',$types->id)->where('extra',1)->get();//額外檢測項目
+            if($types->name=='名牌服飾')
+            {
                 $_SESSION['link']='https://meet.google.com/qvh-hqum-dvc';
                 $_SESSION['exam_type']='名牌服飾';
             }
-          else  if($types->name=='書籍'){
-              $question=array("書本是否有污漬","書本內容是否有缺頁、掉頁","書本是否有摺痕","書本內容是否有劃線、註記","書本是否有黃斑(書口、內頁被陽光曬到褪色)","書本是否泡過水");
-              $_SESSION['link']='https://meet.google.com/hof-hvzr-ykt';
-              $_SESSION['exam_type']='書籍';
-          }
-          else  if($types->name=='鋼筆'){
-              $question=array("外觀是否有刮痕、凹陷…(以明顯程度評分)","筆尖是否有刮痕或維修過的痕跡","筆舌內是否有乾枯的墨水堆積、斷裂、變形");
-              $_SESSION['link']='https://meet.google.com/kbn-dqif-mku';
-              $_SESSION['exam_type']='鋼筆';
+            else  if($types->name=='書籍'){
+                $_SESSION['link']='https://meet.google.com/hof-hvzr-ykt';
+                $_SESSION['exam_type']='書籍';
+            }
+            else  if($types->name=='鋼筆'){
+                $_SESSION['link']='https://meet.google.com/kbn-dqif-mku';
+                $_SESSION['exam_type']='鋼筆';
 
-          }
-          else  if($types->name=='專輯'){
-              $question=array("能否正常播放","專輯外盒/封面是否有損壞(或污漬)","CD片是否有刮痕","寫真書內頁是否有缺頁","專輯是否有附成員明信片","成員明信片是否有缺少","專輯是否有附專輯小卡","專輯小卡是否有缺少","專輯是否有附海報","海報是否有污漬");
-              $_SESSION['link']='https://meet.google.com/zmy-tzzm-bxs';
-              $_SESSION['exam_type']='專輯';
+            }
+            else  if($types->name=='專輯'){
+                $_SESSION['link']='https://meet.google.com/zmy-tzzm-bxs';
+                $_SESSION['exam_type']='專輯';
 
-          }
+            }
         }
-
-
-
-            return view('exam',compact('exam_data','product','type','question'));
+            return view('exam',compact('exam_data','product','type','question','extra_question'));
     }
 
     public function finish()
@@ -111,6 +109,20 @@ class ExamController extends Controller
               ]
           );
       }
+      DB:Category::where('name', $_SESSION['exam_type'])->get();
+
+        DB::table('exam_item_scores')->insert(
+            [
+
+
+                'exam_id'=>$id,
+                'quality_item_id'=>$_SESSION['cid'],
+                'score'=>$_SESSION['total']
+
+
+
+            ]
+        );
         return redirect()->route('staffhome.index');
 
     }

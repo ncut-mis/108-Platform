@@ -14,6 +14,7 @@ class QualityItem extends Model
         'id',
         'category_id',
         'content',
+        'extra',
 
     ];
     public function categories()
