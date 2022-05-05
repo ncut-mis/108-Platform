@@ -86,6 +86,8 @@
                 <a href="{{route('home.index')}}" class="nav-item nav-link"><i class="bi bi-person-plus-fill"></i>&nbsp;新增平台使用者</a><br>
                 <a href="{{route('apply.index')}}" class="nav-item nav-link"><i class="fa fa-th me-2"></i>賣家申請管理</a><br>
                 <a href="{{route('schedule.index')}}" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>班表管理</a>
+                <a href="#" class="nnav-item nav-link"><i class="bi bi-gear-fill"></i>設定</a>
+
 
             </div>
         </nav>

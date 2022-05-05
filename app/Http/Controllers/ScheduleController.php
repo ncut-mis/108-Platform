@@ -418,16 +418,23 @@ class ScheduleController extends Controller
         return redirect()->route('schedule.index');
 
     }
-    public  function t2()
+    public  function t2()//輔助工具
 {
 //    $month = date("n")+1;
 //    DB::table('per_week_schedules')->delete('month',$month);
 
-    $t2 = PerWeekSchedule::where('month',4)->delete();
+//    $t2 = PerWeekSchedule::where('month',4)->delete();
 
 //    $t2 = PerWeekSchedule::where('month',5)->delete();
 
-
+//        DB::table('per_week_schedules')->where('month',6)->update(
+//            [
+//
+//                'month'=>5
+//
+//
+//            ]
+//        );
 
 
 
