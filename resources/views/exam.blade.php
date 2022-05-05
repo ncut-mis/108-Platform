@@ -176,6 +176,11 @@
                         if(isset($_GET['qu2'])==true)
                         {
                             $b2=$_GET['qu2'];
+                            for($i=0;$i<count($b2);$i++)
+                            {
+                                $score2+=$b2[$i];
+
+                            }
 
 
                         }
@@ -187,6 +192,7 @@
                         $_SESSION['total']= $total;
                            if($score>0&&$score2==0)//無額外項目
                            {
+
                                $great_max=5*count($b);
                                $great_min=$great_max-5;
                                $good_max=$great_min-1;
@@ -197,6 +203,29 @@
                                        $_SESSION['exam_paas']="優良";
                                    else
                                        $_SESSION['exam_paas']="不通過";
+
+
+                            echo "<div style=''><strong><h3 style='color: gray'>";
+                            echo "<br>"."總分:".$total."<br>";
+                            echo $_SESSION['exam_paas']."<br>";
+                            echo "</h3></strong></div>";
+                            echo "<div style='float: right;margin-right:3% '>";
+                            echo" <a class='btn btn-sm btn-secondary' style='' href='/exams/finish'>結束檢測</a>";
+                            echo "</div>";
+                        }
+                     else   if($score>0&&$score2>0)//有額外項目
+                        {
+
+                            $great_max=5*(count($b)+count($b2));
+                            $great_min=$great_max-5;
+                            $good_max=$great_min-1;
+                            $good_min=$great_max-10;
+                            if($total>=$good_min&&$total<=$good_max)
+                                $_SESSION['exam_paas']="通過";
+                            else  if($total>=$great_min&&$total<=$great_max)
+                                $_SESSION['exam_paas']="優良";
+                            else
+                                $_SESSION['exam_paas']="不通過";
 
 
                             echo "<div style=''><strong><h3 style='color: gray'>";
