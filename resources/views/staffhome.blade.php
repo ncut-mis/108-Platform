@@ -68,7 +68,7 @@
             <div class="col-md-10" style="margin-top:3%;margin-left:5%; float:left;">
                 <div class="bg-light text-center rounded p-4">
                     <div class="d-flex align-items-center justify-content-between mb-4">
-                        <h3><a class="a1"><i class="bi bi-card-checklist"></i>&nbsp;<?php echo date('m/d'); ?>&nbsp;所有被預約時段</a></h3>
+                        <h3><a class="a1"><i class="bi bi-card-checklist"></i>&nbsp;<?php echo date('m/d'); ?>&nbsp;所有品質檢測時段</a></h3>
 
                     </div>
                     <table class="table text-start align-middle table-bordered table-hover mb-0" style="border:whitesmoke">
@@ -86,22 +86,30 @@
                                 $temp=date("H:i:s", strtotime($start."+15 minute"));
 
 
-                                    foreach ($_SESSION['exam'] as $datas)
-                                {
+//                                foreach ($_SESSION['exam_finish'] as $finish)//判斷檢測是否完成(bug)
+//                                {
 
 
-                                        if($start==$datas->start&&strtotime($now)<strtotime($start))//判斷資料庫是否有這筆資料且當前時間不超過檢測時間
-                                        {
-                                            $count++;
-                                            $_SESSION['tt']=1;
-                                            break;
-                                        }
-                                        else
-                                        {
-                                            $_SESSION['tt']=0;
-                                        }
+                                        foreach ($_SESSION['exam'] as $datas) {
 
-                                }
+
+                                                if($start==$datas->start&&strtotime($now)<strtotime($start))//判斷資料庫是否有這筆資料且當前時間不超過檢測時間
+                                                {
+                                                    $count++;
+                                                    $_SESSION['tt']=1;
+                                                    break;
+                                                }
+
+                                                else
+                                                {
+                                                    $_SESSION['tt']=0;
+                                                }
+
+
+                                            }
+//                                        }
+
+
 
 
                                  if ($_SESSION['tt']==1)
