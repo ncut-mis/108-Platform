@@ -136,7 +136,15 @@
                                                     if ($w1_1s->staff_id==null)
                                                         echo "";
                                                     else
-                                                       echo "編號:".$w1_1s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+                                                    {
+                                                        if(strlen($w1_1s->staff_id)==3)
+                                                            echo "編號:".$w1_1s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+
+                                                        else if(strlen($w1_1s->staff_id)==2)
+                                                            echo "編號:0".$w1_1s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+                                                        else
+                                                            echo "編號:00".$w1_1s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+                                                    }
 
                                                       }
 
@@ -158,7 +166,15 @@
                                                             if ($w2_1s->staff_id==null)
                                                                 echo "";
                                                             else
-                                                                echo "編號:".$w2_1s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+                                                            {
+                                                                if(strlen($w2_1s->staff_id)==3)
+                                                                    echo "編號:".$w2_1s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+
+                                                                else if(strlen($w2_1s->staff_id)==2)
+                                                                    echo "編號:0".$w2_1s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+                                                                else
+                                                                    echo "編號:00".$w2_1s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+                                                            }
 
                                                         }
 
@@ -179,7 +195,15 @@
                                                             if ($w3_1s->staff_id==null)
                                                                 echo "";
                                                             else
-                                                                echo "編號:".$w3_1s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+                                                            {
+                                                                if(strlen($w3_1s->staff_id)==3)
+                                                                    echo "編號:".$w3_1s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+
+                                                                else if(strlen($w3_1s->staff_id)==2)
+                                                                    echo "編號:0".$w3_1s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+                                                                else
+                                                                    echo "編號:00".$w3_1s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+                                                            }
 
                                                         }
 
@@ -201,7 +225,15 @@
                                                             if ($w4_1s->staff_id==null)
                                                                 echo "";
                                                             else
-                                                                echo "編號:".$w4_1s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+                                                            {
+                                                                if(strlen($w4_1s->staff_id)==3)
+                                                                    echo "編號:".$w4_1s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+
+                                                                else if(strlen($w4_1s->staff_id)==2)
+                                                                    echo "編號:0".$w4_1s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+                                                                else
+                                                                    echo "編號:00".$w4_1s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+                                                            }
 
                                                         }
 
@@ -223,7 +255,15 @@
                                                             if ($w5_1s->staff_id==null)
                                                                 echo "";
                                                             else
-                                                                echo "編號:".$w5_1s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+                                                            {
+                                                                if(strlen($w5_1s->staff_id)==3)
+                                                                    echo "編號:".$w5_1s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+
+                                                                else if(strlen($w5_1s->staff_id)==2)
+                                                                    echo "編號:0".$w5_1s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+                                                                else
+                                                                    echo "編號:00".$w5_1s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+                                                            }
 
                                                         }
 
@@ -245,7 +285,15 @@
                                                             if ($w6_1s->staff_id==null)
                                                                 echo "";
                                                             else
-                                                                echo "編號".$w6_1s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+                                                            {
+                                                                if(strlen($w6_1s->staff_id)==3)
+                                                                    echo "編號:".$w6_1s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+
+                                                                else if(strlen($w6_1s->staff_id)==2)
+                                                                    echo "編號:0".$w6_1s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+                                                                else
+                                                                    echo "編號:00".$w6_1s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+                                                            }
 
                                                         }
 
@@ -267,7 +315,15 @@
                                                             if ($w7_1s->staff_id==null)
                                                                 echo "";
                                                             else
-                                                                echo "編號".$w7_1s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+                                                            {
+                                                                if(strlen($w7_1s->staff_id)==3)
+                                                                    echo "編號:".$w7_1s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+
+                                                                else if(strlen($w7_1s->staff_id)==2)
+                                                                    echo "編號:0".$w7_1s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+                                                                else
+                                                                    echo "編號:00".$w7_1s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+                                                            }
 
                                                         }
 
@@ -292,7 +348,15 @@
                                                 if ($w1_2s->staff_id==null)
                                                     echo "";
                                                 else
-                                                    echo "編號:".$w1_2s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+                                                {
+                                                    if(strlen($w1_2s->staff_id)==3)
+                                                        echo "編號:".$w1_2s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+
+                                                    else if(strlen($w1_2s->staff_id)==2)
+                                                        echo "編號:0".$w1_2s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+                                                    else
+                                                        echo "編號:00".$w1_2s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+                                                }
 
                                             }
 
@@ -313,7 +377,15 @@
                                                 if ($w2_2s->staff_id==null)
                                                     echo "";
                                                 else
-                                                    echo "編號:".$w2_2s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+                                                {
+                                                    if(strlen($w2_2s->staff_id)==3)
+                                                        echo "編號:".$w2_2s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+
+                                                    else if(strlen($w2_2s->staff_id)==2)
+                                                        echo "編號:0".$w2_2s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+                                                    else
+                                                        echo "編號:00".$w2_2s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+                                                }
 
                                             }
 
@@ -334,7 +406,15 @@
                                                 if ($w3_2s->staff_id==null)
                                                     echo "";
                                                 else
-                                                    echo "編號:".$w3_2s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+                                                {
+                                                    if(strlen($w3_2s->staff_id)==3)
+                                                        echo "編號:".$w3_2s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+
+                                                    else if(strlen($w3_2s->staff_id)==2)
+                                                        echo "編號:0".$w3_2s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+                                                    else
+                                                        echo "編號:00".$w3_2s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+                                                }
 
                                             }
 
@@ -356,7 +436,15 @@
                                                 if ($w4_2s->staff_id==null)
                                                     echo "";
                                                 else
-                                                    echo "編號:".$w4_2s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+                                                {
+                                                    if(strlen($w4_2s->staff_id)==3)
+                                                        echo "編號:".$w4_2s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+
+                                                    else if(strlen($w4_2s->staff_id)==2)
+                                                        echo "編號:0".$w4_2s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+                                                    else
+                                                        echo "編號:00".$w4_2s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+                                                }
 
                                             }
 
@@ -378,7 +466,15 @@
                                                 if ($w5_2s->staff_id==null)
                                                     echo "";
                                                 else
-                                                    echo "編號:".$w5_2s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+                                                {
+                                                    if(strlen($w5_2s->staff_id)==3)
+                                                        echo "編號:".$w5_2s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+
+                                                    else if(strlen($w5_2s->staff_id)==2)
+                                                        echo "編號:0".$w5_2s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+                                                    else
+                                                        echo "編號:00".$w5_2s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+                                                }
 
                                             }
 
@@ -400,7 +496,15 @@
                                                 if ($w6_2s->staff_id==null)
                                                     echo "";
                                                 else
-                                                    echo "編號:".$w6_2s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+                                                {
+                                                    if(strlen($w6_2s->staff_id)==3)
+                                                        echo "編號:".$w6_2s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+
+                                                    else if(strlen($w6_2s->staff_id)==2)
+                                                        echo "編號:0".$w6_2s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+                                                    else
+                                                        echo "編號:00".$w6_2s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+                                                }
 
                                             }
 
@@ -422,7 +526,15 @@
                                                 if ($w7_2s->staff_id==null)
                                                     echo "";
                                                 else
-                                                    echo "編號:".$w7_2s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+                                                {
+                                                    if(strlen($w7_2s->staff_id)==3)
+                                                        echo "編號:".$w7_2s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+
+                                                    else if(strlen($w7_2s->staff_id)==2)
+                                                        echo "編號:0".$w7_2s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+                                                    else
+                                                        echo "編號:00".$w7_2s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+                                                }
 
                                             }
 
@@ -447,7 +559,15 @@
                                                 if ($w1_3s->staff_id==null)
                                                     echo "";
                                                 else
-                                                    echo "編號:".$w1_3s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+                                                {
+                                                    if(strlen($w1_3s->staff_id)==3)
+                                                        echo "編號:".$w1_3s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+
+                                                    else if(strlen($w1_3s->staff_id)==2)
+                                                        echo "編號:0".$w1_3s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+                                                    else
+                                                        echo "編號:00".$w1_3s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+                                                }
 
                                             }
 
@@ -469,7 +589,15 @@
                                                 if ($w2_3s->staff_id==null)
                                                     echo "";
                                                 else
-                                                    echo "編號:".$w2_3s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+                                                {
+                                                    if(strlen($w2_3s->staff_id)==3)
+                                                        echo "編號:".$w2_3s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+
+                                                    else if(strlen($w2_3s->staff_id)==2)
+                                                        echo "編號:0".$w2_3s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+                                                    else
+                                                        echo "編號:00".$w2_3s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+                                                }
 
                                             }
 
@@ -490,7 +618,15 @@
                                                 if ($w3_3s->staff_id==null)
                                                     echo "";
                                                 else
-                                                    echo "編號:".$w3_3s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+                                                {
+                                                    if(strlen($w3_3s->staff_id)==3)
+                                                        echo "編號:".$w3_3s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+
+                                                    else if(strlen($w3_3s->staff_id)==2)
+                                                        echo "編號:0".$w3_3s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+                                                    else
+                                                        echo "編號:00".$w3_3s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+                                                }
 
                                             }
 
@@ -512,7 +648,15 @@
                                                 if ($w4_3s->staff_id==null)
                                                     echo "";
                                                 else
-                                                    echo "編號:".$w4_3s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+                                                {
+                                                    if(strlen($w4_3s->staff_id)==3)
+                                                        echo "編號:".$w4_3s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+
+                                                    else if(strlen($w4_3s->staff_id)==2)
+                                                        echo "編號:0".$w4_3s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+                                                    else
+                                                        echo "編號:00".$w4_3s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+                                                }
 
                                             }
 
@@ -534,7 +678,15 @@
                                                 if ($w5_3s->staff_id==null)
                                                     echo "";
                                                 else
-                                                    echo "編號:".$w5_3s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+                                                {
+                                                    if(strlen($w5_3s->staff_id)==3)
+                                                        echo "編號:".$w5_3s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+
+                                                    else if(strlen($w5_3s->staff_id)==2)
+                                                        echo "編號:0".$w5_3s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+                                                    else
+                                                        echo "編號:00".$w5_3s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+                                                }
 
                                             }
 
@@ -556,9 +708,19 @@
                                                 if ($w6_3s->staff_id==null)
                                                     echo "";
                                                 else
+                                                {
+                                                  if(strlen($w6_3s->staff_id)==3)
                                                     echo "編號:".$w6_3s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
 
-                                            }
+                                                   else if(strlen($w6_3s->staff_id)==2)
+                                                        echo "編號:0".$w6_3s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+                                                   else
+                                                       echo "編號:00".$w6_3s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+                                                }
+
+                                                }
+
+
 
                                     }
 
@@ -578,8 +740,16 @@
                                                 if ($w7_3s->staff_id==null)
                                                     echo "";
                                                 else
+                                                {
+                                                    if(strlen($w7_3s->staff_id)==3)
                                                     echo "編號:".$w7_3s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
 
+                                                   else if(strlen($w7_3s->staff_id)==2)
+                                                        echo "編號:0".$w7_3s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+                                                   else
+                                                       echo "編號:00".$w7_3s->staff_id."<br>姓名:".$staffs->name."<br><hr>";
+
+                                                }
                                             }
 
                                     }
@@ -675,11 +845,17 @@
                   @foreach($staff as $staffs)
                   @if($staffs->job!='管理者')
                         <a class="" style="" href="{{route('schedule.check',$staffs->id)}}">
-                            編號:{{$staffs->id}}
+                            @if(strlen($staffs->id)==3)
+                                編號:{{$staffs->id}}
+                            @elseif(strlen($staffs->id)==2)
+                                編號:0{{$staffs->id}}
+                            @elseif(strlen($staffs->id)==1)
+                                編號:00{{$staffs->id}}
+                            @endif
                             <br>
                             姓名:{{$staffs->name}}
                             <br>
-                            負責項目:{{$staffs->job}}
+                            負責項目:{{$staffs->job}}類
                             <br>
                             <hr>
                         </a>
