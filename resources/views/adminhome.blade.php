@@ -1,4 +1,6 @@
 @extends('layouts.master')
+
+@section('title','平台管理者頁面')
 <header>
     <nav class="navbar navbar-expand-md navbar-dark"  style="background-color: lightblue">
         <div class="container-fluid" style="margin-left:70%">

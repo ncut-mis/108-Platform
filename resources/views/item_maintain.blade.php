@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title','公告管理')
+@section('title','品質檢測項目維護')
 
 <header>
     <nav class="navbar navbar-expand-md navbar-dark"  style="background-color: lightblue">
@@ -52,36 +52,29 @@
                             </div>
                         </div>
                     </li>
-
                     <a href="#" class="sidebar-toggler flex-shrink-0" style="margin:auto">
                         &nbsp;<i class="bi bi-arrow-up-right-square-fill"></i>
                     </a>
                     </li>
-
                 </ul>
             </div>
-
         </div>
     </nav>
-
 </header>
+
 <main>
     <div class="container-xxl position-relative bg-white d-flex p-0">
         <div class="content">
-            <div class="col-md-11" style="margin-left:6%;margin-top:3%">
+            <div class="col-md-8" style="float: left;margin:2%">
                 <div class="bg-light text-center rounded p-4">
                     <div class="d-flex align-items-center justify-content-between mb-4">
-                        <h3> <a class="a1"><i class="bi bi-brush"></i>&nbsp; 公告區</a></h3>
+                        <h3> <a class="a1"><i class="bi bi-tools"></i>&nbsp; 品質檢測項目維護</a></h3>
                     </div>
                     <div class="table-responsive">
                         <table class="table text-start align-middle table-bordered table-hover mb-0">
                             <thead>
                             <tr class="text-dark">
-                                <th scope="col">Date</th>
-                                <th scope="col">XXX</th>
-                                <th scope="col">XXX</th>
-                                <th scope="col">XXX</th>
-                                <th scope="col">XXX</th>
+                                <th scope="col">Quality_item</th>
                                 <th scope="col">Action</th>
                             </tr>
                             </thead>
@@ -89,31 +82,22 @@
                             <tr>
                                 <td>XXX</td>
                                 <td>XXX</td>
-                                <td>XXX</td>
-                                <td>XXX</td>
-                                <td>XXX</td>
-                                <td>
-                                    <a class="btn btn-sm btn-primary" href="">修改</a>&nbsp;/&nbsp;
-                                    <a class="btn btn-sm btn-danger" href="">刪除</a>
-                                </td>
+
                             </tr>
                             <tr>
                                 <td>XXX</td>
                                 <td>XXX</td>
-                                <td>XXX</td>
-                                <td>XXX</td>
-                                <td>XXX</td>
-                                <td>
-                                    <a class="btn btn-sm btn-primary" href="">修改</a>&nbsp;/&nbsp;
-                                    <a class="btn btn-sm btn-danger" href="">刪除</a>
-                                </td>
                             </tr>
 
                             </tbody>
-                        </table><br><a class="btn btn-sm btn-warning" style="" href="">新增</a>
+                        </table>
                     </div>
                 </div>
             </div>
+            <br><br>
+
+
+
         </div>
     </div>
 

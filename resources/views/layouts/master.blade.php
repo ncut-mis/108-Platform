@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>平台管理者頁面</title>
+    <title>@yield('title')</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -63,7 +63,7 @@
     </a>
     <!-- Sidebar Start -->
     <div class="sidebar pe-4 pb-3">
-        <nav class="navbar bg-light navbar-light ">
+        <nav class="navbar bg-light navbar-light">
 
             <div class="navbar-nav w-100">
                 <div class="nav-item dropdown">
@@ -85,10 +85,9 @@
                 <a href="{{route('posts.index')}}" class="nav-item nav-link"><i class="fa fa-laptop me-2"></i>公告管理</a><br>
                 <a href="{{route('home.index')}}" class="nav-item nav-link"><i class="bi bi-person-plus-fill"></i>&nbsp;新增平台使用者</a><br>
                 <a href="{{route('apply.index')}}" class="nav-item nav-link"><i class="fa fa-th me-2"></i>賣家申請管理</a><br>
-                <a href="{{route('schedule.index')}}" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>班表管理</a>
-                <a href="#" class="nnav-item nav-link"><i class="bi bi-gear-fill"></i>設定</a>
-
-
+                <a href="{{route('schedule.index')}}" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>班表管理</a><br>
+                <a href="{{route('adminhome.category_maintain')}}" class="nav-item nav-link"><i class="bi bi-tools me-2"></i>商品類別維護</a><br>
+                <a href="{{route('adminhome.item_maintain')}}" class="nav-item nav-link"><i class="bi bi-tools me-2"></i>品質檢測項目維護</a>
             </div>
         </nav>
     </div>

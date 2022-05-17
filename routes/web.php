@@ -13,8 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//新增平台使用者
 Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home.index');
 Route::post('/home', [\App\Http\Controllers\HomeController::class, 'store'])->name('home.store');
+
+//商品類別維護
+Route::get('/category_maintain', [\App\Http\Controllers\AdminHomeController::class,'category_maintain'])->name('adminhome.category_maintain');
+Route::get('/item_maintain', [\App\Http\Controllers\AdminHomeController::class,'item_maintain'])->name('adminhome.item_maintain');
 
 Route::get('/', [\App\Http\Controllers\AdminHomeController::class, 'index'])->name('adminhome.index');//平台管理者首頁
 Route::get('/posts', [\App\Http\Controllers\PostController::class, 'index'])->name('posts.index');//公告管理頁面

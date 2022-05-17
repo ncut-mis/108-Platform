@@ -62,6 +62,14 @@
                 </x-jet-button>
             </div>
         </form>
+        <br>
+        <form action="{{route('adminhome.index')}}">
+            <div style="text-align: right">
+                <x-jet-button class="">
+                    {{ __('BACK') }}
+                </x-jet-button>
+            </div>
+        </form>
     </x-jet-authentication-card>
 </x-guest-layout>
 

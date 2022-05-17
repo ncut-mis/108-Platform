@@ -38,4 +38,13 @@ class AdminHomeController extends Controller
         }
     }
 
+    public function category_maintain()
+    {
+        return view('category_maintain');
+    }
+
+    public function item_maintain()
+    {
+        return view('item_maintain');
+    }
 }
