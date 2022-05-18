@@ -1,4 +1,7 @@
 @extends('layouts.master')
+
+@section('title','班表管理')
+
 <header>
     <nav class="navbar navbar-expand-md navbar-dark"  style="background-color: lightblue">
         <div class="container-fluid" style="margin-left:70%">

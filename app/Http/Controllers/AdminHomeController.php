@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\PerWeekSchedule;
+use App\Models\QualityItem;
 use App\Models\Seller;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -40,11 +42,52 @@ class AdminHomeController extends Controller
 
     public function category_maintain()
     {
-        return view('category_maintain');
+        $category = Category::get();
+        $data = ['categories' => $category];
+
+        if(isset($_GET['status']))
+        {
+            if($_GET['status'] == 1)
+                $status = 1;
+            else
+                $status = 0;
+        }
+
+        if(isset($_GET['new_category']))
+        {
+            Category::insert(['name'=>$_GET['new_category'], 'status'=>$status]);
+            echo "<script >alert('新增成功'); location.href ='/category_maintain';</script>";//重整頁面新增資料顯現
+        }
+
+        return view('category_maintain',$data);
+    }
+
+    public function update_category()
+    {
+        Category::where('id','=',$_GET['id'])
+        ->update(['status'=>$_GET['status1']]);
+        return redirect()->route('adminhome.category_maintain');
+    }
+
+    public function delete_category($id)
+    {
+        Category::destroy($id);
+        return redirect()->route('adminhome.category_maintain');
     }
 
     public function item_maintain()
     {
-        return view('item_maintain');
+        //status=1，有品質檢定
+        $categories=Category::
+            where('status','=','1')
+            ->get();
+
+        $item = QualityItem::
+        join('categories','quality_items.category_id','=','categories.id')
+        ->select('categories.name','quality_items.content','quality_items.extra')
+        ->get();
+        $data = ['categories' => $categories];
+        $data2 = ['items' => $item];
+        return view('item_maintain',$data,$data2);
     }
 }

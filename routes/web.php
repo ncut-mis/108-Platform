@@ -19,6 +19,10 @@ Route::post('/home', [\App\Http\Controllers\HomeController::class, 'store'])->na
 
 //商品類別維護
 Route::get('/category_maintain', [\App\Http\Controllers\AdminHomeController::class,'category_maintain'])->name('adminhome.category_maintain');
+Route::get('/categories/{id}', [\App\Http\Controllers\AdminHomeController::class,'delete_category'])->name('adminhome.delete_category');
+Route::get('/categories', [\App\Http\Controllers\AdminHomeController::class,'update_category'])->name('adminhome.update_category');
+
+//品質檢測項目維護
 Route::get('/item_maintain', [\App\Http\Controllers\AdminHomeController::class,'item_maintain'])->name('adminhome.item_maintain');
 
 Route::get('/', [\App\Http\Controllers\AdminHomeController::class, 'index'])->name('adminhome.index');//平台管理者首頁

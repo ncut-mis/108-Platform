@@ -73,24 +73,51 @@
                     <div class="table-responsive">
                         <table class="table text-start align-middle table-bordered table-hover mb-0">
                             <thead>
-                            <tr class="text-dark">
+                            <tr class="text-dark" style="text-align: center;vertical-align: middle">
                                 <th scope="col">Category</th>
-                                <th scope="col">Action</th>
+                                <th scope="col">是否為品質檢測類別</th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td>XXX</td>
-                                <td>XXX</td>
+                            @foreach($categories as $type)
+                                <tr>
+                                    <td style="text-align: center;vertical-align: middle">
+                                        {{$type->name}}
+                                    </td>
+                                    @if($type->status == '1')
+                                        <td style="text-align: center;vertical-align: middle">是</td>
+                                    @else
+                                        <td style="text-align: center;vertical-align: middle">否</td>
+                                    @endif
+                                    <form action="{{route('adminhome.update_category')}}">
+                                        <td style="text-align: center;vertical-align: middle">
+                                                <input type="hidden" name="id" value="{{ $type->id }}">
+                                                是否為品質檢測類別：
+                                                <input type="radio" name="status1" value="1">是
+                                                <input type="radio" name="status1" value="0">否&nbsp;
+                                                <button style="text-align:center" class="btn btn-sm btn-primary">修改</button>
 
-                            </tr>
-                            <tr>
-                                <td>XXX</td>
-                                <td>XXX</td>
-                            </tr>
-
+                                            {{--<a href="{{route('adminhome.update_category', $type->id)}}" class="btn btn-sm btn-primary">修改</a>--}}
+                                        </td>
+                                    </form>
+                                    <td style="text-align: center;vertical-align: middle">
+                                        <a href="{{route('adminhome.delete_category', $type->id)}}" class="btn btn-sm btn-danger" onClick="return confirm('確定要刪除嗎?')">刪除</a>
+                                    </td>
+                                </tr>
+                            @endforeach
                             </tbody>
-                        </table>
+                        </table><br>
+                        <tr>
+                            <form action="{{route('adminhome.category_maintain')}}">
+                                <input type="text" name="new_category"><br><br>
+                                是否為品質檢測類別：
+                                <input type="radio" name="status" value="1">是
+                                <input type="radio" name="status" value="0">否&nbsp;
+                                <button style="text-align:center" class="btn btn-sm btn-primary">新增</button>
+                            </form>
+                        </tr>
                     </div>
                 </div>
             </div>

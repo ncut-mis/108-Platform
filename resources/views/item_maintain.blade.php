@@ -65,30 +65,52 @@
 <main>
     <div class="container-xxl position-relative bg-white d-flex p-0">
         <div class="content">
-            <div class="col-md-8" style="float: left;margin:2%">
+            <div class="col-md-10" style="float: left;margin:2%">
                 <div class="bg-light text-center rounded p-4">
                     <div class="d-flex align-items-center justify-content-between mb-4">
                         <h3> <a class="a1"><i class="bi bi-tools"></i>&nbsp; 品質檢測項目維護</a></h3>
                     </div>
                     <div class="table-responsive">
                         <table class="table text-start align-middle table-bordered table-hover mb-0">
-                            <thead>
+                            <thead>{{--
                             <tr class="text-dark">
                                 <th scope="col">Quality_item</th>
                                 <th scope="col">Action</th>
-                            </tr>
+                            </tr>--}}
                             </thead>
                             <tbody>
-                            <tr>
-                                <td>XXX</td>
-                                <td>XXX</td>
-
-                            </tr>
-                            <tr>
-                                <td>XXX</td>
-                                <td>XXX</td>
-                            </tr>
-
+                            @foreach($categories as $category)
+                                <tr>
+                                    <td colspan='6' style="text-align: center;vertical-align: middle">
+                                        <h3><b>{{$category->name}}</b></h3>
+                                    </td>
+                                </tr>
+                                <tr class="text-dark">
+                                    <th scope="col">Quality_item</th>
+                                    <th scope="col" style="text-align: center;vertical-align: middle">Extra_item</th>
+                                    <th scope="col" style="text-align: center;vertical-align: middle">Action</th>
+                                </tr>
+                                @foreach($items as $quality)
+                                    @if($category->name == $quality->name)
+                                        <tr>
+                                            <td>{{$quality->content}}</td>
+                                            @if($quality->extra == '1')
+                                                <td style="text-align: center;vertical-align: middle">是</td>
+                                                <td style="text-align: center;vertical-align: middle">
+                                                    <button style="text-align:center" class="btn btn-sm btn-primary">修改</button>&nbsp;/&nbsp;
+                                                    <button style="text-align:center" class="btn btn-sm btn-danger">刪除</button>
+                                                </td>
+                                            @else
+                                                <td style="text-align: center;vertical-align: middle">&nbsp; </td>
+                                                <td style="text-align: center;vertical-align: middle">
+                                                    <button style="text-align:center" class="btn btn-sm btn-primary">修改</button>&nbsp;/&nbsp;
+                                                    <button style="text-align:center" class="btn btn-sm btn-danger">刪除</button>
+                                                </td>
+                                            @endif
+                                        </tr>
+                                    @endif
+                                @endforeach
+                            @endforeach
                             </tbody>
                         </table>
                     </div>
