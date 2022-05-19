@@ -72,11 +72,7 @@
                     </div>
                     <div class="table-responsive">
                         <table class="table text-start align-middle table-bordered table-hover mb-0">
-                            <thead>{{--
-                            <tr class="text-dark">
-                                <th scope="col">Quality_item</th>
-                                <th scope="col">Action</th>
-                            </tr>--}}
+                            <thead>
                             </thead>
                             <tbody>
                             @foreach($categories as $category)
@@ -88,39 +84,101 @@
                                 <tr class="text-dark">
                                     <th scope="col">Quality_item</th>
                                     <th scope="col" style="text-align: center;vertical-align: middle">Extra_item</th>
-                                    <th scope="col" style="text-align: center;vertical-align: middle">Action</th>
+                                    <th scope="col" style="text-align: center;vertical-align: middle" colspan='7' >Action</th>
                                 </tr>
                                 @foreach($items as $quality)
-                                    @if($category->name == $quality->name)
-                                        <tr>
-                                            <td>{{$quality->content}}</td>
-                                            @if($quality->extra == '1')
-                                                <td style="text-align: center;vertical-align: middle">是</td>
-                                                <td style="text-align: center;vertical-align: middle">
-                                                    <button style="text-align:center" class="btn btn-sm btn-primary">修改</button>&nbsp;/&nbsp;
-                                                    <button style="text-align:center" class="btn btn-sm btn-danger">刪除</button>
-                                                </td>
-                                            @else
-                                                <td style="text-align: center;vertical-align: middle">&nbsp; </td>
-                                                <td style="text-align: center;vertical-align: middle">
-                                                    <button style="text-align:center" class="btn btn-sm btn-primary">修改</button>&nbsp;/&nbsp;
-                                                    <button style="text-align:center" class="btn btn-sm btn-danger">刪除</button>
-                                                </td>
+                                    @if(isset($_GET['id']) && isset($_GET['category_id']))
+                                        @if($quality->id == $_GET['id'] && $quality->category_id == $_GET['category_id'])
+                                            @if($category->name == $quality->name)
+                                                <form action="{{route('adminhome.update_item')}}">
+                                                    <tr>
+                                                        <td>
+                                                            <input type="text" style="width:300px;"  name="content">
+                                                        </td>
+                                                        <td>
+                                                            是否為額外檢查項目：
+                                                            <input type="radio" name="extra1" value="1">是
+                                                            <input type="radio" name="extra1" value="0">否&nbsp;
+                                                        </td>
+                                                        <td style="text-align: center;vertical-align: middle">
+                                                            <input type="hidden" name="id" value="{{$quality->id}}">
+                                                            <input type="hidden" name="category_id" value="{{$quality->category_id}}">
+                                                            <button style="text-align:center" class="btn btn-sm btn-primary">修改</button>&nbsp;/&nbsp;
+                                                            <a href="{{route('adminhome.item_maintain')}}" class="btn btn-sm btn-danger">返回</a>
+                                                        </td>
+                                                    </tr>
+                                                </form>
                                             @endif
-                                        </tr>
+                                        @else
+                                            @if($category->name == $quality->name)
+                                                <tr>
+                                                    <td>{{$quality->content}}</td>
+                                                    @if($quality->extra == '1')
+                                                        <td style="text-align: center;vertical-align: middle">是</td>
+                                                    @else
+                                                        <td style="text-align: center;vertical-align: middle">&nbsp; </td>
+                                                    @endif
+                                                    <td style="text-align: center;vertical-align: middle">
+                                                        <form action="{{route('adminhome.item_maintain')}}">
+                                                            <input type="hidden" name="id" id="id" value="{{$quality->id}}">
+                                                            <input type="hidden" name="category_id" value="{{$quality->category_id}}">
+                                                        </form>
+                                                    </td>
+                                                </tr>
+                                            @endif
+                                        @endif
+                                    @else
+                                        @if($category->name == $quality->name)
+                                            <tr>
+                                                <td>{{$quality->content}}</td>
+                                                @if($quality->extra == '1')
+                                                    <td style="text-align: center;vertical-align: middle">是</td>
+                                                @else
+                                                    <td style="text-align: center;vertical-align: middle">&nbsp; </td>
+                                                @endif
+                                                <td style="text-align: center;vertical-align: middle">
+                                                    <form action="{{route('adminhome.item_maintain')}}">
+                                                        <input type="hidden" name="id" id="id" value="{{$quality->id}}">
+                                                        <input type="hidden" name="category_id" value="{{$quality->category_id}}">
+                                                        <button style="text-align:center" class="btn btn-sm btn-primary">修改</button>
+                                                    </form>
+                                                </td>
+                                                <td style="text-align: center;vertical-align: middle">
+                                                    <form action="{{route('adminhome.delete_item',$quality->id)}}">
+                                                        <input type="hidden" name="category_id" value="{{$quality->category_id}}">
+                                                        <button style="text-align:center" class="btn btn-sm btn-danger">刪除</button>
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                        @endif
                                     @endif
                                 @endforeach
                             @endforeach
                             </tbody>
-                        </table>
+                        </table><br>
+                        @if(!isset($_GET['id']))
+                            <tr>
+                                <?php
+                                    $type = \App\Models\Category::get();
+                                ?>
+                                <form action="{{route('adminhome.item_maintain')}}">
+                                    <select name="category">
+                                        @foreach($type as $category)
+                                            <option value="{{$category->id}}">{{$category->name}}</option>
+                                        @endforeach
+                                    </select>
+                                    <input type="text" style="width:300px;"  name="new_item"><br><br>
+                                    是否為額外檢查項目：
+                                    <input type="radio" name="extra" value="1">是
+                                    <input type="radio" name="extra" value="0">否&nbsp;
+                                    <button style="text-align:center" class="btn btn-sm btn-primary">新增</button>
+                                </form>
+                            </tr>
+                        @endif
                     </div>
                 </div>
             </div>
             <br><br>
-
-
-
         </div>
     </div>
-
 </main>

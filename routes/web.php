@@ -24,6 +24,9 @@ Route::get('/categories', [\App\Http\Controllers\AdminHomeController::class,'upd
 
 //品質檢測項目維護
 Route::get('/item_maintain', [\App\Http\Controllers\AdminHomeController::class,'item_maintain'])->name('adminhome.item_maintain');
+Route::get('/quality_items/{id}', [\App\Http\Controllers\AdminHomeController::class,'delete_item'])->name('adminhome.delete_item');
+Route::get('/quality_items', [\App\Http\Controllers\AdminHomeController::class,'update_item'])->name('adminhome.update_item');
+
 
 Route::get('/', [\App\Http\Controllers\AdminHomeController::class, 'index'])->name('adminhome.index');//平台管理者首頁
 Route::get('/posts', [\App\Http\Controllers\PostController::class, 'index'])->name('posts.index');//公告管理頁面

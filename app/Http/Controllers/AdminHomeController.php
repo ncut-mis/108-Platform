@@ -81,13 +81,43 @@ class AdminHomeController extends Controller
         $categories=Category::
             where('status','=','1')
             ->get();
-
         $item = QualityItem::
         join('categories','quality_items.category_id','=','categories.id')
-        ->select('categories.name','quality_items.content','quality_items.extra')
+        ->select('categories.name','quality_items.category_id','quality_items.id','quality_items.content','quality_items.extra')
         ->get();
         $data = ['categories' => $categories];
         $data2 = ['items' => $item];
+
+        if(isset($_GET['extra']))
+        {
+            if($_GET['extra'] == 1)
+                $extra = 1;
+            else
+                $extra = 0;
+        }
+
+        if(isset($_GET['category']) && isset($_GET['new_item']))
+        {
+            QualityItem::insert(['category_id'=>$_GET['category'], 'content'=>$_GET['new_item'], 'extra'=>$extra]);
+            Category::where('id','=',$_GET['category'])->update(['status'=>'1']);
+            echo "<script >alert('新增成功'); location.href ='/item_maintain';</script>";//重整頁面新增資料顯現
+        }
+
         return view('item_maintain',$data,$data2);
+    }
+
+    public function update_item()
+    {
+        QualityItem::where('id','=',$_GET['id'])->update(['content'=>$_GET['content'],'extra'=>$_GET['extra1']]);
+        return redirect()->route('adminhome.item_maintain');
+    }
+
+    public function delete_item($id)
+    {
+        QualityItem::destroy($id);
+        $cid = QualityItem::where('category_id','=',$_GET['category_id'])->get();
+        if(count($cid)==0)
+            Category::where('id','=',$_GET['category_id'])->update(['status'=>'0']);
+        return redirect()->route('adminhome.item_maintain');
     }
 }

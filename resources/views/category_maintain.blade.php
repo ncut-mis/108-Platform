@@ -68,7 +68,7 @@
             <div class="col-md-8" style="float: left;margin:2%">
                 <div class="bg-light text-center rounded p-4">
                     <div class="d-flex align-items-center justify-content-between mb-4">
-                        <h3> <a class="a1"><i class="bi bi-tools"></i>&nbsp; 商品類別維護</a></h3>
+                        <h3><a class="a1"><i class="bi bi-tools"></i>&nbsp; 商品類別維護</a></h3>
                     </div>
                     <div class="table-responsive">
                         <table class="table text-start align-middle table-bordered table-hover mb-0">
@@ -76,8 +76,7 @@
                             <tr class="text-dark" style="text-align: center;vertical-align: middle">
                                 <th scope="col">Category</th>
                                 <th scope="col">是否為品質檢測類別</th>
-                                <th scope="col"></th>
-                                <th scope="col"></th>
+                                <th scope="col" style="text-align: center;vertical-align: middle" colspan='7' >Action</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -97,10 +96,7 @@
                                                 是否為品質檢測類別：
                                                 <input type="radio" name="status1" value="1">是
                                                 <input type="radio" name="status1" value="0">否&nbsp;
-                                                <button style="text-align:center" class="btn btn-sm btn-primary">修改</button>
-
-                                            {{--<a href="{{route('adminhome.update_category', $type->id)}}" class="btn btn-sm btn-primary">修改</a>--}}
-                                        </td>
+                                                <button style="text-align:center" class="btn btn-sm btn-primary">修改</button> </td>
                                     </form>
                                     <td style="text-align: center;vertical-align: middle">
                                         <a href="{{route('adminhome.delete_category', $type->id)}}" class="btn btn-sm btn-danger" onClick="return confirm('確定要刪除嗎?')">刪除</a>
