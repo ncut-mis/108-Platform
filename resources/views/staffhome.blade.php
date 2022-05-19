@@ -80,7 +80,20 @@
                             $count=0;
                             $now=date("H:i:s");
 
-
+                            //通知施工區_start_測試版
+//                            $start_t="19:46:00";
+//
+//                                  if(strtotime($now)<strtotime($start_t))
+//                                   {
+//                                       $t2=strtotime($start_t)-strtotime($now);
+//                                       echo $t2;
+//                                       if($t2<300){
+//                                       echo "<script> if(confirm( '離下個檢測時間開始不到5分鐘，請注意時間')) ; </script>";
+//
+//                                   }
+//                                   }
+                            //通知施工區_end
+                            $list[]='';
                             for($i=1;$i<=96;$i++)//1個小時有4個15分鐘，所以24小時有96個
                             {
                                 $temp=date("H:i:s", strtotime($start."+15 minute"));
@@ -95,6 +108,8 @@
 
                                                 if($start==$datas->start&&strtotime($now)<strtotime($start))//判斷資料庫是否有這筆資料且當前時間不超過檢測時間
                                                 {
+
+
                                                     $count++;
                                                     $_SESSION['tt']=1;
                                                     break;
@@ -121,11 +136,47 @@
                                     echo"&nbsp;<a href='/staff/exams/{$datas->id}' class='btn btn-sm btn-secondary'>進行檢測</a><br><br><hr>";
                                     echo"</div>";
 
+                                    $list[]=$start;
+
                                 }
 
 
                                 $start=$temp;
                             }
+//
+                            //簡易通知_start
+                            if(strtotime($now)<strtotime($list[1]))
+                            {
+                                $t2=strtotime($list[1])-strtotime($now);
+                                if($t2<300&&$t2>=240)
+                                {
+                                    echo "<script> if(confirm( '離下個檢測時間開始剩下5分鐘，請注意時間')) ; </script>";
+
+                                }
+                             else   if($t2<240&&$t2>=180)
+                                {
+                                    echo "<script> if(confirm( '離下個檢測時間開始剩下4分鐘，請注意時間')) ; </script>";
+
+                                }
+                             else   if($t2<180&&$t2>=120)
+                             {
+                                 echo "<script> if(confirm( '離下個檢測時間開始剩下3分鐘，請注意時間')) ; </script>";
+
+                             }
+                             else   if($t2<120&&$t2>=60)
+                             {
+                                 echo "<script> if(confirm( '離下個檢測時間開始剩下2分鐘，請注意時間')) ; </script>";
+
+                             }
+                             else   if($t2<60&&$t2>=0)
+                             {
+                                 echo "<script> if(confirm( '離下個檢測時間開始剩下1分鐘，請注意時間')) ; </script>";
+
+                             }
+                            }//簡易通知_end
+
+//
+
                             if($count==0) echo "<strong><a>今日已無檢測</a></strong>";
 //                            $count=0;
 //                             foreach ($_SESSION['exam'] as $datas)
