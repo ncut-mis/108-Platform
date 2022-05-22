@@ -42,7 +42,7 @@ class AdminHomeController extends Controller
 
     public function category_maintain()
     {
-        $category = Category::get();
+        $category = Category::orderby('status','DESC')->get();
         $data = ['categories' => $category];
 
         if(isset($_GET['status']))
@@ -69,24 +69,27 @@ class AdminHomeController extends Controller
         return redirect()->route('adminhome.category_maintain');
     }
 
-    public function delete_category($id)
+    public function disable_category($id)
     {
-        Category::destroy($id);
+        Category::where('id','=',$id)->update(['disable'=>'1']);
         return redirect()->route('adminhome.category_maintain');
     }
 
-    public function item_maintain()
+    public function able_category($id)
     {
-        //status=1，有品質檢定
-        $categories=Category::
-            where('status','=','1')
-            ->get();
+        Category::where('id','=',$id)->update(['disable'=>'0']);
+        return redirect()->route('adminhome.category_maintain');
+    }
+
+    public function show($id)
+    {
+        $item_name= Category::where('id','=',$id)->first();
         $item = QualityItem::
         join('categories','quality_items.category_id','=','categories.id')
-        ->select('categories.name','quality_items.category_id','quality_items.id','quality_items.content','quality_items.extra')
-        ->get();
-        $data = ['categories' => $categories];
-        $data2 = ['items' => $item];
+            ->orderby('extra','ASC')
+            ->where('quality_items.category_id','=',$id)
+            ->select('categories.name','quality_items.category_id','quality_items.id','quality_items.content','quality_items.extra')
+            ->get();
 
         if(isset($_GET['extra']))
         {
@@ -96,20 +99,23 @@ class AdminHomeController extends Controller
                 $extra = 0;
         }
 
-        if(isset($_GET['category']) && isset($_GET['new_item']))
+        if(isset($id) && isset($_GET['new_item']))
         {
-            QualityItem::insert(['category_id'=>$_GET['category'], 'content'=>$_GET['new_item'], 'extra'=>$extra]);
-            Category::where('id','=',$_GET['category'])->update(['status'=>'1']);
-            echo "<script >alert('新增成功'); location.href ='/item_maintain';</script>";//重整頁面新增資料顯現
+            QualityItem::insert(['category_id'=>$id, 'content'=>$_GET['new_item'], 'extra'=>$extra]);
+            Category::where('id','=',$id)->update(['status'=>'1']);
+            echo "<script >alert('新增成功'); location.href ='/category_item/".$id."';</script>";//重整頁面新增資料顯現
         }
 
-        return view('item_maintain',$data,$data2);
+        $data = ['name' => $item_name];
+        $data2 = ['items' => $item];
+        return view('item_maintain',$data, $data2);
     }
 
     public function update_item()
     {
-        QualityItem::where('id','=',$_GET['id'])->update(['content'=>$_GET['content'],'extra'=>$_GET['extra1']]);
-        return redirect()->route('adminhome.item_maintain');
+        if(isset($_GET['extra1']))
+            QualityItem::where('id','=',$_GET['id'])->update(['content'=>$_GET['content'],'extra'=>$_GET['extra1']]);
+        return redirect()->route('adminhome.show',$_GET['category_id']);
     }
 
     public function delete_item($id)
@@ -118,6 +124,6 @@ class AdminHomeController extends Controller
         $cid = QualityItem::where('category_id','=',$_GET['category_id'])->get();
         if(count($cid)==0)
             Category::where('id','=',$_GET['category_id'])->update(['status'=>'0']);
-        return redirect()->route('adminhome.item_maintain');
+        return redirect()->route('adminhome.show',$_GET['category_id']);
     }
 }

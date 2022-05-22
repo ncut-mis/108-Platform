@@ -19,11 +19,15 @@ Route::post('/home', [\App\Http\Controllers\HomeController::class, 'store'])->na
 
 //商品類別維護
 Route::get('/category_maintain', [\App\Http\Controllers\AdminHomeController::class,'category_maintain'])->name('adminhome.category_maintain');
-Route::get('/categories/{id}', [\App\Http\Controllers\AdminHomeController::class,'delete_category'])->name('adminhome.delete_category');
+//停用類別
+Route::get('/disable/{id}', [\App\Http\Controllers\AdminHomeController::class,'disable_category'])->name('adminhome.disable_category');
+//啟用類別
+Route::get('/able/{id}', [\App\Http\Controllers\AdminHomeController::class,'able_category'])->name('adminhome.able_category');
 Route::get('/categories', [\App\Http\Controllers\AdminHomeController::class,'update_category'])->name('adminhome.update_category');
+Route::get('/category_item/{id}', [\App\Http\Controllers\AdminHomeController::class,'show'])->name('adminhome.show');
 
 //品質檢測項目維護
-Route::get('/item_maintain', [\App\Http\Controllers\AdminHomeController::class,'item_maintain'])->name('adminhome.item_maintain');
+/*Route::get('/item_maintain', [\App\Http\Controllers\AdminHomeController::class,'item_maintain'])->name('adminhome.item_maintain');*/
 Route::get('/quality_items/{id}', [\App\Http\Controllers\AdminHomeController::class,'delete_item'])->name('adminhome.delete_item');
 Route::get('/quality_items', [\App\Http\Controllers\AdminHomeController::class,'update_item'])->name('adminhome.update_item');
 
