@@ -769,7 +769,7 @@
                     </div>
                 </div>
                 <br><center>
-                    <a class="btn btn-sm btn-secondary" style="" href="{{route('schedule.test2')}}">t2</a>
+{{--                    <a class="btn btn-sm btn-secondary" style="" href="{{route('schedule.test2')}}">t2</a>--}}
                     <button type="button" class="btn btn-sm btn-secondary" data-bs-toggle="collapse" data-bs-target="#demo">新增排班空間</button>
                     <a class="btn btn-sm btn-secondary" style="" href="{{route('schedule.index')}}">本月班表</a>
                     <?php

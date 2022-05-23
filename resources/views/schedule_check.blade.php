@@ -68,7 +68,13 @@
             <div class="col-md-8" style="margin-top:3%;float:left;">
                 <div class="bg-light text-center rounded p-4">
                     <div class="d-flex align-items-center justify-content-between mb-4">
-                        <h3><a class="a1"><i class="bi bi-card-checklist"></i>&nbsp;班表 人員編號:<?php echo $_SESSION['sid']; ?></a></h3>
+                        <h3><a class="a1"><i class="bi bi-card-checklist"></i>&nbsp;班表 人員編號:
+                                <?php
+                                if(strlen($_SESSION['sid'])==3) echo $_SESSION['sid'];
+                               else if(strlen($_SESSION['sid'])==2) echo '0'.$_SESSION['sid'];
+                               else if(strlen($_SESSION['sid'])==1) echo '00'.$_SESSION['sid'];
+
+                                ?></a></h3>
                         <h3><a class=""><?php
                                 $month = date("n");
                                 echo "適用月份:".$month."月"; //抓系統當前月份
@@ -533,7 +539,13 @@
                     @foreach($staff as $staffs)
                         @if($staffs->job!='管理者')
                         <a class="" style="" href="{{route('schedule.check',$staffs->id)}}">
-                            編號:{{$staffs->id}}
+                            @if(strlen($staffs->id)==3)
+                                編號:{{$staffs->id}}
+                            @elseif(strlen($staffs->id)==2)
+                                編號:0{{$staffs->id}}
+                            @elseif(strlen($staffs->id)==1)
+                                編號:00{{$staffs->id}}
+                            @endif
                             <br>
                             姓名:{{$staffs->name}}
                             <br>
