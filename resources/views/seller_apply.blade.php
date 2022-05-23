@@ -74,29 +74,25 @@
                         <table class="table text-start align-middle table-bordered table-hover mb-0">
                             <thead>
                             <tr class="text-dark">
-                                <th scope="col">會員ID</th>
-                                <th scope="col">會員名稱</th>
-                                <th scope="col">銀行分行</th>
-                                <th scope="col">銀行帳號</th>
-                                <th scope="col">Action</th>
+                                <th scope="col" style="text-align: center;vertical-align: middle; border: none">會員ID</th>
+                                <th scope="col" style="text-align: center;vertical-align: middle; border: none">會員名稱</th>
+                                <th scope="col" style="text-align: center;vertical-align: middle; border: none">銀行代碼</th>
+                                <th scope="col" style="text-align: center;vertical-align: middle; border: none">銀行帳號</th>
+                                <th scope="col" style="text-align: center;vertical-align: middle; border: none">Action</th>
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach ($apply as $applies)
-                                @foreach ($member as $members)
-                                    @if($members->id==$applies->member_id)
-                           <tr>
-                                <td>{{$applies->member_id}}</td>
-                                <td>{{$members->name}}</td>
-                                <td>{{$applies->bank_branch}}</td>
-                                <td>{{$applies->account}}</td>
-                                <td>
-                                    <a class="btn btn-sm btn-primary" href="{{route('apply.pass',$applies->id)}}">通過</a>&nbsp;/&nbsp;
-                                    <a class="btn btn-sm btn-danger" href="{{route('apply.fail',$applies->id)}}">不通過</a>
-                                </td>
-                            </tr>
-                                    @endif
-                            @endforeach
+                            @foreach($applies as $apply)
+                                <tr>
+                                    <td style="text-align: center;vertical-align: middle; border: none">{{$apply->member_id}}</td>
+                                    <td style="text-align: center;vertical-align: middle; border: none">{{$apply->name}}</td>
+                                    <td style="text-align: center;vertical-align: middle; border: none">{{$apply->bank_branch}}</td>
+                                    <td style="text-align: center;vertical-align: middle; border: none">{{$apply->account}}</td>
+                                    <td style="text-align: center;vertical-align: middle; border: none">
+                                        <a class="btn btn-sm btn-primary" href="{{route('apply.pass',$apply->member_id)}}">通過</a>&nbsp;&nbsp;
+                                        <a class="btn btn-sm btn-danger" href="{{route('apply.fail',$apply->member_id)}}">不通過</a>
+                                    </td>
+                                </tr>
                             @endforeach
                             </tbody>
                         </table>

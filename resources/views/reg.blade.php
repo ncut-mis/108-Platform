@@ -61,8 +61,8 @@
                     {{ __('ADD') }}
                 </x-jet-button>
             </div>
-        </form>
-        <br>
+        </form><br>
+        {{--<a href="{{route('adminhome.index')}}" class="btn btn-sm btn-secondary">返回</a>--}}
         <form action="{{route('adminhome.index')}}">
             <div style="text-align: right">
                 <x-jet-button class="">

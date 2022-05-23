@@ -26,8 +26,7 @@ Route::get('/able/{id}', [\App\Http\Controllers\AdminHomeController::class,'able
 Route::get('/categories', [\App\Http\Controllers\AdminHomeController::class,'update_category'])->name('adminhome.update_category');
 Route::get('/category_item/{id}', [\App\Http\Controllers\AdminHomeController::class,'show'])->name('adminhome.show');
 
-//品質檢測項目維護
-/*Route::get('/item_maintain', [\App\Http\Controllers\AdminHomeController::class,'item_maintain'])->name('adminhome.item_maintain');*/
+//品質檢測項目維護/
 Route::get('/quality_items/{id}', [\App\Http\Controllers\AdminHomeController::class,'delete_item'])->name('adminhome.delete_item');
 Route::get('/quality_items', [\App\Http\Controllers\AdminHomeController::class,'update_item'])->name('adminhome.update_item');
 
@@ -36,8 +35,8 @@ Route::get('/', [\App\Http\Controllers\AdminHomeController::class, 'index'])->na
 Route::get('/posts', [\App\Http\Controllers\PostController::class, 'index'])->name('posts.index');//公告管理頁面
 
 Route::get('/apply', [\App\Http\Controllers\ApplyController::class, 'index'])->name('apply.index');//賣家申請管理頁面
-Route::get('/apply/{apply}/pass', [\App\Http\Controllers\ApplyController::class, 'pass'])->name('apply.pass');//通過賣家申請
-Route::get('/apply/{apply}/fail', [\App\Http\Controllers\ApplyController::class, 'fail'])->name('apply.fail');//不通過賣家申請
+Route::get('/apply/{member_id}/pass', [\App\Http\Controllers\ApplyController::class, 'pass'])->name('apply.pass');//通過賣家申請
+Route::get('/apply/{member_id}/fail', [\App\Http\Controllers\ApplyController::class, 'fail'])->name('apply.fail');//不通過賣家申請
 
 Route::get('/schedule', [\App\Http\Controllers\ScheduleController::class, 'index'])->name('schedule.index');//排班頁面
 Route::get('/schedule/add/{id}', [\App\Http\Controllers\ScheduleController::class, 'add'])->name('schedule.add');//新增值班時段

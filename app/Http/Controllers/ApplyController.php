@@ -10,28 +10,21 @@ class ApplyController extends Controller
 {
     public function index()
     {
-        $data = DB::table('sellers')->where('status',0)->get();//申請為賣家的人
-        $data2 = DB::table('members')->get();
-        return view('seller_apply', ['apply' => $data],['member'=>$data2]);
+        $apply = Seller::join('users','sellers.member_id','=','users.id')
+                        ->where('status','=','0')
+                        ->select('users.name','sellers.member_id','sellers.bank_branch','sellers.account')
+                        ->get();
+        return view('seller_apply', ['applies' => $apply]);
 
     }
-    public function pass($apply)
+    public function pass($member_id)
     {
-        DB::table('sellers')->where('id',$apply)->update(
-            [
-
-
-
-                'status'=>1
-
-
-            ]
-        );
+        Seller::where('id','=',$member_id)->update(['status'=>'1']);
         return redirect()->route('apply.index');
     }
-    public function fail($apply)
+    public function fail($member_id)
     {
-        Seller::destroy($apply);
+        Seller::destroy($member_id);
         return redirect()->route('apply.index');
     }
 }

@@ -17,9 +17,7 @@ class AdminHomeController extends Controller
         {
             $month = date("n");
             session_start();
-            //$data = DB::table('sellers')->where('status',0)->get();
             $data = Seller::where('status',0)->get();
-            //$data2=DB::table('per_week_schedules')->where('month',$month)->where('staff_id',null)->get();
             $data2 = PerWeekSchedule::where('month',$month)->where('staff_id',null)->get();
             $_SESSION['apply_status']=$data;
             $_SESSION['schedule_status']=$data2;
