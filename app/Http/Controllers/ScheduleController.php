@@ -425,7 +425,7 @@ class ScheduleController extends Controller
 
 //    $t2 = PerWeekSchedule::where('month',4)->delete();
 
-//    $t2 = PerWeekSchedule::where('month',5)->delete();
+    $t2 = PerWeekSchedule::where('month',6)->delete();
 
 //        DB::table('per_week_schedules')->where('month',6)->update(
 //            [

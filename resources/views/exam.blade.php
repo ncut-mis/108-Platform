@@ -11,19 +11,19 @@
                                     <i class="fa fa-envelope me-lg-2"></i>
                                     <span class="d-none d-lg-inline-flex">Message</span> &nbsp;
                                 </a>
-                                <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                                    <a href="#" class="dropdown-item">
-                                        <div class="d-flex align-items-center">
-                                            <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                                            <div class="ms-2">
-                                                <h6 class="fw-normal mb-0">收到XXX訊息</h6>
-                                                <small>15 minutes ago</small>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <hr class="dropdown-divider">
-                                    <a href="#" class="dropdown-item text-center">See all message</a>
-                                </div>
+{{--                                <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">--}}
+{{--                                    <a href="#" class="dropdown-item">--}}
+{{--                                        <div class="d-flex align-items-center">--}}
+{{--                                            <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">--}}
+{{--                                            <div class="ms-2">--}}
+{{--                                                <h6 class="fw-normal mb-0">收到XXX訊息</h6>--}}
+{{--                                                <small>15 minutes ago</small>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                    </a>--}}
+{{--                                    <hr class="dropdown-divider">--}}
+{{--                                    <a href="#" class="dropdown-item text-center">See all message</a>--}}
+{{--                                </div>--}}
                             </div>
                         </div>
                     </li>
@@ -34,20 +34,20 @@
                                 <i class="fa fa-bell me-lg-2"></i>
                                 <span class="d-none d-lg-inline-flex">Notificatin</span>&nbsp;
                             </a>
-                            <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                                <a href="#" class="dropdown-item">
-                                    <h6 class="fw-normal mb-0">提醒XXX</h6>
-                                    <small>15 minutes ago</small>
-                                </a>
-                                <hr class="dropdown-divider">
-                                <a href="#" class="dropdown-item">
-                                    <h6 class="fw-normal mb-0">提醒XXX</h6>
-                                    <small>15 minutes ago</small>
-                                </a>
-                                <hr class="dropdown-divider">
-                                <a href="#" class="dropdown-item text-center">See all notifications</a>
-                            </div>
-                        </div>
+{{--                            <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">--}}
+{{--                                <a href="#" class="dropdown-item">--}}
+{{--                                    <h6 class="fw-normal mb-0">提醒XXX</h6>--}}
+{{--                                    <small>15 minutes ago</small>--}}
+{{--                                </a>--}}
+{{--                                <hr class="dropdown-divider">--}}
+{{--                                <a href="#" class="dropdown-item">--}}
+{{--                                    <h6 class="fw-normal mb-0">提醒XXX</h6>--}}
+{{--                                    <small>15 minutes ago</small>--}}
+{{--                                </a>--}}
+{{--                                <hr class="dropdown-divider">--}}
+{{--                                <a href="#" class="dropdown-item text-center">See all notifications</a>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
                     </li>
 
                     <a href="#" class="sidebar-toggler flex-shrink-0" style="margin:auto">
