@@ -44,6 +44,10 @@
 
         }
         .a1{}
+        th
+        {
+            border: none;
+        }
     </style>
 </head>
 
