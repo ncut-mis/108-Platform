@@ -70,7 +70,7 @@ class AdminHomeController extends Controller
 
         if(isset($_GET['new_category']))
         {
-            Category::insert(['name'=>$_GET['new_category'], 'status'=>$status]);
+            Category::insert(['name'=>$_GET['new_category'], 'status'=>$status, 'disable'=>0]);
             echo "<script >alert('新增成功'); location.href ='/category_maintain';</script>";//重整頁面新增資料顯現
         }
 

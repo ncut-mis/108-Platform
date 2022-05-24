@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title','修改公告')
+@section('title','新增公告')
 
 <header>
     <nav class="navbar navbar-expand-md navbar-dark"  style="background-color: lightblue">
