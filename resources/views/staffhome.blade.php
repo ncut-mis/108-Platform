@@ -145,38 +145,50 @@
                             }
 //
                             //簡易通知_start
-                            if(\PHPUnit\Framework\isEmpty($list)){ }
-                            else{
+//                            if(\PHPUnit\Framework\isEmpty($list)){echo '';}
+//                            else{
+                            if(isset($list[1])){
                             if(strtotime($now)<strtotime($list[1]))
                             {
                                 $t2=strtotime($list[1])-strtotime($now);
+                                echo $t2;
+                                session_start();
+                                $_SESSION['mail_open']=$list[1];
+                                if($t2<900&&$t2>=856)
+                                {
+
+                                    echo "<script> if(confirm('離下個檢測開始還有15分鐘，請按下確認發送通知給賣家'))location.href='/sendmail' ;else ; </script>";
+                                }
                                 if($t2<300&&$t2>=240)
                                 {
                                     echo "<script> if(confirm( '離下個檢測時間開始剩下5分鐘，請注意時間')) ; </script>";
 
                                 }
-                             else   if($t2<240&&$t2>=180)
+                                else   if($t2<240&&$t2>=180)
                                 {
                                     echo "<script> if(confirm( '離下個檢測時間開始剩下4分鐘，請注意時間')) ; </script>";
 
                                 }
-                             else   if($t2<180&&$t2>=120)
-                             {
-                                 echo "<script> if(confirm( '離下個檢測時間開始剩下3分鐘，請注意時間')) ; </script>";
+                                else   if($t2<180&&$t2>=120)
+                                {
+                                    echo "<script> if(confirm( '離下個檢測時間開始剩下3分鐘，請注意時間')) ; </script>";
 
-                             }
-                             else   if($t2<120&&$t2>=60)
-                             {
-                                 echo "<script> if(confirm( '離下個檢測時間開始剩下2分鐘，請注意時間')) ; </script>";
+                                }
+                                else   if($t2<120&&$t2>=60)
+                                {
+                                    echo "<script> if(confirm( '離下個檢測時間開始剩下2分鐘，請注意時間')) ; </script>";
 
-                             }
-                             else   if($t2<60&&$t2>=0)
-                             {
-                                 echo "<script> if(confirm( '離下個檢測時間開始剩下1分鐘，請注意時間')) ; </script>";
+                                }
+                                else   if($t2<60&&$t2>=0)
+                                {
+                                    echo "<script> if(confirm( '離下個檢測時間開始剩下1分鐘，請注意時間')) ; </script>";
 
-                             }
+                                }
+
+
                             }
-                            }//簡易通知_end
+
+                                                        }//簡易通知_end
 
 //
 

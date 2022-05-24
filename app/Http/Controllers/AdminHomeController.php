@@ -28,6 +28,7 @@ class AdminHomeController extends Controller
             }
             else
             {
+
                 return redirect()->route('staffhome.index');
             }
         }
