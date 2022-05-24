@@ -75,7 +75,8 @@ class ExamController extends Controller
 
 
 
-                    'pass'=>'1'
+                    'pass'=>'1',
+                    'url'=>'1'
 
 
                 ]
@@ -89,7 +90,8 @@ class ExamController extends Controller
 
 
                     'pass'=>'1',
-                    'perfect'=>'1'
+                    'perfect'=>'1',
+                    'url'=>'1'
 
 
                 ]

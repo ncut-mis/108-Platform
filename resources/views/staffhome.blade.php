@@ -151,7 +151,7 @@
                             if(strtotime($now)<strtotime($list[1]))
                             {
                                 $t2=strtotime($list[1])-strtotime($now);
-                                echo $t2;
+//                                echo $t2;
                                 session_start();
                                 $_SESSION['mail_open']=$list[1];
                                 if($t2<900&&$t2>=856)

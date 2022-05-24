@@ -97,6 +97,7 @@
                             @csrf
                         </form>
                     </div>
+
                 </div><br>
                 <a href="{{route('staffhome.index')}}" class="nav-item nav-link"><i class="bi bi-house-door-fill"></i>  首頁</a><br>
                 <a href="{{route('staffschedule.index')}}" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>查看班表</a><br>
