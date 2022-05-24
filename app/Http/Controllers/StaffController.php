@@ -101,4 +101,9 @@ class StaffController extends Controller
         return view('staff_checkschedule_detail');
 
     }
+    public function post()
+    {
+
+        return view('staff_posts');
+    }
 }
