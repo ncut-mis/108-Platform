@@ -104,7 +104,7 @@
                                 </div></td>
                                 <td><div>
                                         <a class="btn btn-sm btn-primary" href="{{route('posts.update_post',$p1->id)}}">修改</a>&nbsp;/&nbsp;
-                                        <a class="btn btn-sm btn-danger" href="">刪除</a>
+                                        <a class="btn btn-sm btn-danger" href="{{route('posts.delete_post',$p1->id)}}"  OnClick="return confirm('確定要刪除嗎?')">刪除</a>
                                 </div></td>
                             @endforeach
                             <tr><td colspan="5"><div style="vertical-align: center; text-align: center">

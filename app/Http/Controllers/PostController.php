@@ -33,10 +33,12 @@ class PostController extends Controller
             Post::where('id','=',$id)->update(['date'=>$_GET['date'],'title'=>$_GET['title'],'content'=>$_GET['content'],'for'=>$_GET['for']]);
             echo "<script >alert('修改成功'); location.href ='/posts/".$id."';</script>";
         }
-
-
         return view('update_post',$data3);
     }
 
-    
+    public function delete_post($id)
+    {
+        Post::destroy($id);
+        return redirect()->route('posts.index');
+    }
 }

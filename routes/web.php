@@ -40,6 +40,9 @@ Route::get('/posts', [\App\Http\Controllers\PostController::class, 'index'])->na
 Route::get('/posts/{id}', [\App\Http\Controllers\PostController::class, 'show_post'])->name('posts.show_post');
 //更新公告
 Route::get('/posts_update/{id}', [\App\Http\Controllers\PostController::class, 'update_post'])->name('posts.update_post');
+//刪除公告
+Route::get('/posts_delete/{id}', [\App\Http\Controllers\PostController::class, 'delete_post'])->name('posts.delete_post');
+
 
 Route::get('/apply', [\App\Http\Controllers\ApplyController::class, 'index'])->name('apply.index');//賣家申請管理頁面
 Route::get('/apply/{member_id}/pass', [\App\Http\Controllers\ApplyController::class, 'pass'])->name('apply.pass');//通過賣家申請
