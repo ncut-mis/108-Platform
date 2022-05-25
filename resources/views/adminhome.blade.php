@@ -72,37 +72,52 @@
 <div class="content">
 <div class="col-md-8" style="float: left;margin:2%">
     <div class="bg-light text-center rounded p-4">
-        <div class="d-flex align-items-center justify-content-between mb-4">
-            <h3> <a class="a1"><i class="bi bi-brush"></i>&nbsp; 公告區</a></h3>
-        </div>
+
         <div class="table-responsive">
-            <table class="table text-start align-middle table-bordered table-hover mb-0">
+            <table class="table text-start align-middle table-hover mb-0" frame="void">
                 <thead>
-                <tr class="text-dark">
-                    <th scope="col">Date</th>
-                    <th scope="col">XXX</th>
-                    <th scope="col">XXX</th>
-                    <th scope="col">XXX</th>
-                    <th scope="col">XXX</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>XXX</td>
-                    <td>XXX</td>
-                    <td>XXX</td>
-                    <td>XXX</td>
-                    <td>XXX</td>
-
-                </tr>
-                <tr>
-                    <td>XXX</td>
-                    <td>XXX</td>
-                    <td>XXX</td>
-                    <td>XXX</td>
-                    <td>XXX</td>
-                </tr>
-
+                @if(isset($posts))
+                    <div class="d-flex align-items-center justify-content-between mb-4">
+                        <h3> <a class="a1"><i class="bi bi-brush"></i>&nbsp; 公告區</a></h3>
+                    </div>
+                    <thead>
+                    <tr>
+                        <th>日期</th>
+                        <th>標題</th>
+                        <th>公告對象</th>
+                        <th> </th>
+                    </tr>
+                    </thead>
+                    <tfoot>
+                    <tbody>
+                    @foreach($posts as $p)
+                        <tr>
+                            <td><div>{{$p->date}}</div></td>
+                            <td><div>{{$p->title}}</div></td>
+                            @if($p->for == '0')
+                                <td><div>賣家</div></td>
+                            @else
+                                <td><div>檢測人員</div></td>
+                            @endif
+                            <td><div>
+                                    <form action="{{route('adminhmoe.show_post',$p->id)}}">
+                                        <input type="hidden" name="id" value="{{$p->id}}">
+                                        <button style="text-align:center; vertical-align:center; color: black" class="btn btn-sm btn-link">詳細內容</button>
+                                    </form>
+                            </div></td>
+                        </tr>
+                    @endforeach
+                @endif
+                    @if(isset($post1))
+                        <table>
+                            <div class="d-flex align-items-center justify-content-between mb-4">
+                                <h3> <a class="a1"><i class="bi bi-brush"></i>&nbsp; {{$post1->title}}</a></h3>
+                            </div>
+                            <tr><td><div>
+                                 <p style="white-space: pre-line; font-size: 20px;">{{$post1->content}}</p>
+                            </div></td></tr>
+                        </table>
+                    @endif
                 </tbody>
             </table>
         </div>

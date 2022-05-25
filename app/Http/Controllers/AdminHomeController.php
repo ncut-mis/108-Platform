@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\PerWeekSchedule;
+use App\Models\Post;
 use App\Models\QualityItem;
 use App\Models\Seller;
 use App\Models\User;
@@ -24,7 +25,9 @@ class AdminHomeController extends Controller
             $t2 = PerWeekSchedule::where('month',$month-1)->delete();//自動刪除前一個月的班表
             if(auth()->user()->job=='管理者')
             {
-                return view('adminhome');
+                $post = Post::get();
+                $data = ['posts' => $post];
+                return view('adminhome', $data);
             }
             else
             {
@@ -35,8 +38,21 @@ class AdminHomeController extends Controller
         else
         {
             return redirect()->route('login');
-
         }
+    }
+
+    public function show_post($id)
+    {
+        $month = date("n");
+        session_start();
+        $data = Seller::where('status',0)->get();
+        $data2 = PerWeekSchedule::where('month',$month)->where('staff_id',null)->get();
+        $_SESSION['apply_status']=$data;
+        $_SESSION['schedule_status']=$data2;
+
+        $posts = Post::where('id','=',$id)->first();
+        $data2 = ['post1' => $posts];
+        return view('adminhome', $data2);
     }
 
     public function category_maintain()

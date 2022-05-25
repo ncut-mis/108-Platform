@@ -27,12 +27,14 @@ Route::get('/able/{id}', [\App\Http\Controllers\AdminHomeController::class,'able
 Route::get('/categories', [\App\Http\Controllers\AdminHomeController::class,'update_category'])->name('adminhome.update_category');
 Route::get('/category_item/{id}', [\App\Http\Controllers\AdminHomeController::class,'show'])->name('adminhome.show');
 
-//品質檢測項目維護/
+//品質檢測項目維護
 Route::get('/quality_items/{id}', [\App\Http\Controllers\AdminHomeController::class,'delete_item'])->name('adminhome.delete_item');
 Route::get('/quality_items', [\App\Http\Controllers\AdminHomeController::class,'update_item'])->name('adminhome.update_item');
 
 
 Route::get('/', [\App\Http\Controllers\AdminHomeController::class, 'index'])->name('adminhome.index');//平台管理者首頁
+//平台管理者首頁查看公告
+Route::get('/admimhome/post/{id}', [\App\Http\Controllers\AdminHomeController::class, 'show_post'])->name('adminhmoe.show_post');
 Route::get('/posts', [\App\Http\Controllers\PostController::class, 'index'])->name('posts.index');//公告管理頁面
 
 Route::get('/apply', [\App\Http\Controllers\ApplyController::class, 'index'])->name('apply.index');//賣家申請管理頁面
