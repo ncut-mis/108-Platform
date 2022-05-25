@@ -72,7 +72,6 @@
 <div class="content">
 <div class="col-md-8" style="float: left;margin:2%">
     <div class="bg-light text-center rounded p-4">
-
         <div class="table-responsive">
             <table class="table text-start align-middle table-hover mb-0" frame="void">
                 <thead>

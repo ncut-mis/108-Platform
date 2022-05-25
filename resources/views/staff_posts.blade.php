@@ -71,47 +71,51 @@
         <div class="content">
             <div class="col-md-11" style="float: left;margin:2%">
                 <div class="bg-light text-center rounded p-4">
-                    <div class="d-flex align-items-center justify-content-between mb-4">
-                        <h3> <a class="a1"><i class="bi bi-brush"></i>&nbsp; 公告區</a></h3>
-                    </div>
                     <div class="table-responsive">
-                        <table class="table text-start align-middle table-bordered table-hover mb-0">
+                        <table class="table text-start align-middle table-hover mb-0" frame="void">
                             <thead>
-                            <tr class="text-dark">
-                                <th scope="col">Date</th>
-                                <th scope="col">XXX</th>
-                                <th scope="col">XXX</th>
-                                <th scope="col">XXX</th>
-                                <th scope="col">XXX</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td>XXX</td>
-                                <td>XXX</td>
-                                <td>XXX</td>
-                                <td>XXX</td>
-                                <td>XXX</td>
-
-                            </tr>
-                            <tr>
-                                <td>XXX</td>
-                                <td>XXX</td>
-                                <td>XXX</td>
-                                <td>XXX</td>
-                                <td>XXX</td>
-                            </tr>
-
+                            @if(isset($post1))
+                                <div class="d-flex align-items-center justify-content-between mb-4">
+                                    <h3> <a class="a1"><i class="bi bi-brush"></i>&nbsp; 公告區</a></h3>
+                                </div>
+                                <thead>
+                                <tr>
+                                    <th>日期</th>
+                                    <th>標題</th>
+                                    <th> </th>
+                                </tr>
+                                </thead>
+                                <tfoot>
+                                <tbody>
+                                @foreach($post1 as $p1)
+                                    <tr>
+                                        <td><div>{{$p1->date}}</div></td>
+                                        <td><div>{{$p1->title}}</div></td>
+                                        <td><div>
+                                                <form action="{{route('staff.show_post',$p1->id)}}">
+                                                    <input type="hidden" name="id" value="{{$p1->id}}">
+                                                    <button style="text-align:center; vertical-align:center; color: black" class="btn btn-sm btn-link">詳細內容</button>
+                                                </form>
+                                            </div></td>
+                                    </tr>
+                                @endforeach
+                                @endif
+                                @if(isset($post2))
+                                    <table>
+                                        <div class="d-flex align-items-center justify-content-between mb-4">
+                                            <h3> <a class="a1"><i class="bi bi-brush"></i>&nbsp; {{$post2->title}}</a></h3>
+                                        </div>
+                                        <tr><td><div>
+                                                    <p style="white-space: pre-line; font-size: 20px;">{{$post2->content}}</p>
+                                        </div></td></tr>
+                                    </table>
+                                @endif
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
             <br><br>
-
-
-
         </div>
     </div>
-
 </main>

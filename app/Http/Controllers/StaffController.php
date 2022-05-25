@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -103,7 +104,15 @@ class StaffController extends Controller
     }
     public function post()
     {
+        $post1 = Post::where('for','=','1')->get();
+        $data = ['post1' => $post1];
+        return view('staff_posts',$data);
+    }
 
-        return view('staff_posts');
+    public function show_post($id)
+    {
+       $post2 = Post::where('id','=',$id)->where('for','=','1')->first();
+        $data2 = ['post2' => $post2];
+        return view('staff_posts',$data2);
     }
 }
