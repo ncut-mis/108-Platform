@@ -42,6 +42,8 @@ Route::get('/posts/{id}', [\App\Http\Controllers\PostController::class, 'show_po
 Route::get('/posts_update/{id}', [\App\Http\Controllers\PostController::class, 'update_post'])->name('posts.update_post');
 //刪除公告
 Route::get('/posts_delete/{id}', [\App\Http\Controllers\PostController::class, 'delete_post'])->name('posts.delete_post');
+//新增公告
+Route::get('/posts_create', [\App\Http\Controllers\PostController::class, 'create_post'])->name('posts.create_post');
 
 
 Route::get('/apply', [\App\Http\Controllers\ApplyController::class, 'index'])->name('apply.index');//賣家申請管理頁面

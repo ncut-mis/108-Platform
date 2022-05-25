@@ -26,7 +26,7 @@ class PostController extends Controller
     public function update_post($id)
     {
         $post3 = Post::where('id','=',$id)->first();
-        $data3 = ['post3' => $post3];;
+        $data3 = ['post3' => $post3];
 
         if(isset($_GET['for']))
         {
@@ -41,4 +41,19 @@ class PostController extends Controller
         Post::destroy($id);
         return redirect()->route('posts.index');
     }
+
+    public function create_post()
+    {
+        $post4 = Post::get();
+        $data4 = ['post4' => $post4];
+
+        if(isset($_GET['date']) && isset($_GET['title']) && isset($_GET['content']) && isset($_GET['for']))
+        {
+            Post::insert(['date'=>$_GET['date'],'title'=>$_GET['title'],'content'=>$_GET['content'],'for'=>$_GET['for']]);
+            echo "<script >alert('新增成功'); location.href ='/posts';</script>";
+        }
+        return view('create_post',$data4);
+        /*return view('posts');*/
+    }
+
 }

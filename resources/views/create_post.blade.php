@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title','公告管理')
+@section('title','修改公告')
 
 <header>
     <nav class="navbar navbar-expand-md navbar-dark"  style="background-color: lightblue">
@@ -73,56 +73,31 @@
                     <div class="table-responsive">
                         <table class="table text-start align-middle table-hover mb-0" frame="void">
                             <thead>
-                            @if(isset($post1))
-                                <div class="d-flex align-items-center justify-content-between mb-4">
-                                    <h3> <a class="a1"><i class="bi bi-brush"></i>&nbsp; 公告管理</a></h3>
-                                </div>
-                            <thead>
-                            <tr>
-                                <th>日期</th>
-                                <th>標題</th>
-                                <th>公告對象</th>
-                                <th> </th>
-                            </tr>
                             </thead>
                             <tfoot>
                             <tbody>
-                            @foreach($post1 as $p1)
-                            <tr>
-                                <td><div>{{$p1->date}}</div></td>
-                                <td><div>{{$p1->title}}</div></td>
-                                @if($p1->for == '0')
-                                    <td><div>賣家</div></td>
-                                @else
-                                    <td><div>檢測人員</div></td>
-                                @endif
-                                <td><div>
-                                        <form action="{{route('posts.show_post',$p1->id)}}">
-                                            <input type="hidden" name="id" value="{{$p1->id}}">
-                                            <button style="text-align:center; vertical-align:center; color: black" class="btn btn-sm btn-link">詳細內容</button>
-                                        </form>
-                                </div></td>
-                                <td><div>
-                                        <a class="btn btn-sm btn-primary" href="{{route('posts.update_post',$p1->id)}}">修改</a>&nbsp;/&nbsp;
-                                        <a class="btn btn-sm btn-danger" href="{{route('posts.delete_post',$p1->id)}}"  OnClick="return confirm('確定要刪除嗎?')">刪除</a>
-                                </div></td>
-                            @endforeach
-                            <tr><td colspan="5"><div style="vertical-align: center; text-align: center">
-                                 <a class="btn btn-sm btn-warning" href="{{route('posts.create_post')}}">新增</a>
-                            </div></td></tr>
-                            @endif
-                            @if(isset($post2))
-                                <table>
-                                    <div class="d-flex align-items-center justify-content-between mb-4">
-                                        <h3> <a class="a1"><i class="bi bi-brush"></i>&nbsp; {{$post2->title}}</a></h3>
-                                    </div>
-                                    <tr><td><div>
-                                         <p style="white-space: pre-line; font-size: 20px;">{{$post2->content}}</p>
+                            @if(isset($post4))
+                                <form action="{{route('posts.create_post')}}">
+                                    <tr><td><div><h3><a class="a1"><i class="bi bi-brush"></i>&nbsp; 新增公告</a></h3></div></td></tr>
+                                    <?php
+                                        $date = date('Y/m/d');
+                                        echo "<tr><td><div>日期：<input type='text' name='date' value='".$date."'></div></td></tr>";
+                                    ?>
+                                    <tr><td><div>標題：<input type="text" name="title"></div></td></tr>
+                                    <tr><td><div>內容：
+                                         <textarea name="content" rows="10" cols="80"></textarea>
                                     </div></td></tr>
-                                    <tr><td>
-                                            <a class="btn btn-primary" href="{{route('posts.index')}}">返回</a>
-                                    </td></tr>
-                                </table>
+                                    <td style="border: none">
+                                        公布對象：
+                                            <input type="radio" name="for" value="1" checked>檢測人員
+                                            <input type="radio" name="for" value="0">賣家&nbsp;
+                                    </td>
+                                    <tr style="text-align: center">
+                                        <td>
+                                            <button style="text-align:center" class="btn btn-sm btn-primary">新增</button>
+                                        </td>
+                                    </tr>
+                                </form>
                             @endif
                             </tbody>
                         </table>
@@ -133,3 +108,5 @@
     </div>
 
 </main>
+
+

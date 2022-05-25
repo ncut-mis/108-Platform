@@ -96,7 +96,6 @@
                                     </td>
                                     <tr style="text-align: center">
                                         <td>
-                                            {{--<a class="btn btn-sm btn-primary" href="{{route('posts.update_post',$post3->id)}}">修改</a>--}}
                                             <button style="text-align:center" class="btn btn-sm btn-primary">修改</button>
                                         </td>
                                     </tr>
