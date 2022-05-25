@@ -36,6 +36,10 @@ Route::get('/', [\App\Http\Controllers\AdminHomeController::class, 'index'])->na
 //平台管理者首頁查看公告
 Route::get('/admimhome/post/{id}', [\App\Http\Controllers\AdminHomeController::class, 'show_post'])->name('adminhmoe.show_post');
 Route::get('/posts', [\App\Http\Controllers\PostController::class, 'index'])->name('posts.index');//公告管理頁面
+//公告管理頁面查看公告詳細資訊
+Route::get('/posts/{id}', [\App\Http\Controllers\PostController::class, 'show_post'])->name('posts.show_post');
+//更新公告
+Route::get('/posts_update/{id}', [\App\Http\Controllers\PostController::class, 'update_post'])->name('posts.update_post');
 
 Route::get('/apply', [\App\Http\Controllers\ApplyController::class, 'index'])->name('apply.index');//賣家申請管理頁面
 Route::get('/apply/{member_id}/pass', [\App\Http\Controllers\ApplyController::class, 'pass'])->name('apply.pass');//通過賣家申請

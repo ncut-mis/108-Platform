@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title','公告管理')
+@section('title','修改公告')
 
 <header>
     <nav class="navbar navbar-expand-md navbar-dark"  style="background-color: lightblue">
@@ -73,57 +73,34 @@
                     <div class="table-responsive">
                         <table class="table text-start align-middle table-hover mb-0" frame="void">
                             <thead>
-                            @if(isset($post1))
-                                <div class="d-flex align-items-center justify-content-between mb-4">
-                                    <h3> <a class="a1"><i class="bi bi-brush"></i>&nbsp; 公告管理</a></h3>
-                                </div>
-                            <thead>
-                            <tr>
-                                <th>日期</th>
-                                <th>標題</th>
-                                <th>公告對象</th>
-                                <th> </th>
-                            </tr>
                             </thead>
                             <tfoot>
                             <tbody>
-                            @foreach($post1 as $p1)
-                            <tr>
-                                <td><div>{{$p1->date}}</div></td>
-                                <td><div>{{$p1->title}}</div></td>
-                                @if($p1->for == '0')
-                                    <td><div>賣家</div></td>
-                                @else
-                                    <td><div>檢測人員</div></td>
-                                @endif
-                                <td><div>
-                                        <form action="{{route('posts.show_post',$p1->id)}}">
-                                            <input type="hidden" name="id" value="{{$p1->id}}">
-                                            <button style="text-align:center; vertical-align:center; color: black" class="btn btn-sm btn-link">詳細內容</button>
-                                        </form>
-                                </div></td>
-                                <td><div>
-                                        <a class="btn btn-sm btn-primary" href="{{route('posts.update_post',$p1->id)}}">修改</a>&nbsp;/&nbsp;
-                                        <a class="btn btn-sm btn-danger" href="">刪除</a>
-                                </div></td>
-                            @endforeach
-                            <tr><td colspan="5"><div style="vertical-align: center; text-align: center">
-                                    <a class="btn btn-sm btn-warning" style="" href="">新增</a>
-                            </div></td></tr>
-
-                            @endif
-                            @if(isset($post2))
-                                <table>
-                                    <div class="d-flex align-items-center justify-content-between mb-4">
-                                        <h3> <a class="a1"><i class="bi bi-brush"></i>&nbsp; {{$post2->title}}</a></h3>
-                                    </div>
-                                    <tr><td><div>
-                                         <p style="white-space: pre-line; font-size: 20px;">{{$post2->content}}</p>
-                                    </div></td></tr>
-                                    <tr><td>
-                                            <a class="btn btn-primary" href="{{route('posts.index')}}">返回</a>
-                                    </td></tr>
-                                </table>
+                            @if(isset($post3))
+                                <form action="{{route('posts.update_post',$post3->id)}}">
+                                    <tr><td><div><h3><a class="a1"><i class="bi bi-brush"></i>&nbsp; {{$post3->title}}</a></h3></div></td></tr>
+                                    <tr><td><div>日期：<input type="text" name="date" value="{{$post3->date}}"></div></td></tr>
+                                    <tr><td><div>標題：<input type="text" name="title" value="{{$post3->title}}"></div></td></tr>
+                                    <tr><td><div><p style="white-space: pre-line;">內容：
+                                          <textarea name="content" rows="10" cols="80">{{$post3->content}}</textarea>
+                                    </p></div></td></tr>
+                                    <td style="border: none">
+                                        公布對象：
+                                        @if($post3->for == '1')
+                                            <input type="radio" name="for" value="1" checked>檢測人員
+                                            <input type="radio" name="for" value="0">賣家&nbsp;
+                                        @else
+                                            <input type="radio" name="for" value="1">檢測人員
+                                            <input type="radio" name="for" value="0" checked>賣家&nbsp;
+                                        @endif
+                                    </td>
+                                    <tr style="text-align: center">
+                                        <td>
+                                            {{--<a class="btn btn-sm btn-primary" href="{{route('posts.update_post',$post3->id)}}">修改</a>--}}
+                                            <button style="text-align:center" class="btn btn-sm btn-primary">修改</button>
+                                        </td>
+                                    </tr>
+                                </form>
                             @endif
                             </tbody>
                         </table>
@@ -134,3 +111,4 @@
     </div>
 
 </main>
+
