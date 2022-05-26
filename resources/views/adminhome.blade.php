@@ -117,6 +117,31 @@
                             </div>
                             <tr><td><div>
                                  <p style="white-space: pre-line; font-size: 20px;">{{$post1->content}}</p>
+                                 @if(isset($items))
+                                     <?php
+                                        $check = \App\Models\Category::where('categories.status','=','1')->get();
+                                        $q_item = \App\Models\QualityItem::
+                                                join('categories','categories.id','=','quality_items.category_id')
+                                                ->where('categories.status','=','1')
+                                                ->select('categories.id','quality_items.category_id','quality_items.content','quality_items.extra')
+                                                ->get();
+                                        $i = 0;
+                                     ?>
+                                     @foreach($check as $cc)
+                                         <?php
+                                            $i ++;
+                                            echo "<div style='text-align: left'>
+                                                  <input type='radio' name='type' id='type' value='".$i."' style='display: inline' onclick='divClick();'>
+                                                 <label for='type' style='display: inline'>".$cc->name."</label>
+                                             </div>";
+                                         ?>
+                                     @endforeach
+                                     {{--@foreach($q_item as $qq)
+                                         @if($qq->id == $qq->category_id)
+                                            <div>{{$qq->content}}</div>
+                                         @endif
+                                     @endforeach--}}
+                                 @endif
                             </div></td></tr>
                         </table>
                     @endif
@@ -126,6 +151,28 @@
     </div>
 </div>
 <br><br>
+
+  {{--  <script type="text/javascript">
+        function divClick()
+        {
+            var show = "";
+            var radiobtn = document.getElementsByName("type");
+            for(var i=0; i<radiobtn.length; i++)
+            {
+                if(radiobtn[i].checked)
+                    show = radiobtn[i].value;
+            }
+            switch (show)
+            {
+                case "0":
+                    document.getElementById("card").style.display="block";
+                    break;
+                case "1":
+                    document.getElementById("card").style.display="none";
+                    break;
+            }
+        }
+    </script>--}}
 
 
       <?php

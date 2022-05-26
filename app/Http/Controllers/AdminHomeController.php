@@ -52,7 +52,12 @@ class AdminHomeController extends Controller
 
         $posts = Post::where('id','=',$id)->first();
         $data2 = ['post1' => $posts];
-        return view('adminhome', $data2);
+
+        //固定公布檢測項目的公告
+        $item = Post::where('id','=','4')->first();
+        $data3 = ['items' => $item];
+
+        return view('adminhome', $data2, $data3);
     }
 
     public function category_maintain()
