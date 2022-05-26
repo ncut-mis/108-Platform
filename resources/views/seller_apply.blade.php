@@ -1,4 +1,7 @@
 @extends('layouts.master')
+
+@section('title','賣家申請')
+
 <header>
     <nav class="navbar navbar-expand-md navbar-dark"  style="background-color: lightblue">
         <div class="container-fluid" style="margin-left:70%">
@@ -90,7 +93,7 @@
                                     <td style="text-align: center;vertical-align: middle; border: none">{{$apply->account}}</td>
                                     <td style="text-align: center;vertical-align: middle; border: none">
                                         <a class="btn btn-sm btn-primary" href="{{route('apply.pass',$apply->member_id)}}">通過</a>&nbsp;&nbsp;
-                                        <a class="btn btn-sm btn-danger" href="{{route('apply.fail',$apply->member_id)}}">不通過</a>
+                                        <a class="btn btn-sm btn-danger" href="{{route('apply.fail',$apply->id)}}">不通過</a>
                                     </td>
                                 </tr>
                             @endforeach
