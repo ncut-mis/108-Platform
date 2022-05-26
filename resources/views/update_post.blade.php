@@ -97,6 +97,7 @@
                                     <tr style="text-align: center">
                                         <td>
                                             <button style="text-align:center" class="btn btn-sm btn-primary">修改</button>
+                                            <a class="btn btn-sm btn-danger" href="{{route('posts.index')}}">取消</a>
                                         </td>
                                     </tr>
                                 </form>

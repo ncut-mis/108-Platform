@@ -102,6 +102,9 @@
                                 @endforeach
                                 @endif
                                 @if(isset($post2))
+                                    <div style="text-align: right;vertical-align: middle;">
+                                        <a href="{{route('staff.post')}}" class="btn btn-sm btn-danger">返回</a>
+                                    </div>
                                     <table>
                                         <div class="d-flex align-items-center justify-content-between mb-4">
                                             <h3> <a class="a1"><i class="bi bi-brush"></i>&nbsp; {{$post2->title}}</a></h3>

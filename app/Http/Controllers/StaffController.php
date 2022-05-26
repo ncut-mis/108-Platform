@@ -4,17 +4,21 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class StaffController extends Controller
 {
     public function index()
     {
-        $data=DB::table('exam_item_scores')->get();
-        $data1=DB::table('exams')->where('staff_id',auth()->user()->id)->where('date',date("Y-m-d"))->get();
-        $_SESSION['exam']=$data1;
-        $_SESSION['exam_finish']=$data;
-        return view('staffhome');
+        if(Auth::check())
+        {
+            $data=DB::table('exam_item_scores')->get();
+            $data1=DB::table('exams')->where('staff_id',auth()->user()->id)->where('date',date("Y-m-d"))->get();
+            $_SESSION['exam']=$data1;
+            $_SESSION['exam_finish']=$data;
+            return view('staffhome');
+        }
     }
     public function check()
     {

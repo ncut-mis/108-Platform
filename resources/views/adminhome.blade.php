@@ -108,6 +108,9 @@
                     @endforeach
                 @endif
                     @if(isset($post1))
+                        <div style="vertical-align: center; text-align: right">
+                            <a class="btn btn-sm btn-danger" href="{{route('adminhome.index')}}">返回</a>
+                        </div>
                         <table>
                             <div class="d-flex align-items-center justify-content-between mb-4">
                                 <h3> <a class="a1"><i class="bi bi-brush"></i>&nbsp; {{$post1->title}}</a></h3>

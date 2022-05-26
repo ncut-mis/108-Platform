@@ -77,6 +77,9 @@
                                 <div class="d-flex align-items-center justify-content-between mb-4">
                                     <h3> <a class="a1"><i class="bi bi-brush"></i>&nbsp; 公告管理</a></h3>
                                 </div>
+                                <div style="vertical-align: center; text-align: right">
+                                    <a class="btn btn-sm btn-warning" href="{{route('posts.create_post')}}">發布公告</a>
+                                </div>
                             <thead>
                             <tr>
                                 <th>日期</th>
@@ -88,7 +91,7 @@
                             <tfoot>
                             <tbody>
                             @foreach($post1 as $p1)
-                            <tr>
+                                <tr>
                                 <td><div>{{$p1->date}}</div></td>
                                 <td><div>{{$p1->title}}</div></td>
                                 @if($p1->for == '0')
@@ -107,11 +110,11 @@
                                         <a class="btn btn-sm btn-danger" href="{{route('posts.delete_post',$p1->id)}}"  OnClick="return confirm('確定要刪除嗎?')">刪除</a>
                                 </div></td>
                             @endforeach
-                            <tr><td colspan="5"><div style="vertical-align: center; text-align: center">
-                                 <a class="btn btn-sm btn-warning" href="{{route('posts.create_post')}}">新增</a>
-                            </div></td></tr>
                             @endif
                             @if(isset($post2))
+                                <div style="vertical-align: center; text-align: right">
+                                    <a class="btn btn-sm btn-danger" href="{{route('posts.index')}}">返回</a>
+                                </div>
                                 <table>
                                     <div class="d-flex align-items-center justify-content-between mb-4">
                                         <h3> <a class="a1"><i class="bi bi-brush"></i>&nbsp; {{$post2->title}}</a></h3>
@@ -119,9 +122,6 @@
                                     <tr><td><div>
                                          <p style="white-space: pre-line; font-size: 20px;">{{$post2->content}}</p>
                                     </div></td></tr>
-                                    <tr><td>
-                                            <a class="btn btn-primary" href="{{route('posts.index')}}">返回</a>
-                                    </td></tr>
                                 </table>
                             @endif
                             </tbody>
