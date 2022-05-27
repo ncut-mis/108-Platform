@@ -23,6 +23,20 @@ class PostController extends Controller
         return view('posts',$data2);
     }
 
+    public function show_item($id)
+    {
+        //固定公布檢測項目的公告
+        $post2 = Post::where('id','=','4')->first();
+        $data3 = ['post2' => $post2];
+
+        if(isset($_GET['category_id']))
+        {
+            $quality=QualityItem::where('category_id','=',$_GET['category_id'])->get();
+        }
+        $data4 = ['quality' => $quality];
+        return view('posts',$data3,$data4);
+    }
+
     public function update_post($id)
     {
         $post3 = Post::where('id','=',$id)->first();

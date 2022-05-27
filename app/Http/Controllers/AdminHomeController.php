@@ -53,11 +53,28 @@ class AdminHomeController extends Controller
         $posts = Post::where('id','=',$id)->first();
         $data2 = ['post1' => $posts];
 
-        //固定公布檢測項目的公告
-        $item = Post::where('id','=','4')->first();
-        $data3 = ['items' => $item];
+        return view('adminhome', $data2);
+    }
 
-        return view('adminhome', $data2, $data3);
+    public function show_item($id)
+    {
+        $month = date("n");
+        session_start();
+        $data = Seller::where('status',0)->get();
+        $data2 = PerWeekSchedule::where('month',$month)->where('staff_id',null)->get();
+        $_SESSION['apply_status']=$data;
+        $_SESSION['schedule_status']=$data2;
+
+        //固定公布檢測項目的公告
+        $posts = Post::where('id','=','4')->first();
+        $data3 = ['post1' => $posts];
+
+        if(isset($_GET['category_id']))
+        {
+            $quality=QualityItem::where('category_id','=',$_GET['category_id'])->get();
+        }
+        $data4 = ['quality' => $quality];
+        return view('adminhome',$data3,$data4);
     }
 
     public function category_maintain()

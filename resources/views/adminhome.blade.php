@@ -53,6 +53,7 @@
                     </li>
                     <?php //if(\Illuminate\Support\Facades\Auth::check()){ $un=auth()->user()->name; echo "歡迎使用者:&nbsp;".$un;}else{}?>
 
+                    <li>
                     <a href="#" class="sidebar-toggler flex-shrink-0" style="margin:auto">
                         &nbsp;<i class="bi bi-arrow-up-right-square-fill"></i>
                     </a>
@@ -99,7 +100,7 @@
                                 <td><div>檢測人員</div></td>
                             @endif
                             <td><div>
-                                    <form action="{{route('adminhmoe.show_post',$p->id)}}">
+                                    <form action="{{route('adminhome.show_post',$p->id)}}">
                                         <input type="hidden" name="id" value="{{$p->id}}">
                                         <button style="text-align:center; vertical-align:center; color: black" class="btn btn-sm btn-link">詳細內容</button>
                                     </form>
@@ -117,65 +118,49 @@
                             </div>
                             <tr><td><div>
                                  <p style="white-space: pre-line; font-size: 20px;">{{$post1->content}}</p>
-                                 @if(isset($items))
+                                 @if($post1->id == 4)
                                      <?php
-                                        $check = \App\Models\Category::where('categories.status','=','1')->get();
-                                        $q_item = \App\Models\QualityItem::
-                                                join('categories','categories.id','=','quality_items.category_id')
-                                                ->where('categories.status','=','1')
-                                                ->select('categories.id','quality_items.category_id','quality_items.content','quality_items.extra')
-                                                ->get();
-                                        $i = 0;
-                                     ?>
+                                        $check = \App\Models\Category::where('categories.status','=','1')->get();?>
                                      @foreach($check as $cc)
-                                         <?php
-                                            $i ++;
-                                            echo "<div style='text-align: left'>
-                                                  <input type='radio' name='type' id='type' value='".$i."' style='display: inline' onclick='divClick();'>
-                                                 <label for='type' style='display: inline'>".$cc->name."</label>
-                                             </div>";
-                                         ?>
+                                             <tr><td><div>
+                                                 <form action="{{route('adminhome.show_item',$cc->id)}}">
+                                                     <input type="hidden" name="category_id" value="{{$cc->id}}">
+                                                     <button style="text-align:center; vertical-align:center; color: black; font-size: 18px;" class="btn btn-sm btn-link">{{$cc->name}}</button>
+                                                 </form>
+                                             </div></td></tr>
                                      @endforeach
-                                     {{--@foreach($q_item as $qq)
-                                         @if($qq->id == $qq->category_id)
-                                            <div>{{$qq->content}}</div>
-                                         @endif
-                                     @endforeach--}}
+                                     @if(isset($quality))
+                                             <tr>
+                                                 <th>Quality_item</th>
+                                                 <th>Extra_item</th>
+                                             </tr>
+                                          @foreach($quality as $qq)
+                                             <div style="font-size: 16px;">
+                                                 <tr>
+                                                     <td>
+                                                        {{$qq->content}}
+                                                     </td>
+                                                     @if($qq->extra == 1)
+                                                         <td style="text-align: center">是</td>
+                                                     @else
+                                                         <td style="text-align: center">  </td>
+                                                     @endif
+                                                 </tr>
+                                             </div>
+                                          @endforeach
+                                     @endif
                                  @endif
-                            </div></td></tr>
-                        </table>
+                        </div></td></tr>
+                    </table>
                     @endif
                 </tbody>
-            </table>
+        </table>
         </div>
     </div>
 </div>
 <br><br>
 
-  {{--  <script type="text/javascript">
-        function divClick()
-        {
-            var show = "";
-            var radiobtn = document.getElementsByName("type");
-            for(var i=0; i<radiobtn.length; i++)
-            {
-                if(radiobtn[i].checked)
-                    show = radiobtn[i].value;
-            }
-            switch (show)
-            {
-                case "0":
-                    document.getElementById("card").style.display="block";
-                    break;
-                case "1":
-                    document.getElementById("card").style.display="none";
-                    break;
-            }
-        }
-    </script>--}}
-
-
-      <?php
+    <?php
 
             $apply_status=$_SESSION['apply_status'];
             $schedule_status=$_SESSION['schedule_status'];

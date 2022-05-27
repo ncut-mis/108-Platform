@@ -91,8 +91,7 @@
                 <a href="{{route('apply.index')}}" class="nav-item nav-link"><i class="fa fa-th me-2"></i>賣家申請管理</a><br>
                 <a href="{{route('schedule.index')}}" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>班表管理</a><br>
                 <a href="{{route('adminhome.category_maintain')}}" class="nav-item nav-link"><i class="bi bi-tools me-2"></i>商品類別維護</a><br>
-                {{--<a href="{{route('adminhome.item_maintain')}}" class="nav-item nav-link"><i class="bi bi-tools me-2"></i>品質檢測項目維護</a>
-            --}}</div>
+                </div>
         </nav>
     </div>
 

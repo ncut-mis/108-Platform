@@ -34,10 +34,14 @@ Route::get('/quality_items', [\App\Http\Controllers\AdminHomeController::class,'
 
 Route::get('/', [\App\Http\Controllers\AdminHomeController::class, 'index'])->name('adminhome.index');//平台管理者首頁
 //平台管理者首頁查看公告
-Route::get('/admimhome/post/{id}', [\App\Http\Controllers\AdminHomeController::class, 'show_post'])->name('adminhmoe.show_post');
+Route::get('/adminhome/post/{id}', [\App\Http\Controllers\AdminHomeController::class, 'show_post'])->name('adminhome.show_post');
+//查看檢測項目公告
+Route::get('/adminhome/item/{id}', [\App\Http\Controllers\AdminHomeController::class, 'show_item'])->name('adminhome.show_item');
 Route::get('/posts', [\App\Http\Controllers\PostController::class, 'index'])->name('posts.index');//公告管理頁面
 //公告管理頁面查看公告詳細資訊
 Route::get('/posts/{id}', [\App\Http\Controllers\PostController::class, 'show_post'])->name('posts.show_post');
+//查看檢測項目公告
+Route::get('/posts/item/{id}', [\App\Http\Controllers\PostController::class, 'show_item'])->name('posts.show_item');
 //更新公告
 Route::get('/posts_update/{id}', [\App\Http\Controllers\PostController::class, 'update_post'])->name('posts.update_post');
 //刪除公告
