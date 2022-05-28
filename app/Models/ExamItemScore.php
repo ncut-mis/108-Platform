@@ -13,7 +13,7 @@ class ExamItemScore extends Model
     protected $fillable =[
         'id',
         'exam_id',
-        'quality_item_id',
+        'category_id',
         'score',
 
     ];

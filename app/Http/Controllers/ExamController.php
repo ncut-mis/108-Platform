@@ -118,7 +118,7 @@ class ExamController extends Controller
 
 
                 'exam_id'=>$id,
-                'quality_item_id'=>$_SESSION['cid'],
+                'category_id'=>$_SESSION['cid'],
                 'score'=>$_SESSION['total']
 
 
