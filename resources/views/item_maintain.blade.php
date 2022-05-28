@@ -70,7 +70,7 @@
                     <div class="d-flex align-items-center justify-content-between mb-4">
                         <h3> <a class="a1"><i class="bi bi-tools"></i>&nbsp; {{$name->name}}檢測項目維護</a></h3>
                     </div>
-                    <div class="table-responsive">
+                    <div class="table-responsive" style="font-size: 18px;">
                         <tr>
                             <form action="#">
                                 Quality_item：<input type="text" style="width:300px;"  name="new_item">&nbsp;
@@ -80,7 +80,7 @@
                                 <button style="text-align:center" class="btn btn-sm btn-primary">新增</button>
                             </form>
                         </tr>
-                        <table class="table text-start align-middle table-bordered table-hover mb-0">
+                        <table class="table text-start align-middle table-bordered table-hover mb-0" style="font-size: 18px;">
                             <thead>
                             </thead>
                             <tbody>
@@ -95,9 +95,9 @@
                                             <form action="{{route('adminhome.update_item')}}">
                                                 <tr>
                                                     <td style="border: none">
-                                                        <input type="text" style="width:300px;"  name="content" value="{{$quality->content}}">
+                                                        <input type="text" style="width:300px"  name="content" value="{{$quality->content}}">
                                                     </td>
-                                                    <td style="border: none">
+                                                    <td style="border: none;">
                                                         @if($quality->extra == '1')
                                                             <input type="radio" name="extra1" value="1" checked>是
                                                             <input type="radio" name="extra1" value="0">否&nbsp;

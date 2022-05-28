@@ -93,16 +93,16 @@
                             @foreach($post1 as $p1)
                                 <tr>
                                 <td><div>{{$p1->date}}</div></td>
-                                <td><div>{{$p1->title}}</div></td>
+                                <td><div style="font-size: 18px;">{{$p1->title}}</div></td>
                                 @if($p1->for == '0')
-                                    <td><div>賣家</div></td>
+                                    <td><div style="font-size: 18px;">賣家</div></td>
                                 @else
-                                    <td><div>檢測人員</div></td>
+                                    <td><div style="font-size: 18px;">檢測人員</div></td>
                                 @endif
                                 <td><div>
                                         <form action="{{route('posts.show_post',$p1->id)}}">
                                             <input type="hidden" name="id" value="{{$p1->id}}">
-                                            <button style="text-align:center; vertical-align:center; color: black" class="btn btn-sm btn-link">詳細內容</button>
+                                            <button style="text-align:center; vertical-align:center; color: black; font-size: 18px;" class="btn btn-sm btn-link">詳細內容</button>
                                         </form>
                                 </div></td>
                                 <td><div>
