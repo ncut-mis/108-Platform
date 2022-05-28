@@ -87,13 +87,15 @@
                             <tbody>
                             @foreach($applies as $apply)
                                 <tr>
-                                    <td style="text-align: center;vertical-align: middle; border: none">{{$apply->member_id}}</td>
-                                    <td style="text-align: center;vertical-align: middle; border: none">{{$apply->name}}</td>
-                                    <td style="text-align: center;vertical-align: middle; border: none">{{$apply->bank_branch}}</td>
-                                    <td style="text-align: center;vertical-align: middle; border: none">{{$apply->account}}</td>
+                                    <td style="text-align: center;vertical-align: middle; border: none"><div style="font-size: 18px;">{{$apply->member_id}}</div></td>
+                                    <td style="text-align: center;vertical-align: middle; border: none"><div style="font-size: 18px;"><b>{{$apply->name}}</b></div></td>
+                                    <td style="text-align: center;vertical-align: middle; border: none"><div style="font-size: 18px;">{{$apply->bank_branch}}</div></td>
+                                    <td style="text-align: center;vertical-align: middle; border: none"><div style="font-size: 18px;">{{$apply->account}}</div></td>
                                     <td style="text-align: center;vertical-align: middle; border: none">
+                                        <div style="font-size: 18px;">
                                         <a class="btn btn-sm btn-primary" href="{{route('apply.pass',$apply->member_id)}}">通過</a>&nbsp;&nbsp;
                                         <a class="btn btn-sm btn-danger" href="{{route('apply.fail',$apply->id)}}">不通過</a>
+                                        </div>
                                     </td>
                                 </tr>
                             @endforeach

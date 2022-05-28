@@ -70,7 +70,7 @@
                     <div class="d-flex align-items-center justify-content-between mb-4">
                         <h3><a class="a1"><i class="bi bi-tools"></i>&nbsp; 商品類別維護</a></h3>
                     </div>
-                    <div class="table-responsive">
+                    <div class="table-responsive" style="font-size: 18px;">
                         <tr>
                             <form action="{{route('adminhome.category_maintain')}}">
                                 類別：<input type="text" name="new_category">&nbsp;
@@ -80,7 +80,7 @@
                                 <button style="text-align:center" class="btn btn-sm btn-primary">新增</button>
                             </form>
                         </tr>
-                        <table class="table text-start align-middle table-bordered table-hover mb-0">
+                        <table class="table text-start align-middle table-bordered table-hover mb-0" style="font-size: 18px;">
                             <thead>
                             <tr class="text-dark" style="text-align: center;vertical-align: middle">
                                 <th scope="col" style="border: none;">Category</th>

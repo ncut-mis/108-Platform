@@ -20,8 +20,9 @@ class ApplyController extends Controller
     public function pass($member_id)
     {
 
-        Seller::where('id','=',$member_id)->update(['status'=>'1']);
-        
+
+        Seller::where('member_id','=',$member_id)->update(['status'=>'1']);
+
         return redirect()->route('apply.index');
     }
     public function fail($id)
