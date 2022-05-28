@@ -22,7 +22,6 @@ class ApplyController extends Controller
 
         Seller::where('id','=',$member_id)->update(['status'=>'1']);
         
-
         return redirect()->route('apply.index');
     }
     public function fail($id)
