@@ -68,18 +68,20 @@
             <div class="col-md-10" style="margin-top:3%;margin-left:5%; float:left;">
                 <div class="bg-light text-center rounded p-4">
                     @foreach($type as $types)
+                        @foreach($product as $products)
                     <div class="d-flex align-items-center justify-content-between mb-4">
-                        <h3><a class="a1"><i class="bi bi-card-checklist"></i>&nbsp;<?php echo date('m/d'); ?>&nbsp;檢測項目:{{$types->name}}</a></h3><br>
+                        <h3><a class="a1"><i class="bi bi-card-checklist"></i>&nbsp;<?php echo date('m/d'); ?>&nbsp;商品名稱:{{$products->name}}</a></h3><br>
 
                    </div>
                     @endforeach
-                        @foreach($product as $products)
+
                             <div style="margin-right:5%;float:left ;margin-bottom:3%">
-                                <img src="{{ asset('img/'.$products->pictures.'') }}" alt="" height="250">
+                                <img src="{{ asset('img/'.$products->pictures.'') }}" alt=""  height="250">
+
                             </div>
 
-                            <div style="margin-left:5%;float:right;margin-bottom:3%;margin-top:5%;">
-{{--                                    <a style="color: gray">檢測商品名稱:{{$products->name}}</a>--}}
+                            <div style="margin-left:3%;float:right;margin-bottom:3%;margin-top:5%;">
+{{--                                <h3><a class="" style="color: gray">商品名稱:{{$products->name}}</a></h3>--}}
                                     <br><br>
                                     <a href=<?php echo $_SESSION['link'];?> target="_blank" style="color:white;width:auto;height:auto;font-size:20px;" class="btn btn-sm btn-secondary">開啟會議室</a>
 
