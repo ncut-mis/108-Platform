@@ -70,9 +70,12 @@
                     @foreach($type as $types)
                         @foreach($product as $products)
                     <div class="d-flex align-items-center justify-content-between mb-4">
-                        <h3><a class="a1"><i class="bi bi-card-checklist"></i>&nbsp;<?php echo date('m/d'); ?>&nbsp;商品名稱:{{$products->name}}</a></h3><br>
+                        <h3><a class="a1"><i class="bi bi-card-checklist"></i>&nbsp;<?php echo date('m/d'); ?>&nbsp;</a></h3><br>
 
                    </div>
+                            <div class="d-flex align-items-center justify-content-between mb-4">
+                                <strong><h4><a class="a1">檢測商品:{{$products->name}}</a></h4></strong>
+                            </div>
                     @endforeach
 
                             <div style="margin-right:5%;float:left ;margin-bottom:3%">
