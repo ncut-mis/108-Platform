@@ -7,10 +7,10 @@
                     <li class="nav-item">
                         <div class="navbar-nav align-items-center  ms-auto">
                             <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                                    <i class="fa fa-envelope me-lg-2"></i>
-                                    <span class="d-none d-lg-inline-flex">Message</span> &nbsp;
-                                </a>
+{{--                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">--}}
+{{--                                    <i class="fa fa-envelope me-lg-2"></i>--}}
+{{--                                    <span class="d-none d-lg-inline-flex">Message</span> &nbsp;--}}
+{{--                                </a>--}}
 {{--                                <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">--}}
 {{--                                    <a href="#" class="dropdown-item">--}}
 {{--                                        <div class="d-flex align-items-center">--}}
@@ -30,10 +30,10 @@
 
                     <li class="nav-item">
                         <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                                <i class="fa fa-bell me-lg-2"></i>
-                                <span class="d-none d-lg-inline-flex">Notificatin</span>&nbsp;
-                            </a>
+{{--                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">--}}
+{{--                                <i class="fa fa-bell me-lg-2"></i>--}}
+{{--                                <span class="d-none d-lg-inline-flex">Notificatin</span>&nbsp;--}}
+{{--                            </a>--}}
 {{--                            <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">--}}
 {{--                                <a href="#" class="dropdown-item">--}}
 {{--                                    <h6 class="fw-normal mb-0">提醒XXX</h6>--}}
@@ -50,9 +50,9 @@
                         </div>
                     </li>
 
-                    <a href="#" class="sidebar-toggler flex-shrink-0" style="margin:auto">
-                        &nbsp;<i class="bi bi-arrow-up-right-square-fill"></i>
-                    </a>
+{{--                    <a href="#" class="sidebar-toggler flex-shrink-0" style="margin:auto">--}}
+{{--                        &nbsp;<i class="bi bi-arrow-up-right-square-fill"></i>--}}
+{{--                    </a>--}}
                     </li>
 
                 </ul>
@@ -75,11 +75,23 @@
                     <div class="" style="font-size:25px ;float: left;align-content: center;">
                         <?php
                         date_default_timezone_set('Asia/Taipei');//時區調整
+                        $good= $_SESSION['start'];
                         $start= $_SESSION['start'];
                         $detail=$_SESSION['staff_detail'];
                         $_SESSION['tt']=0;
+                        if($good=='18:00:00')
+                            {
+                                $ii=6;
+                                $jj=12;
+                            }
+                         else
+                        {
+                            $ii=4;
+                            $jj=8;
+                        }
 
-                   for($i=1;$i<=6;$i++)
+
+                   for($i=1;$i<=$ii;$i++)
                         {
                             $temp=date("H:i:s", strtotime($start."+15 minute"));
 
@@ -145,7 +157,7 @@
                           <?php
                           date_default_timezone_set('Asia/Taipei');//時區調整
 
-                          for($i=7;$i<=12;$i++)
+                          for($i=$ii+1;$i<=$jj;$i++)
                           {
                               $temp=date("H:i:s", strtotime($start."+15 minute"));
 
