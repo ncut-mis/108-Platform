@@ -10,10 +10,11 @@
                     <li class="nav-item">
                         <div class="navbar-nav align-items-center  ms-auto">
                             <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                                    <i class="fa fa-envelope me-lg-2"></i>
-                                    <span class="d-none d-lg-inline-flex">Message</span> &nbsp;
-                                </a>
+
+{{--                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">--}}
+{{--                                    <i class="fa fa-envelope me-lg-2"></i>--}}
+{{--                                    <span class="d-none d-lg-inline-flex">Message</span> &nbsp;--}}
+{{--                                </a>--}}
 {{--                                <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">--}}
 {{--                                    <a href="#" class="dropdown-item">--}}
 {{--                                        <div class="d-flex align-items-center">--}}
@@ -33,10 +34,10 @@
 
                     <li class="nav-item">
                         <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                                <i class="fa fa-bell me-lg-2"></i>
-                                <span class="d-none d-lg-inline-flex">Notificatin</span>&nbsp;
-                            </a>
+{{--                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">--}}
+{{--                                <i class="fa fa-bell me-lg-2"></i>--}}
+{{--                                <span class="d-none d-lg-inline-flex">Notificatin</span>&nbsp;--}}
+{{--                            </a>--}}
 {{--                            <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">--}}
 {{--                                <a href="#" class="dropdown-item">--}}
 {{--                                    <h6 class="fw-normal mb-0">提醒XXX</h6>--}}
@@ -53,9 +54,9 @@
                         </div>
                     </li>
 
-                    <a href="#" class="sidebar-toggler flex-shrink-0" style="margin:auto">
-                        &nbsp;<i class="bi bi-arrow-up-right-square-fill"></i>
-                    </a>
+{{--                    <a href="#" class="sidebar-toggler flex-shrink-0" style="margin:auto">--}}
+{{--                        &nbsp;<i class="bi bi-arrow-up-right-square-fill"></i>--}}
+{{--                    </a>--}}
                     </li>
 
                 </ul>
@@ -128,7 +129,7 @@
                             ?>
                             <tr><!--早上 -->
                                 <td style="background-color:lightblue;text-align: center">早<br>9:00~11:00</td>
-                                <td style="text-align: center">
+                                <td style="text-align: center;font-size: small;">
                                     <?php
 
                                     foreach ($w1_1 as $w1_1s)
@@ -158,7 +159,7 @@
                                     ?>
 
                                 </td>
-                                <td style="text-align: center">
+                                <td style="text-align: center;font-size: small;">
                                     <?php
 
                                     foreach ($w2_1 as $w2_1s)
@@ -187,7 +188,7 @@
                                     ?>
 
                                 </td>
-                                <td style="text-align: center">
+                                <td style="text-align: center;font-size: small;">
                                     <?php
 
                                     foreach ($w3_1 as $w3_1s)
@@ -217,7 +218,7 @@
                                     ?>
 
                                 </td>
-                                <td style="text-align: center">
+                                <td style="text-align: center;font-size: small;">
                                     <?php
 
                                     foreach ($w4_1 as $w4_1s)
@@ -247,7 +248,7 @@
                                     ?>
 
                                 </td>
-                                <td style="text-align: center">
+                                <td style="text-align: center;font-size: small;">
                                     <?php
 
                                     foreach ($w5_1 as $w5_1s)
@@ -277,7 +278,7 @@
                                     ?>
 
                                 </td>
-                                <td style="text-align: center">
+                                <td style="text-align: center;font-size: small;">
                                     <?php
 
                                     foreach ($w6_1 as $w6_1s)
@@ -307,7 +308,7 @@
                                     ?>
 
                                 </td>
-                                <td style="text-align: center">
+                                <td style="text-align: center;font-size: small;">
                                     <?php
 
                                     foreach ($w7_1 as $w7_1s)
@@ -340,7 +341,7 @@
                             </tr>
                             <tr><!--午-->
                                 <td style="background-color:lightblue;text-align: center">午<br>15:00~17:00</td>
-                                <td style="text-align: center">
+                                <td style="text-align: center;font-size: small;">
                                     <?php
 
                                     foreach ($w1_2 as $w1_2s)
@@ -369,7 +370,7 @@
                                     ?>
 
                                 </td>
-                                <td style="text-align: center">
+                                <td style="text-align: center;font-size: small;">
                                     <?php
 
                                     foreach ($w2_2 as $w2_2s)
@@ -398,7 +399,7 @@
                                     ?>
 
                                 </td>
-                                <td style="text-align: center">
+                                <td style="text-align: center;font-size: small;">
                                     <?php
 
                                     foreach ($w3_2 as $w3_2s)
@@ -428,7 +429,7 @@
                                     ?>
 
                                 </td>
-                                <td style="text-align: center">
+                                <td style="text-align: center;font-size: small;">
                                     <?php
 
                                     foreach ($w4_2 as $w4_2s)
@@ -458,7 +459,7 @@
                                     ?>
 
                                 </td>
-                                <td style="text-align: center">
+                                <td style="text-align: center;font-size: small;">
                                     <?php
 
                                     foreach ($w5_2 as $w5_2s)
@@ -488,7 +489,7 @@
                                     ?>
 
                                 </td>
-                                <td style="text-align: center">
+                                <td style="text-align: center;font-size: small;">
                                     <?php
 
                                     foreach ($w6_2 as $w6_2s)
@@ -518,7 +519,7 @@
                                     ?>
 
                                 </td>
-                                <td style="text-align: center">
+                                <td style="text-align: center;font-size: small;">
                                     <?php
 
                                     foreach ($w7_2 as $w7_2s)
@@ -551,7 +552,7 @@
                             </tr>
                             <tr><!--晚-->
                                 <td style="background-color:lightblue;text-align: center">晚<br>18:00~21:00</td>
-                                <td style="text-align: center">
+                                <td style="text-align: center;font-size: small;">
                                     <?php
 
                                     foreach ($w1_3 as $w1_3s)
@@ -581,7 +582,7 @@
                                     ?>
 
                                 </td>
-                                <td style="text-align: center">
+                                <td style="text-align: center;font-size: small;">
                                     <?php
 
                                     foreach ($w2_3 as $w2_3s)
@@ -610,7 +611,7 @@
                                     ?>
 
                                 </td>
-                                <td style="text-align: center">
+                                <td style="text-align: center;font-size: small;">
                                     <?php
 
                                     foreach ($w3_3 as $w3_3s)
@@ -640,7 +641,7 @@
                                     ?>
 
                                 </td>
-                                <td style="text-align: center">
+                                <td style="text-align: center;font-size: small;">
                                     <?php
 
                                     foreach ($w4_3 as $w4_3s)
@@ -670,7 +671,7 @@
                                     ?>
 
                                 </td>
-                                <td style="text-align: center">
+                                <td style="text-align: center;font-size: small;">
                                     <?php
 
                                     foreach ($w5_3 as $w5_3s)
@@ -700,7 +701,7 @@
                                     ?>
 
                                 </td>
-                                <td style="text-align: center">
+                                <td style="text-align: center;font-size: small;">
                                     <?php
 
                                     foreach ($w6_3 as $w6_3s)
@@ -730,7 +731,7 @@
                                     ?>
 
                                 </td>
-                                <td style="text-align: center">
+                                <td style="text-align: center;font-size: small;">
                                     <?php
 
                                     foreach ($w7_3 as $w7_3s)
